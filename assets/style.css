@@ -81,10 +81,9 @@ header.site p.sub { margin: 0; color: var(--ink-2); }
   width: 10px; height: 10px; border-radius: 3px; flex: none;
 }
 
-.searchbar { margin: 14px 0 6px; }
-.searchbar input {
-  width: 100%;
-  max-width: 420px;
+.searchbar { margin: 14px 0 6px; display: flex; gap: 8px; flex-wrap: wrap; }
+.searchbar input,
+.searchbar select {
   padding: 8px 12px;
   border: 1px solid var(--baseline);
   border-radius: 8px;
@@ -92,7 +91,10 @@ header.site p.sub { margin: 0; color: var(--ink-2); }
   color: var(--ink);
   font: inherit;
 }
-.searchbar input:focus { outline: 2px solid var(--cat-1); outline-offset: 1px; }
+.searchbar input { flex: 1 1 260px; max-width: 420px; }
+.searchbar select { flex: none; cursor: pointer; }
+.searchbar input:focus,
+.searchbar select:focus { outline: 2px solid var(--cat-1); outline-offset: 1px; }
 
 section.collection { margin-top: 28px; }
 section.collection h2 {
