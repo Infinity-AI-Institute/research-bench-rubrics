@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+<title id="title">ResearchBench inference paper task completions by model</title>
+<desc id="desc">Per-paper closed headline task counts for Claude Opus 4.7 and GPT-5 Codex across the current 20-paper inference selection. The first three papers use the gate3 benchmark runs; papers 4 through 10 use the 10-paper stage1 runs; papers 12 through 20 use the 9-paper stage2 runs; Hybrid JIT is blocked and not benchmarked yet.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<style>text { font-family: Georgia, "Times New Roman", serif; fill: #111827; } .muted { fill: #6b7280; font-size: 13px; } .small { font-size: 12px; fill: #6b7280; } .label { font-size: 14px; } .value { font-size: 12px; font-weight: 700; } .title { font-size: 28px; font-weight: 700; } .subtitle { font-size: 14px; fill: #6b7280; } .axis { font-size: 12px; fill: #6b7280; }</style>
+<text x="40" y="44" class="title">ResearchBench Inference Task Completions by Paper</text>
+<text x="40" y="68" class="subtitle">Closed headline tasks per paper. Claude uses the completed 3-paper gate3 run for the first three papers; Codex uses the completed gate3 post-harness run for those same papers.</text>
+<text x="40" y="88" class="subtitle">Papers 4-10 use the completed 10-paper stage1 runs. Papers 12-20 use the completed 9-paper stage2 runs. Hybrid JIT remains blocked and is shown as not benchmarked.</text>
+<rect x="40" y="100" width="14" height="14" rx="2" fill="#f97316"/>
+<text x="62" y="111" class="label">Claude Opus 4.7</text>
+<rect x="220" y="100" width="14" height="14" rx="2" fill="#0f766e"/>
+<text x="242" y="111" class="label">GPT-5 Codex</text>
+<line x1="340.0" y1="120" x2="340.0" y2="740" stroke="#e5e7eb" stroke-width="1"/>
+<text x="340.0" y="110" text-anchor="middle" class="axis">0</text>
+<line x1="436.5" y1="120" x2="436.5" y2="740" stroke="#e5e7eb" stroke-width="1"/>
+<text x="436.5" y="110" text-anchor="middle" class="axis">20</text>
+<line x1="532.9" y1="120" x2="532.9" y2="740" stroke="#e5e7eb" stroke-width="1"/>
+<text x="532.9" y="110" text-anchor="middle" class="axis">40</text>
+<line x1="629.4" y1="120" x2="629.4" y2="740" stroke="#e5e7eb" stroke-width="1"/>
+<text x="629.4" y="110" text-anchor="middle" class="axis">60</text>
+<line x1="725.9" y1="120" x2="725.9" y2="740" stroke="#e5e7eb" stroke-width="1"/>
+<text x="725.9" y="110" text-anchor="middle" class="axis">80</text>
+<line x1="822.4" y1="120" x2="822.4" y2="740" stroke="#e5e7eb" stroke-width="1"/>
+<text x="822.4" y="110" text-anchor="middle" class="axis">100</text>
+<line x1="918.8" y1="120" x2="918.8" y2="740" stroke="#e5e7eb" stroke-width="1"/>
+<text x="918.8" y="110" text-anchor="middle" class="axis">120</text>
+<line x1="1015.3" y1="120" x2="1015.3" y2="740" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1015.3" y="110" text-anchor="middle" class="axis">140</text>
+<line x1="1111.8" y1="120" x2="1111.8" y2="740" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1111.8" y="110" text-anchor="middle" class="axis">160</text>
+<line x1="340" y1="740" x2="1160" y2="740" stroke="#6b7280" stroke-width="1.2"/>
+<text x="750.0" y="878" text-anchor="middle" class="muted">Closed headline tasks</text>
+<rect x="28" y="118" width="1344" height="31" fill="#fafafa"/>
+<text x="40" y="131" class="label">01. LLMServingSim 2.0</text>
+<text x="40" y="145" class="small">source: gate3</text>
+<rect x="340" y="122" width="0.0" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="135" width="77.2" height="10" rx="3" fill="#0f766e"/>
+<text x="346.0" y="131" class="value">0</text>
+<text x="423.2" y="144" class="value">16</text>
+<text x="40" y="162" class="label">02. FOCUS AutoKernel</text>
+<text x="40" y="176" class="small">source: gate3</text>
+<rect x="340" y="153" width="631.9" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="166" width="255.6" height="10" rx="3" fill="#0f766e"/>
+<text x="977.9" y="162" class="value">131</text>
+<text x="601.6" y="175" class="value">53</text>
+<rect x="28" y="180" width="1344" height="31" fill="#fafafa"/>
+<text x="40" y="193" class="label">03. Illusion of Equivalence</text>
+<text x="40" y="207" class="small">source: gate3</text>
+<rect x="340" y="184" width="57.9" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="197" width="192.9" height="10" rx="3" fill="#0f766e"/>
+<text x="403.9" y="193" class="value">12</text>
+<text x="538.9" y="206" class="value">40</text>
+<text x="40" y="224" class="label">04. AsyncTLS</text>
+<text x="40" y="238" class="small">source: stage1</text>
+<rect x="340" y="215" width="675.3" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="228" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="1021.3" y="224" class="value">140</text>
+<text x="346.0" y="237" class="value">0</text>
+<rect x="28" y="242" width="1344" height="31" fill="#fafafa"/>
+<text x="40" y="255" class="label">05. CacheFlow 3D</text>
+<text x="40" y="269" class="small">source: stage1</text>
+<rect x="340" y="246" width="0.0" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="259" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="346.0" y="255" class="value">0</text>
+<text x="346.0" y="268" class="value">0</text>
+<text x="40" y="286" class="label">06. DuetServe</text>
+<text x="40" y="300" class="small">source: stage1</text>
+<rect x="340" y="277" width="120.6" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="290" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="466.6" y="286" class="value">25</text>
+<text x="346.0" y="299" class="value">0</text>
+<rect x="28" y="304" width="1344" height="31" fill="#fafafa"/>
+<text x="40" y="317" class="label">07. Fast Heterogeneous</text>
+<text x="40" y="331" class="small">source: stage1</text>
+<rect x="340" y="308" width="0.0" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="321" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="346.0" y="317" class="value">0</text>
+<text x="346.0" y="330" class="value">0</text>
+<text x="40" y="348" class="label">08. FlexiCache</text>
+<text x="40" y="362" class="small">source: stage1</text>
+<rect x="340" y="339" width="0.0" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="352" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="346.0" y="348" class="value">0</text>
+<text x="346.0" y="361" class="value">0</text>
+<rect x="28" y="366" width="1344" height="31" fill="#fafafa"/>
+<text x="40" y="379" class="label">09. LAMP</text>
+<text x="40" y="393" class="small">source: stage1</text>
+<rect x="340" y="370" width="188.1" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="383" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="534.1" y="379" class="value">39</text>
+<text x="346.0" y="392" class="value">0</text>
+<text x="40" y="410" class="label">10. TuTTI</text>
+<text x="40" y="424" class="small">source: stage1</text>
+<rect x="340" y="401" width="43.4" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="414" width="14.5" height="10" rx="3" fill="#0f766e"/>
+<text x="389.4" y="410" class="value">9</text>
+<text x="360.5" y="423" class="value">3</text>
+<rect x="28" y="428" width="1344" height="31" fill="#fafafa"/>
+<text x="40" y="441" class="label">11. Hybrid JIT CUDA Graph</text>
+<text x="40" y="455" class="small">source: blocked</text>
+<text x="348" y="448" class="small">not benchmarked yet</text>
+<text x="40" y="472" class="label">12. PAT</text>
+<text x="40" y="486" class="small">source: stage2</text>
+<rect x="340" y="463" width="0.0" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="476" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="346.0" y="472" class="value">0</text>
+<text x="346.0" y="485" class="value">0</text>
+<rect x="28" y="490" width="1344" height="31" fill="#fafafa"/>
+<text x="40" y="503" class="label">13. Hardware-Efficient Attention</text>
+<text x="40" y="517" class="small">source: stage2</text>
+<rect x="340" y="494" width="795.9" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="507" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="1141.9" y="503" class="value">165</text>
+<text x="346.0" y="516" class="value">0</text>
+<text x="40" y="534" class="label">14. PAM</text>
+<text x="40" y="548" class="small">source: stage2</text>
+<rect x="340" y="525" width="0.0" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="538" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="346.0" y="534" class="value">0</text>
+<text x="346.0" y="547" class="value">0</text>
+<rect x="28" y="552" width="1344" height="31" fill="#fafafa"/>
+<text x="40" y="565" class="label">15. LLM-42</text>
+<text x="40" y="579" class="small">source: stage2</text>
+<rect x="340" y="556" width="361.8" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="569" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="707.8" y="565" class="value">75</text>
+<text x="346.0" y="578" class="value">0</text>
+<text x="40" y="596" class="label">16. Interpretable Latency Model</text>
+<text x="40" y="610" class="small">source: stage2</text>
+<rect x="340" y="587" width="202.6" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="600" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="548.6" y="596" class="value">42</text>
+<text x="346.0" y="609" class="value">0</text>
+<rect x="28" y="614" width="1344" height="31" fill="#fafafa"/>
+<text x="40" y="627" class="label">17. Buffers to Registers</text>
+<text x="40" y="641" class="small">source: stage2</text>
+<rect x="340" y="618" width="4.8" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="631" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="350.8" y="627" class="value">1</text>
+<text x="346.0" y="640" class="value">0</text>
+<text x="40" y="658" class="label">18. FSA</text>
+<text x="40" y="672" class="small">source: stage2</text>
+<rect x="340" y="649" width="178.5" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="662" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="524.5" y="658" class="value">37</text>
+<text x="346.0" y="671" class="value">0</text>
+<rect x="28" y="676" width="1344" height="31" fill="#fafafa"/>
+<text x="40" y="689" class="label">19. TPLA</text>
+<text x="40" y="703" class="small">source: stage2</text>
+<rect x="340" y="680" width="419.6" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="693" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="765.6" y="689" class="value">87</text>
+<text x="346.0" y="702" class="value">0</text>
+<text x="40" y="720" class="label">20. Frontier</text>
+<text x="40" y="734" class="small">source: stage2</text>
+<rect x="340" y="711" width="776.6" height="10" rx="3" fill="#f97316"/>
+<rect x="340" y="724" width="0.0" height="10" rx="3" fill="#0f766e"/>
+<text x="1122.6" y="720" class="value">161</text>
+<text x="346.0" y="733" class="value">0</text>
+</svg>

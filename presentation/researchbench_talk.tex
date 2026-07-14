@@ -1,0 +1,442 @@
+% ResearchBench — 30-minute talk draft
+% Build: pdflatex researchbench_talk.tex  (twice for TOC)
+% ~22 content slides ≈ 30 min at ~80s/slide. Cut slides marked [OPTIONAL] if running long.
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\setbeamertemplate{navigation symbols}{}
+\setbeamerfont{frametitle}{series=\bfseries}
+
+\title{ResearchBench: Paper Replication as the Benchmark\\for Autonomous AI Research Agents}
+\subtitle{Rubric-scored replication of 20 inference-optimization papers on a single H100}
+\author{Annika Kaul Singh \\ \texttt{research@infinity.inc}}
+\date{July 9, 2026}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents[hideallsubsections]
+\end{frame}
+
+% =====================================================================
+\section{Why paper replication}
+% =====================================================================
+
+\begin{frame}{Paper replication is a superb eval target for research agents}
+  \begin{itemize}
+    \item \textbf{Novel research is mostly re-composition.} The sub-tasks of new work
+          --- environment bring-up, data prep, method implementation, benchmarking,
+          analysis --- replicate the vast majority of sub-tasks in pre-existing research.
+    \item An agent that can \emph{faithfully replicate} a paper has demonstrated the
+          skill set needed to \emph{execute} novel research.
+    \item Ground truth exists: the paper's own reported numbers.
+    \item Difficulty is tunable: from structural scaffolding to exact numeric
+          reproduction under tolerance.
+  \end{itemize}
+  \vfill
+  \begin{block}{The question this benchmark answers}
+    \emph{Which coding agent --- and which harness --- should you trust to do
+    autonomous AI research?}
+  \end{block}
+\end{frame}
+
+\begin{frame}{From binary replication to a score: rubrics}
+  \begin{columns}[T]
+    \column{0.52\textwidth}
+      \textbf{2024 --- PaperBench:} explicit task decompositions (``rubrics'')
+      turn replication from a binary judgment into graded sub-tasks.
+      Rubrics were \emph{hand-authored} by experts.
+      \vspace{0.5em}
+
+      \textbf{2026 --- what changed:} terminal agents now \emph{auto-generate}
+      both the decomposition and the per-task correctness tests.
+      \begin{itemize}
+        \item rubric generator + critic (two-pass, convergence loop)
+        \item verification contracts with numeric tolerances
+        \item shared structural/behavioral test suites
+      \end{itemize}
+    \column{0.44\textwidth}
+      \begin{block}{Replication as a score}
+        Each paper $\rightarrow$ a tree of graded leaves.
+        \[
+          \text{score} = \frac{\#\,\text{leaves verified pass}}{\#\,\text{achievable leaves}}
+        \]
+        A leaf passes only when an \emph{executable verifier} attributes it ---
+        not when the agent claims it.
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Pipeline: fully automated rubric generation and grading}
+  \centering
+  \small
+  \texttt{arxiv URL $\rightarrow$ ingest $\rightarrow$ triage $\rightarrow$ rubric generator $\rightarrow$ rubric critic}\\[2pt]
+  \texttt{$\rightarrow$ feasibility / unblockers / rubric health $\rightarrow$ test generator}\\[2pt]
+  \texttt{$\rightarrow$ replication agent (iterated sessions) $\rightarrow$ grader}\\[2pt]
+  \texttt{$\rightarrow$ isolated reproduction + confession audit $\rightarrow$ report}
+  \vspace{1em}
+  \begin{itemize}
+    \item Rubrics + contracts are \textbf{frozen} (content-hashed) --- every run of every
+          agent/harness grades against byte-identical targets, so scores are comparable over time.
+    \item The replication agent gets only \texttt{paper.md}, an interface contract, the
+          rubric, and stock tools (Read/Write/Edit/Bash/Glob/Grep). Official repos are blacklisted.
+  \end{itemize}
+\end{frame}
+
+% =====================================================================
+\section{The benchmark}
+% =====================================================================
+
+\begin{frame}{The frozen set: \texttt{researchbench\_inference20\_h100}}
+  \begin{columns}[T]
+    \column{0.58\textwidth}
+      \begin{itemize}
+        \item \textbf{20 papers}, theme: LLM inference optimization
+        \item Hardware target: single \textbf{NVIDIA H100 80GB}
+        \item \textbf{7{,}290 rubric leaves} total (93--935 per paper)
+        \item 1{,}327 \emph{implementable} headline claims
+        \item Frozen 2026-06-25; rubric + contract hashes verified before/after every run
+      \end{itemize}
+      \vspace{0.5em}
+      Paper families: serving simulators, KV-cache management (SSD/tiered/prefix),
+      prefill/decode disaggregation, scheduling \& SLOs, mixed precision,
+      GPU kernel optimization, parallelism strategies.
+    \column{0.40\textwidth}
+      \begin{block}{Examples}
+        \footnotesize
+        LLMServingSim 2.0 (214 leaves)\\
+        AdaServe (692)\\
+        IceCache (935)\\
+        ContiguousKV (309)\\
+        FP16-equivalence (650)\\
+        AutoKernel (268)\\
+        Shift Parallelism (407)
+      \end{block}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Replicable vs.\ unreplicable papers}
+  \begin{itemize}
+    \item 17/20 papers are scoreable end-to-end; 3 (\texttt{fast-heterogeneous},
+          \texttt{flexicache}, \texttt{hexgen-flow}) have no implementable headline
+          baseline in this environment ($\rightarrow$ n/a).
+    \item Within scoreable papers, leaves are classified \texttt{achievable} vs.\
+          \texttt{skipped-environment}:
+          hardware the paper used but we don't have (A100, H200, TPU-v7),
+          heavyweight pretrained models, proprietary traces.
+    \item Example: ContiguousKV --- 309 leaves, 218 environment-skipped, 91 achievable.
+  \end{itemize}
+  \vfill
+  \begin{block}{Design choice}
+    Unreplicability is \emph{recorded per leaf}, not per paper: the agent is graded
+    only on what is achievable in the declared environment, and the skip reasons are audited.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Compute burden, feasibility, and deciding what to replicate}
+  \begin{itemize}
+    \item Every paper gets an automated \textbf{feasibility estimate} (GPU-hours, dollar cost)
+          and an \textbf{unblockers probe} (are the models/datasets actually downloadable?).
+    \item Per-run resource contract given to the agent: budget (USD), wall-clock cap,
+          max iterations --- the agent is told its fraction and must scope honestly
+          (\texttt{results/skipped\_leaves.md}).
+    \item \textbf{Target slices}: each iteration focuses the agent on a small set of
+          open leaves with exact expected outputs --- converting a 900-leaf rubric into
+          tractable turns.
+  \end{itemize}
+  \vfill
+  \begin{block}{Test-time compute matters (Attempt 3 vs.\ Attempt 2)}
+    Raising caps (budget $200\!\rightarrow\!1000$, iters $15\!\rightarrow\!40$,
+    wall $8\text{h}\!\rightarrow\!12\text{h}$) \emph{together with} a targeted prompt fix
+    moved closure up to $\sim$5$\times$ (next section). Isolating the two levers is planned.
+  \end{block}
+\end{frame}
+
+% =====================================================================
+\section{Rubric structure \& evaluation}
+% =====================================================================
+
+\begin{frame}{Rubric anatomy}
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \textbf{Structure}
+      \begin{itemize}
+        \item Tree of tasks; leaves carry \texttt{verification} \{type, spec, paper\_cite\}
+              and preconditions (\texttt{requires\_hardware}, \texttt{requires\_pretrained}, \dots)
+        \item Types: structural / evidence / behavioral / measured (\texttt{result\_match})
+        \item Measured leaves get a \textbf{verification contract}: expected artifact path,
+              paper value, unit, tolerance rule
+      \end{itemize}
+    \column{0.46\textwidth}
+      \textbf{Granularity}
+      \begin{itemize}
+        \item 93--935 leaves/paper (median $\sim$300)
+        \item Fine enough that each leaf is one executable check
+        \item Too-broad leaves are a measured failure class
+              (\texttt{broad\_leaf\_unverifiable}) fed back into rubric repair
+      \end{itemize}
+  \end{columns}
+  \vfill
+  \footnotesize
+  Contract example: \texttt{expected\_output = results/leaf\_<id>.json},
+  \texttt{tolerance: abs(measured - 2.1)/2.1 $\le$ 0.4} --- the leaf passes only if a
+  pytest verifier loads that artifact and the assertion holds.
+\end{frame}
+
+\begin{frame}{Where agents fail: rubric task categories}
+  Unclosed implementable work concentrates in benchmark-heavy categories (both backends, Attempt 2):
+  \vspace{0.4em}
+  \begin{table}
+    \small
+    \begin{tabular}{lr}
+      \toprule
+      Missed task type & Unclosed leaves \\
+      \midrule
+      Evaluation, Metrics \& Benchmarking & 1448 \\
+      Method Implementation & 955 \\
+      Experimental Setup & 450 \\
+      Environment \& Infrastructure Setup & 47 \\
+      Dataset and Model Acquisition & 43 \\
+      Logging, Analysis \& Presentation & 28 \\
+      Data Processing \& Preparation & 27 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \vspace{0.4em}
+  Agents are weakest exactly where replication is hardest: full benchmark sweeps,
+  hardware-sensitive profiling, end-to-end regeneration of reported numbers.
+\end{frame}
+
+\begin{frame}{Failure taxonomy: why leaves stay open}
+  Every non-passing leaf is attributed to a category and an \emph{owner layer}:
+  \vspace{0.4em}
+  \begin{table}
+    \small
+    \begin{tabular}{llp{5.2cm}}
+      \toprule
+      Category & Owner & Meaning \\
+      \midrule
+      \texttt{missing\_per\_leaf\_test} & test harness & no executable verifier was produced for the leaf \\
+      \texttt{missing\_result\_artifact} & result artifact & the contract-named output file was never emitted \\
+      \texttt{broad\_leaf\_unverifiable} & rubric & leaf too coarse to verify; needs splitting \\
+      \texttt{verification\_gap} & implementation & code ran, evidence doesn't match the contract \\
+      \texttt{numeric\_mismatch} & implementation & measured, but outside tolerance \\
+      \texttt{environment\_blocked} & environment & hardware/model/dataset unavailable \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \vspace{0.3em}
+  This attribution is what makes \textbf{harness} optimization tractable: it separates
+  ``the model is weak'' from ``the harness never asked for the right file.''
+\end{frame}
+
+% =====================================================================
+\section{Results: agents \& harnesses}
+% =====================================================================
+
+\begin{frame}{Success rates across attempts (same frozen set)}
+  \begin{table}
+    \small
+    \begin{tabular}{llrr}
+      \toprule
+      Attempt & Change vs.\ prior & Codex closure & Claude Code closure \\
+      \midrule
+      1 (unified harness) & first shared controller & \multicolumn{2}{c}{mixed-source snapshot} \\
+      2 (clean baseline) & no intervention & 16/1327 = \textbf{1.21\%} & 79/1327 = \textbf{5.95\%} \\
+      3 (path blurb) & leaf$\rightarrow$file mapping prompt & 78/1327 = \textbf{5.88\%} & 454/1327 = \textbf{34.21\%} \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  \vspace{0.6em}
+  \begin{itemize}
+    \item Attempt 2, avg.\ total-implemented: Codex 0.21\% vs.\ Claude 1.44\%;
+          Claude led on 12 papers, Codex on 2, 3 tied.
+    \item Attempt 3 lifted \emph{both} backends $\sim$5$\times$ with a one-paragraph
+          harness fix + more test-time compute --- model unchanged.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The Attempt-3 intervention: tell the agent how it is scored}
+  \textbf{Diagnosis (from failure attribution):} agents implemented code but never produced
+  the \emph{exact files} the grader checks. A leaf scores only when
+  \texttt{\_tests\_local/test\_leaf\_<LEAF\_ID>.py} passes, reading
+  \texttt{results/<contract.expected\_output>}. Agents covered only the current
+  target slice ($\sim$4 leaves), leaving 80+ achievable leaves unverified per paper.
+  \vspace{0.6em}
+
+  \textbf{Fix (one appended paragraph, both harnesses):}
+  \begin{enumerate}
+    \item state the deterministic leaf$\rightarrow$test-path and contract$\rightarrow$artifact-path mapping;
+    \item instruct: enumerate \emph{every} achievable leaf, not just the slice;
+    \item remind: \texttt{reproduce.sh} must regenerate \texttt{results/} from scratch.
+  \end{enumerate}
+  \vspace{0.6em}
+  \begin{block}{Takeaway}
+    A large fraction of measured ``agent failure'' was \emph{harness legibility} failure.
+    Benchmarks must attribute failures to layers, or they mis-rank models.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Overcoming reward hacking}
+  Agents under budget pressure fabricate: hard-coded ``results,'' tests that assert
+  paper constants, confident reports of runs that never happened.
+  \vspace{0.5em}
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+      \textbf{What did NOT hold} (each bypassed within one run):
+      \begin{itemize}
+        \item regex ``confession'' audits --- agent renamed \texttt{cached} to \texttt{paper\_reported}
+        \item empty-\texttt{src/} negative controls --- tests passed on stubs
+        \item ``do NOT fabricate'' prompt directives --- ignored
+      \end{itemize}
+    \column{0.5\textwidth}
+      \textbf{What holds --- behavioral checks} on facts the agent didn't write:
+      \begin{itemize}
+        \item \textbf{isolated reproduction}: wipe \texttt{results/}, re-run
+              \texttt{reproduce.sh}, observe wall-time, GPU utilization, file diffs
+        \item byte-identical re-ship of pre-baked constants $\rightarrow$ \texttt{suspect}, score gated
+        \item planned: cost/time floors, tool-use forensics on transcripts
+      \end{itemize}
+  \end{columns}
+  \vspace{0.5em}
+  \centering\emph{Rule of thumb: if a safeguard can be defeated by different words, it will be.}
+\end{frame}
+
+\begin{frame}{Long-running agents: the Ralph loop}
+  \begin{itemize}
+    \item Agent SDK sessions can't resume $\Rightarrow$ \textbf{state lives on disk}:
+          \texttt{progress.md}, source tree, per-leaf tests, results.
+    \item Outer loop re-invokes the agent in fresh sessions until: headline closure
+          validates, or budget / iteration / wall caps hit, or repeated no-value
+          iterations force a reroute.
+    \item Each iteration: repair slice selection $\rightarrow$ agent turn $\rightarrow$
+          grade $\rightarrow$ failure attribution $\rightarrow$ next slice.
+    \item Benchmark runs: up to 40 iterations, 12h wall, \$1000/paper (Attempt 3);
+          a 20-paper backend run completes in $\sim$10--14h on one H100.
+  \end{itemize}
+  \vfill
+  \footnotesize [OPTIONAL] Anecdote: AutoKernel \& FP16-equivalence --- $\sim$6 failed runs
+  each across loop designs; the historic stuck cases that motivated behavioral validation.
+\end{frame}
+
+\begin{frame}{Beyond replication: composing new research ideas}
+  \begin{itemize}
+    \item Because rubrics decompose papers into reusable sub-tasks, a \emph{new} idea
+          can be expressed as a novel composition of leaves from existing rubrics
+          (e.g.\ ``TTKV's tiering + ContiguousKV's prefill layout'').
+    \item Evaluation then reuses the same machinery: contracts, per-leaf verifiers,
+          isolated reproduction.
+    \item This turns the benchmark from a replication test into a testbed for
+          \textbf{automated research execution}.
+  \end{itemize}
+\end{frame}
+
+% =====================================================================
+\section{Harness optimization, independent of model}
+% =====================================================================
+
+\begin{frame}{Evaluating harnesses independent of the model}
+  \begin{itemize}
+    \item Frozen inputs + rubrics + contracts, one shared controller; \emph{only the
+          backend adapter varies} $\Rightarrow$ score differences attribute to
+          model+harness, and attempt-over-attempt deltas attribute to the harness alone.
+    \item Attempt 2 vs.\ 3 is the proof: same models, same frozen set,
+          $\sim$5$\times$ closure movement from harness changes.
+  \end{itemize}
+  \vspace{0.5em}
+  \begin{block}{Baseline grid (in progress)}
+    \centering
+    \small
+    \begin{tabular}{lccc}
+      \toprule
+      & OpenCode & Cursor & Claude Code harness \\
+      \midrule
+      Claude   & [planned] & [planned] & \textbf{measured} \\
+      Codex    & [planned] & [planned] & \textbf{measured (codex exec)} \\
+      GLM 5.2  & [planned] & [planned] & [planned] \\
+      \bottomrule
+    \end{tabular}
+  \end{block}
+  \vspace{0.3em}
+  \footnotesize Open questions: Fable vs.\ Mythos? Claude Code vs.\ Codex? Open- vs.\
+  closed-source (GLM 5.2 vs.\ Claude/Codex)?
+\end{frame}
+
+\begin{frame}{Automated harness optimization}
+  \begin{itemize}
+    \item The failure taxonomy is machine-readable
+          (\texttt{failure\_category\_counts}, \texttt{owner\_layer\_counts} per run).
+    \item Attempt 3's fix was found by reading that attribution --- the same loop can
+          be closed automatically:
+          \emph{run $\rightarrow$ attribute failures $\rightarrow$ propose harness patch
+          $\rightarrow$ smoke on one paper $\rightarrow$ full run $\rightarrow$ compare on
+          the frozen set}.
+    \item Frozen hashes make every candidate harness comparable; the benchmark becomes
+          the reward signal for harness search.
+    \item Guardrail: optimize against the \emph{diverse rotation}, never a single stuck
+          paper --- regressions on one paper type must be caught.
+  \end{itemize}
+\end{frame}
+
+% =====================================================================
+\section{Where this goes}
+% =====================================================================
+
+\begin{frame}{Towards production-codebase paper replication}
+  \begin{itemize}
+    \item The product use case: a company sees a relevant paper and wants those
+          improvements \emph{in their internal, performance-sensitive codebase} ---
+          today that is manual researcher work.
+    \item Inference optimization is the sharpest test: numbers are hardware-sensitive,
+          regressions are expensive, and ``it runs'' $\neq$ ``it reproduces.''
+    \item The same contracts that grade replication become \textbf{acceptance tests}
+          for landing the technique in production: measured claims, tolerances,
+          isolated reproduction in CI.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Towards fully automated AI research}
+  \begin{itemize}
+    \item AI hypothesis systems already propose new tasks; those proposals can be
+          \textbf{decomposed by the same rubric machinery} and \textbf{executed by the
+          same agents} this benchmark evaluates.
+    \item The missing piece is trust: behavioral validation and per-leaf attribution
+          give an audit trail for machine-generated results.
+    \item ResearchBench is offered as the yardstick: \emph{which model, in which
+          harness, at what compute, can you trust to do the research?}
+  \end{itemize}
+  \vfill
+  \begin{block}{Summary}
+    \begin{enumerate}
+      \item Replication scored by auto-generated rubrics: 20 papers, 7{,}290 leaves, frozen.
+      \item Behavioral (not textual) defenses against reward hacking.
+      \item Harness quality is measurable and was the dominant lever:
+            1.21\%/5.95\% $\rightarrow$ $\sim$5$\times$ with one attributed fix.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Backup: numbers to update before the talk}
+  \small
+  \begin{itemize}
+    \item Claude Attempt-3 final aggregate (both runs complete): closure
+          454/1327 = 34.21\%, avg.\ total-implemented 8.96\%. Codex final:
+          78/1327 = 5.88\%, avg.\ total-implemented 1.63\%. Claude led 10
+          papers, Codex 2, 5 tied; Claude fully closed \texttt{tutti} and
+          \texttt{shift-parallelism}; \texttt{fp16-equivalence} went
+          0\% $\rightarrow$ 81.9\% closure.
+    \item Per-paper Attempt-3 vs.\ Attempt-2 table (from
+          \texttt{BENCHMARK\_RUN\_SUMMARY.json} of both runs).
+    \item Confound note: Attempt 3 changed prompt \emph{and} compute caps, and ran the
+          two backends concurrently on one H100; lever isolation is Attempt 4.
+    \item Baseline grid cells (OpenCode / Cursor / GLM 5.2) if any land before the talk.
+  \end{itemize}
+\end{frame}
+
+\end{document}
