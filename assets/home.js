@@ -2,6 +2,38 @@ buildLegend(document.getElementById("legend"), "Uncategorized");
 
 let INDEX = null;
 
+function currentView() {
+  if (!INDEX || !INDEX.views || !INDEX.views.length) return null;
+  const sel = document.getElementById("view");
+  return INDEX.views.find((v) => v.id === sel.value) || INDEX.views[0];
+}
+
+function setupViews() {
+  const sel = document.getElementById("view");
+  if (!INDEX.views || !INDEX.views.length) {
+    sel.style.display = "none";
+    return;
+  }
+  sel.innerHTML = INDEX.views
+    .map(
+      (v) =>
+        `<option value="${escapeHtml(v.id)}">${escapeHtml(v.label)} (${v.keys.length})</option>`,
+    )
+    .join("");
+  const fromUrl = new URLSearchParams(location.search).get("view");
+  if (fromUrl && INDEX.views.some((v) => v.id === fromUrl)) sel.value = fromUrl;
+  sel.addEventListener("change", () => {
+    const url = new URL(location.href);
+    url.searchParams.set("view", sel.value);
+    history.replaceState(null, "", url);
+    rerender();
+  });
+}
+
+function rerender() {
+  render(document.getElementById("search").value.trim().toLowerCase());
+}
+
 fetch("data/papers.json")
   .then((r) => {
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
@@ -9,7 +41,8 @@ fetch("data/papers.json")
   })
   .then((index) => {
     INDEX = index;
-    render("");
+    setupViews();
+    rerender();
   })
   .catch((err) => {
     document.getElementById("collections").innerHTML =
@@ -17,9 +50,7 @@ fetch("data/papers.json")
       `Run <code>python3 pipeline/scripts/build_site_data.py</code> and serve the docs/ folder over HTTP.</p>`;
   });
 
-document.getElementById("search").addEventListener("input", (e) => {
-  render(e.target.value.trim().toLowerCase());
-});
+document.getElementById("search").addEventListener("input", rerender);
 
 function distBar(categories, leaves) {
   const parts = [];
@@ -54,13 +85,16 @@ function paperCard(p) {
 function render(query) {
   const root = document.getElementById("collections");
   if (!INDEX) return;
+  const view = currentView();
+  const viewKeys = view ? new Set(view.keys) : null;
   const sections = [];
   for (const coll of INDEX.collections) {
     const papers = coll.papers.filter(
       (p) =>
-        !query ||
-        p.title.toLowerCase().includes(query) ||
-        p.slug.toLowerCase().includes(query),
+        (!viewKeys || viewKeys.has(p.key)) &&
+        (!query ||
+          p.title.toLowerCase().includes(query) ||
+          p.slug.toLowerCase().includes(query)),
     );
     if (!papers.length) continue;
     sections.push(`

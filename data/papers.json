@@ -1289,5 +1289,97 @@
     }
    ]
   }
+ ],
+ "views": [
+  {
+   "id": "paperbench",
+   "label": "PaperBench",
+   "keys": [
+    "exemplar_papers__adaptive-pruning",
+    "exemplar_papers__all-in-one",
+    "exemplar_papers__bam",
+    "exemplar_papers__bbox",
+    "exemplar_papers__bridging-data-gaps",
+    "exemplar_papers__fre",
+    "exemplar_papers__ftrl",
+    "exemplar_papers__lbcs",
+    "exemplar_papers__lca-on-the-line",
+    "exemplar_papers__mechanistic-understanding",
+    "exemplar_papers__pinn",
+    "exemplar_papers__rice",
+    "exemplar_papers__robust-clip",
+    "exemplar_papers__sample-specific-masks",
+    "exemplar_papers__sapg",
+    "exemplar_papers__self-composing-policies",
+    "exemplar_papers__self-expansion",
+    "exemplar_papers__semantic-self-consistency",
+    "exemplar_papers__sequential-neural-score-estimation",
+    "exemplar_papers__stay-on-topic-with-classifier-free-guidance",
+    "exemplar_papers__stochastic-interpolants",
+    "exemplar_papers__test-time-model-adaptation",
+    "exemplar_papers__what-will-my-model-forget"
+   ]
+  },
+  {
+   "id": "researchbench-all",
+   "label": "ResearchBench All",
+   "keys": [
+    "researchbench_inference20_h100__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
+    "researchbench_inference20_h100__adaserve-accelerating-multi-slo-llm-serving-with",
+    "researchbench_inference20_h100__asynctls-efficient-generative-llm-inference-with",
+    "researchbench_inference20_h100__cacheflow-efficient-llm-serving-with-3d-parallel",
+    "researchbench_inference20_h100__contiguouskv-accelerating-llm-prefill-with",
+    "researchbench_inference20_h100__duetserve-harmonizing-prefill-and-decode-for-llm",
+    "researchbench_inference20_h100__fast-heterogeneous-serving-scalable-mixed-scale",
+    "researchbench_inference20_h100__flexicache-leveraging-temporal-stability-of",
+    "researchbench_inference20_h100__hexgen-flow-optimizing-llm-inference-request",
+    "researchbench_inference20_h100__icecache-memory-efficient-kv-cache-management-for",
+    "researchbench_inference20_h100__lamp-look-ahead-mixed-precision-inference-of",
+    "researchbench_inference20_h100__llmservingsim-2-0-a-unified-simulator-for",
+    "researchbench_inference20_h100__nexus-proactive-intra-gpu-disaggregation-of",
+    "researchbench_inference20_h100__niyama-breaking-the-silos-of-llm-inference-serving",
+    "researchbench_inference20_h100__prefill-as-a-service-kvcache-of-next-generation",
+    "researchbench_inference20_h100__ragged-paged-attention-a-high-performance-and",
+    "researchbench_inference20_h100__shift-parallelism-low-latency-high-throughput-llm",
+    "researchbench_inference20_h100__the-illusion-of-equivalence-systematic-fp16",
+    "researchbench_inference20_h100__ttkv-temporal-tiered-kv-cache-for-long-context",
+    "researchbench_inference20_h100__tutti-making-ssd-backed-kv-cache-practical-for",
+    "researchbench_inference9_h100_stage2__an-interpretable-latency-model-for-speculative",
+    "researchbench_inference9_h100_stage2__from-buffers-to-registers-unlocking-fine-grained",
+    "researchbench_inference9_h100_stage2__frontier-towards-comprehensive-and-accurate-llm",
+    "researchbench_inference9_h100_stage2__fsa-an-alternative-efficient-implementation-of",
+    "researchbench_inference9_h100_stage2__hardware-efficient-attention-for-fast-decoding",
+    "researchbench_inference9_h100_stage2__llm-42-enabling-determinism-in-llm-inference-with",
+    "researchbench_inference9_h100_stage2__pam-processing-across-memory-hierarchy-for",
+    "researchbench_inference9_h100_stage2__pat-accelerating-llm-decoding-via-prefix-aware",
+    "researchbench_inference9_h100_stage2__tpla-tensor-parallel-latent-attention-for"
+   ]
+  },
+  {
+   "id": "researchbench-20",
+   "label": "ResearchBench 20",
+   "keys": [
+    "researchbench_inference20_h100__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
+    "researchbench_inference20_h100__adaserve-accelerating-multi-slo-llm-serving-with",
+    "researchbench_inference20_h100__asynctls-efficient-generative-llm-inference-with",
+    "researchbench_inference20_h100__cacheflow-efficient-llm-serving-with-3d-parallel",
+    "researchbench_inference20_h100__contiguouskv-accelerating-llm-prefill-with",
+    "researchbench_inference20_h100__duetserve-harmonizing-prefill-and-decode-for-llm",
+    "researchbench_inference20_h100__fast-heterogeneous-serving-scalable-mixed-scale",
+    "researchbench_inference20_h100__flexicache-leveraging-temporal-stability-of",
+    "researchbench_inference20_h100__hexgen-flow-optimizing-llm-inference-request",
+    "researchbench_inference20_h100__icecache-memory-efficient-kv-cache-management-for",
+    "researchbench_inference20_h100__lamp-look-ahead-mixed-precision-inference-of",
+    "researchbench_inference20_h100__llmservingsim-2-0-a-unified-simulator-for",
+    "researchbench_inference20_h100__nexus-proactive-intra-gpu-disaggregation-of",
+    "researchbench_inference20_h100__niyama-breaking-the-silos-of-llm-inference-serving",
+    "researchbench_inference20_h100__prefill-as-a-service-kvcache-of-next-generation",
+    "researchbench_inference20_h100__ragged-paged-attention-a-high-performance-and",
+    "researchbench_inference20_h100__shift-parallelism-low-latency-high-throughput-llm",
+    "researchbench_inference20_h100__the-illusion-of-equivalence-systematic-fp16",
+    "researchbench_inference20_h100__ttkv-temporal-tiered-kv-cache-for-long-context",
+    "researchbench_inference20_h100__tutti-making-ssd-backed-kv-cache-practical-for"
+   ]
+  }
  ]
 }
