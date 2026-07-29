@@ -5,6 +5,158 @@
    "label": "ResearchBench 100 corpus",
    "papers": [
     {
+     "key": "benchmark100__a-systematic-survey-on-large-language-models-for",
+     "slug": "a-systematic-survey-on-large-language-models-for",
+     "title": "A Systematic Survey on Large Language Models for Algorithm Design",
+     "stats": {
+      "nodes": 407,
+      "leaves": 318,
+      "max_depth": 3,
+      "categories": {
+       "Method Implementation": 80,
+       "Experimental Setup": 10,
+       "Evaluation, Metrics & Benchmarking": 88,
+       "Analysis & Presentation": 118,
+       "Logging, Analysis & Presentation": 10,
+       "Data Processing & Preparation": 11,
+       "Dataset and Model Acquisition": 1
+      },
+      "estimated_minutes": 2284,
+      "estimated_dollars": 393.9
+     }
+    },
+    {
+     "key": "benchmark100__accelopt-a-self-improving-llm-agentic-system-for",
+     "slug": "accelopt-a-self-improving-llm-agentic-system-for",
+     "title": "AccelOpt: A Self-Improving LLM Agentic System for AI Accelerator Kernel Optimization",
+     "stats": {
+      "nodes": 630,
+      "leaves": 524,
+      "max_depth": 3,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 291,
+       "Method Implementation": 113,
+       "Experimental Setup": 54,
+       "Logging, Analysis & Presentation": 24,
+       "Data Processing & Preparation": 4,
+       "Dataset and Model Acquisition": 11,
+       "Environment & Infrastructure Setup": 22,
+       "Analysis & Presentation": 4,
+       "Logging": 1
+      },
+      "estimated_minutes": 110035,
+      "estimated_dollars": 70757.25
+     }
+    },
+    {
+     "key": "benchmark100__an-ai-system-to-help-scientists-write-expert",
+     "slug": "an-ai-system-to-help-scientists-write-expert",
+     "title": "An AI system to help scientists write expert-level empirical software",
+     "stats": {
+      "nodes": 583,
+      "leaves": 482,
+      "max_depth": 4,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 227,
+       "Method Implementation": 106,
+       "Experimental Setup": 61,
+       "Logging, Analysis & Presentation": 28,
+       "Data Processing & Preparation": 20,
+       "Dataset and Model Acquisition": 14,
+       "Environment & Infrastructure Setup": 16,
+       "Analysis & Presentation": 10
+      },
+      "estimated_minutes": 197164,
+      "estimated_dollars": 27295.35
+     }
+    },
+    {
+     "key": "benchmark100__astra-a-multi-agent-system-for-gpu-kernel",
+     "slug": "astra-a-multi-agent-system-for-gpu-kernel",
+     "title": "Astra: A Multi-Agent System for GPU Kernel Performance Optimization",
+     "stats": {
+      "nodes": 399,
+      "leaves": 316,
+      "max_depth": 4,
+      "categories": {
+       "Experimental Setup": 15,
+       "Method Implementation": 103,
+       "Evaluation, Metrics & Benchmarking": 169,
+       "Logging, Analysis & Presentation": 6,
+       "Data Processing & Preparation": 5,
+       "Environment & Infrastructure Setup": 17,
+       "Dataset and Model Acquisition": 1
+      },
+      "estimated_minutes": 5492,
+      "estimated_dollars": 1428.15
+     }
+    },
+    {
+     "key": "benchmark100__cuda-l1-improving-cuda-optimization-via",
+     "slug": "cuda-l1-improving-cuda-optimization-via",
+     "title": "CUDA-L1: Improving CUDA Optimization via Contrastive Reinforcement Learning",
+     "stats": {
+      "nodes": 640,
+      "leaves": 529,
+      "max_depth": 4,
+      "categories": {
+       "Method Implementation": 140,
+       "Evaluation, Metrics & Benchmarking": 292,
+       "Experimental Setup": 29,
+       "Logging, Analysis & Presentation": 29,
+       "Data Processing & Preparation": 14,
+       "Dataset and Model Acquisition": 6,
+       "Environment & Infrastructure Setup": 19
+      },
+      "estimated_minutes": 80007,
+      "estimated_dollars": 13401.3
+     }
+    },
+    {
+     "key": "benchmark100__cuda-l2-surpassing-cublas-performance-for-matrix",
+     "slug": "cuda-l2-surpassing-cublas-performance-for-matrix",
+     "title": "CUDA-L2: Surpassing cuBLAS Performance for Matrix Multiplication through Reinforcement Learning",
+     "stats": {
+      "nodes": 477,
+      "leaves": 384,
+      "max_depth": 4,
+      "categories": {
+       "Method Implementation": 133,
+       "Experimental Setup": 11,
+       "Evaluation, Metrics & Benchmarking": 187,
+       "Analysis & Presentation": 9,
+       "Data Processing & Preparation": 13,
+       "Logging, Analysis & Presentation": 10,
+       "Logging": 1,
+       "Dataset and Model Acquisition": 4,
+       "Environment & Infrastructure Setup": 16
+      },
+      "estimated_minutes": 29491,
+      "estimated_dollars": 5287.4
+     }
+    },
+    {
+     "key": "benchmark100__dflash-block-diffusion-for-flash-speculative",
+     "slug": "dflash-block-diffusion-for-flash-speculative",
+     "title": "DFlash: Block Diffusion for Flash Speculative Decoding",
+     "stats": {
+      "nodes": 575,
+      "leaves": 453,
+      "max_depth": 4,
+      "categories": {
+       "Logging, Analysis & Presentation": 11,
+       "Evaluation, Metrics & Benchmarking": 218,
+       "Experimental Setup": 41,
+       "Method Implementation": 94,
+       "Environment & Infrastructure Setup": 23,
+       "Dataset and Model Acquisition": 23,
+       "Analysis & Presentation": 5,
+       "Data Processing & Preparation": 28,
+       "Metrics & Benchmarking": 10
+      }
+     }
+    },
+    {
      "key": "benchmark100__distserve-disaggregating-prefill-and-decoding-for",
      "slug": "distserve-disaggregating-prefill-and-decoding-for",
      "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving",
@@ -28,6 +180,50 @@
      }
     },
     {
+     "key": "benchmark100__dspark-confidence-scheduled-speculative-decoding",
+     "slug": "dspark-confidence-scheduled-speculative-decoding",
+     "title": "DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation",
+     "stats": {
+      "nodes": 581,
+      "leaves": 482,
+      "max_depth": 4,
+      "categories": {
+       "Method Implementation": 165,
+       "Experimental Setup": 40,
+       "Evaluation, Metrics & Benchmarking": 216,
+       "Logging, Analysis & Presentation": 17,
+       "Environment & Infrastructure Setup": 9,
+       "Analysis & Presentation": 3,
+       "Data Processing & Preparation": 20,
+       "Dataset and Model Acquisition": 12
+      },
+      "estimated_minutes": 28315,
+      "estimated_dollars": 6330.4
+     }
+    },
+    {
+     "key": "benchmark100__eagle-3-scaling-up-inference-acceleration-of",
+     "slug": "eagle-3-scaling-up-inference-acceleration-of",
+     "title": "EAGLE-3: Scaling up Inference Acceleration of Large Language Models via Training-Time Test",
+     "stats": {
+      "nodes": 663,
+      "leaves": 583,
+      "max_depth": 3,
+      "categories": {
+       "Experimental Setup": 33,
+       "Evaluation, Metrics & Benchmarking": 430,
+       "Method Implementation": 69,
+       "Logging, Analysis & Presentation": 9,
+       "Data Processing & Preparation": 13,
+       "Environment & Infrastructure Setup": 14,
+       "Analysis & Presentation": 1,
+       "Dataset and Model Acquisition": 14
+      },
+      "estimated_minutes": 53354,
+      "estimated_dollars": 10033.6
+     }
+    },
+    {
      "key": "benchmark100__efficient-memory-management-for-large-language",
      "slug": "efficient-memory-management-for-large-language",
      "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
@@ -46,6 +242,27 @@
       },
       "estimated_minutes": 44359,
       "estimated_dollars": 11753.7
+     }
+    },
+    {
+     "key": "benchmark100__evoengineer-mastering-automated-cuda-kernel-code",
+     "slug": "evoengineer-mastering-automated-cuda-kernel-code",
+     "title": "EvoEngineer: Mastering Automated CUDA Kernel Code Evolution with Large Language Models",
+     "stats": {
+      "nodes": 437,
+      "leaves": 355,
+      "max_depth": 4,
+      "categories": {
+       "Experimental Setup": 16,
+       "Evaluation, Metrics & Benchmarking": 191,
+       "Method Implementation": 100,
+       "Logging, Analysis & Presentation": 18,
+       "Environment & Infrastructure Setup": 17,
+       "Data Processing & Preparation": 12,
+       "Dataset and Model Acquisition": 1
+      },
+      "estimated_minutes": 117504,
+      "estimated_dollars": 32590.1
      }
     },
     {
@@ -154,6 +371,107 @@
      }
     },
     {
+     "key": "benchmark100__gated-deltanet-2-decoupling-erase-and-write-in",
+     "slug": "gated-deltanet-2-decoupling-erase-and-write-in",
+     "title": "Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention",
+     "stats": {
+      "nodes": 413,
+      "leaves": 315,
+      "max_depth": 3,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 142,
+       "Method Implementation": 101,
+       "Logging, Analysis & Presentation": 6,
+       "Experimental Setup": 25,
+       "Data Processing & Preparation": 15,
+       "Dataset and Model Acquisition": 9,
+       "Environment & Infrastructure Setup": 17
+      }
+     }
+    },
+    {
+     "key": "benchmark100__geak-introducing-triton-kernel-ai-agent",
+     "slug": "geak-introducing-triton-kernel-ai-agent",
+     "title": "Geak: Introducing Triton Kernel AI Agent & Evaluation Benchmarks",
+     "stats": {
+      "nodes": 479,
+      "leaves": 397,
+      "max_depth": 3,
+      "categories": {
+       "Method Implementation": 38,
+       "Evaluation, Metrics & Benchmarking": 271,
+       "Experimental Setup": 36,
+       "Analysis & Presentation": 3,
+       "Logging, Analysis & Presentation": 14,
+       "Environment & Infrastructure Setup": 12,
+       "Data Processing & Preparation": 13,
+       "Dataset and Model Acquisition": 10
+      },
+      "estimated_minutes": 54712,
+      "estimated_dollars": 15208.2
+     }
+    },
+    {
+     "key": "benchmark100__judge-decoding-faster-speculative-sampling",
+     "slug": "judge-decoding-faster-speculative-sampling",
+     "title": "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
+     "stats": {
+      "nodes": 772,
+      "leaves": 678,
+      "max_depth": 3,
+      "categories": {
+       "Method Implementation": 112,
+       "Experimental Setup": 72,
+       "Evaluation, Metrics & Benchmarking": 475,
+       "Data Processing & Preparation": 3,
+       "Logging, Analysis & Presentation": 5,
+       "Environment & Infrastructure Setup": 11
+      },
+      "estimated_minutes": 54564,
+      "estimated_dollars": 14685.3
+     }
+    },
+    {
+     "key": "benchmark100__kernelbench-can-llms-write-efficient-gpu-kernels",
+     "slug": "kernelbench-can-llms-write-efficient-gpu-kernels",
+     "title": "KernelBench: Can LLMs Write Efficient GPU Kernels?",
+     "stats": {
+      "nodes": 381,
+      "leaves": 297,
+      "max_depth": 3,
+      "categories": {
+       "Logging, Analysis & Presentation": 33,
+       "Environment & Infrastructure Setup": 24,
+       "Evaluation, Metrics & Benchmarking": 121,
+       "Method Implementation": 75,
+       "Data Processing & Preparation": 24,
+       "Experimental Setup": 19,
+       "Evaluation, Metrics @ Benchmarking": 1
+      }
+     }
+    },
+    {
+     "key": "benchmark100__kevin-multi-turn-rl-for-generating-cuda-kernels",
+     "slug": "kevin-multi-turn-rl-for-generating-cuda-kernels",
+     "title": "Kevin: Multi-Turn RL for Generating CUDA Kernels",
+     "stats": {
+      "nodes": 473,
+      "leaves": 385,
+      "max_depth": 3,
+      "categories": {
+       "Method Implementation": 64,
+       "Experimental Setup": 38,
+       "Evaluation, Metrics & Benchmarking": 223,
+       "Logging, Analysis & Presentation": 23,
+       "Data Processing & Preparation": 17,
+       "Dataset and Model Acquisition": 7,
+       "Environment & Infrastructure Setup": 13
+      },
+      "estimated_minutes": 171866,
+      "estimated_dollars": 39510.85
+     }
+    },
+    {
      "key": "benchmark100__kivi-a-tuning-free-asymmetric-2bit-quantization",
      "slug": "kivi-a-tuning-free-asymmetric-2bit-quantization",
      "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
@@ -198,6 +516,89 @@
      }
     },
     {
+     "key": "benchmark100__pentagonal-photonic-crystal-mirrors-scalable",
+     "slug": "pentagonal-photonic-crystal-mirrors-scalable",
+     "title": "Pentagonal Photonic Crystal Mirrors: Scalable Lightsails with Enhanced Acceleration via Neural Topology Optimization",
+     "stats": {
+      "nodes": 324,
+      "leaves": 243,
+      "max_depth": 3,
+      "categories": {
+       "Analysis & Presentation": 2,
+       "Evaluation, Metrics & Benchmarking": 78,
+       "Method Implementation": 83,
+       "Experimental Setup": 58,
+       "Data Processing & Preparation": 2,
+       "Logging, Analysis & Presentation": 16,
+       "Environment & Infrastructure Setup": 4
+      }
+     }
+    },
+    {
+     "key": "benchmark100__pm-kvq-progressive-mixed-precision-kv-cache",
+     "slug": "pm-kvq-progressive-mixed-precision-kv-cache",
+     "title": "PM-KVQ: Progressive Mixed-precision KV Cache Quantization for Long-CoT LLMs",
+     "stats": {
+      "nodes": 458,
+      "leaves": 373,
+      "max_depth": 3,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 160,
+       "Logging, Analysis & Presentation": 14,
+       "Data Processing & Preparation": 12,
+       "Method Implementation": 131,
+       "Experimental Setup": 27,
+       "Environment & Infrastructure Setup": 11,
+       "Metrics & Benchmarking": 6,
+       "Dataset and Model Acquisition": 12
+      }
+     }
+    },
+    {
+     "key": "benchmark100__quest-query-aware-sparsity-for-efficient-long",
+     "slug": "quest-query-aware-sparsity-for-efficient-long",
+     "title": "Quest: Query-Aware Sparsity for Efficient Long-Context LLM Inference",
+     "stats": {
+      "nodes": 778,
+      "leaves": 668,
+      "max_depth": 3,
+      "categories": {
+       "Method Implementation": 146,
+       "Experimental Setup": 55,
+       "Evaluation, Metrics & Benchmarking": 422,
+       "Logging, Analysis & Presentation": 19,
+       "Data Processing & Preparation": 13,
+       "Analysis & Presentation": 1,
+       "Logging": 1,
+       "Dataset and Model Acquisition": 6,
+       "Environment & Infrastructure Setup": 5
+      },
+      "estimated_minutes": 29835,
+      "estimated_dollars": 5658.4
+     }
+    },
+    {
+     "key": "benchmark100__recursive-self-improvement-in-ai-from-bounded",
+     "slug": "recursive-self-improvement-in-ai-from-bounded",
+     "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
+     "stats": {
+      "nodes": 305,
+      "leaves": 235,
+      "max_depth": 4,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 37,
+       "Logging, Analysis & Presentation": 41,
+       "Method Implementation": 27,
+       "Data Processing & Preparation": 32,
+       "Experimental Setup": 2,
+       "Analysis & Presentation": 82,
+       "Logging": 1,
+       "Environment & Infrastructure Setup": 9,
+       "Dataset and Model Acquisition": 4
+      }
+     }
+    },
+    {
      "key": "benchmark100__sglang-efficient-execution-of-structured-language",
      "slug": "sglang-efficient-execution-of-structured-language",
      "title": "SGLang: Efficient Execution of Structured Language Model Programs",
@@ -221,6 +622,27 @@
      }
     },
     {
+     "key": "benchmark100__smoothquant-accurate-and-efficient-post-training",
+     "slug": "smoothquant-accurate-and-efficient-post-training",
+     "title": "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models",
+     "stats": {
+      "nodes": 907,
+      "leaves": 792,
+      "max_depth": 3,
+      "categories": {
+       "Method Implementation": 120,
+       "Experimental Setup": 44,
+       "Evaluation, Metrics & Benchmarking": 580,
+       "Logging, Analysis & Presentation": 19,
+       "Environment & Infrastructure Setup": 16,
+       "Dataset and Model Acquisition": 6,
+       "Data Processing & Preparation": 7
+      },
+      "estimated_minutes": 89165,
+      "estimated_dollars": 20233.0
+     }
+    },
+    {
      "key": "benchmark100__taming-throughput-latency-tradeoff-in-llm",
      "slug": "taming-throughput-latency-tradeoff-in-llm",
      "title": "Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve",
@@ -241,6 +663,27 @@
        "Logging": 4,
        "Dataset and Model Acquisition": 6
       }
+     }
+    },
+    {
+     "key": "benchmark100__tritonrl-training-llms-to-think-and-code-triton",
+     "slug": "tritonrl-training-llms-to-think-and-code-triton",
+     "title": "TritonRL: Training LLMs to Think and Code Triton Without Cheating",
+     "stats": {
+      "nodes": 789,
+      "leaves": 664,
+      "max_depth": 3,
+      "categories": {
+       "Experimental Setup": 58,
+       "Method Implementation": 96,
+       "Evaluation, Metrics & Benchmarking": 423,
+       "Logging, Analysis & Presentation": 12,
+       "Dataset and Model Acquisition": 14,
+       "Data Processing & Preparation": 39,
+       "Environment & Infrastructure Setup": 22
+      },
+      "estimated_minutes": 157163,
+      "estimated_dollars": 18781.4
      }
     },
     {
@@ -283,6 +726,48 @@
        "Dataset and Model Acquisition": 5,
        "Metrics & Benchmarking": 3
       }
+     }
+    },
+    {
+     "key": "benchmark100__verbalizable-representations-form-a-global",
+     "slug": "verbalizable-representations-form-a-global",
+     "title": "Verbalizable Representations Form a Global Workspace in Language Models",
+     "stats": {
+      "nodes": 444,
+      "leaves": 361,
+      "max_depth": 3,
+      "categories": {
+       "Experimental Setup": 29,
+       "Method Implementation": 82,
+       "Evaluation, Metrics & Benchmarking": 201,
+       "Logging, Analysis & Presentation": 14,
+       "Environment & Infrastructure Setup": 11,
+       "Data Processing & Preparation": 17,
+       "Dataset and Model Acquisition": 7
+      },
+      "estimated_minutes": 14214,
+      "estimated_dollars": 2813.1
+     }
+    },
+    {
+     "key": "benchmark100__xgrammar-flexible-and-efficient-structured",
+     "slug": "xgrammar-flexible-and-efficient-structured",
+     "title": "XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models",
+     "stats": {
+      "nodes": 1052,
+      "leaves": 957,
+      "max_depth": 4,
+      "categories": {
+       "Method Implementation": 173,
+       "Experimental Setup": 136,
+       "Evaluation, Metrics & Benchmarking": 604,
+       "Environment & Infrastructure Setup": 19,
+       "Logging, Analysis & Presentation": 12,
+       "Data Processing & Preparation": 10,
+       "Dataset and Model Acquisition": 3
+      },
+      "estimated_minutes": 26850,
+      "estimated_dollars": 5424.4
      }
     }
    ]
@@ -1624,14 +2109,14 @@
    "keys": [
     "researchbench20__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
     "researchbench20__adaserve-accelerating-multi-slo-llm-serving-with",
-    "researchbench20__asynctls-efficient-generative-llm-inference-with",
-    "researchbench20__cacheflow-efficient-llm-serving-with-3d-parallel",
-    "researchbench20__contiguouskv-accelerating-llm-prefill-with",
-    "researchbench20__duetserve-harmonizing-prefill-and-decode-for-llm",
-    "researchbench20__fast-heterogeneous-serving-scalable-mixed-scale",
-    "benchmark100__turboquant-online-vector-quantization-with-near",
+    "benchmark100__xgrammar-flexible-and-efficient-structured",
+    "benchmark100__recursive-self-improvement-in-ai-from-bounded",
     "benchmark100__kivi-a-tuning-free-asymmetric-2bit-quantization",
-    "benchmark100__flashattention-2-faster-attention-with-better"
+    "benchmark100__gated-deltanet-2-decoupling-erase-and-write-in",
+    "benchmark100__dflash-block-diffusion-for-flash-speculative",
+    "benchmark100__accelopt-a-self-improving-llm-agentic-system-for",
+    "benchmark100__a-systematic-survey-on-large-language-models-for",
+    "benchmark100__turboquant-online-vector-quantization-with-near"
    ],
    "pending": [],
    "criteria": "maturity(run-backed>graph>pending) > replicability > -gpu_hours; greedy category-coverage swap at each tier boundary"
@@ -1652,14 +2137,14 @@
     "researchbench20__icecache-memory-efficient-kv-cache-management-for",
     "researchbench20__lamp-look-ahead-mixed-precision-inference-of",
     "researchbench20__llmservingsim-2-0-a-unified-simulator-for",
-    "researchbench20__nexus-proactive-intra-gpu-disaggregation-of",
-    "researchbench20__niyama-breaking-the-silos-of-llm-inference-serving",
-    "researchbench20__prefill-as-a-service-kvcache-of-next-generation",
-    "researchbench20__ragged-paged-attention-a-high-performance-and",
-    "researchbench20__shift-parallelism-low-latency-high-throughput-llm",
-    "benchmark100__turboquant-online-vector-quantization-with-near",
+    "benchmark100__xgrammar-flexible-and-efficient-structured",
+    "benchmark100__recursive-self-improvement-in-ai-from-bounded",
     "benchmark100__kivi-a-tuning-free-asymmetric-2bit-quantization",
-    "benchmark100__flashattention-2-faster-attention-with-better"
+    "benchmark100__gated-deltanet-2-decoupling-erase-and-write-in",
+    "benchmark100__dflash-block-diffusion-for-flash-speculative",
+    "benchmark100__accelopt-a-self-improving-llm-agentic-system-for",
+    "benchmark100__a-systematic-survey-on-large-language-models-for",
+    "benchmark100__turboquant-online-vector-quantization-with-near"
    ],
    "pending": [],
    "criteria": "maturity(run-backed>graph>pending) > replicability > -gpu_hours; greedy category-coverage swap at each tier boundary"
@@ -1688,107 +2173,38 @@
     "researchbench20__the-illusion-of-equivalence-systematic-fp16",
     "researchbench20__ttkv-temporal-tiered-kv-cache-for-long-context",
     "researchbench20__tutti-making-ssd-backed-kv-cache-practical-for",
+    "benchmark100__turboquant-online-vector-quantization-with-near",
+    "benchmark100__a-systematic-survey-on-large-language-models-for",
+    "benchmark100__accelopt-a-self-improving-llm-agentic-system-for",
+    "benchmark100__an-ai-system-to-help-scientists-write-expert",
+    "benchmark100__astra-a-multi-agent-system-for-gpu-kernel",
+    "benchmark100__cuda-l1-improving-cuda-optimization-via",
+    "benchmark100__cuda-l2-surpassing-cublas-performance-for-matrix",
+    "benchmark100__dflash-block-diffusion-for-flash-speculative",
     "benchmark100__distserve-disaggregating-prefill-and-decoding-for",
+    "benchmark100__dspark-confidence-scheduled-speculative-decoding",
+    "benchmark100__eagle-3-scaling-up-inference-acceleration-of",
     "benchmark100__efficient-memory-management-for-large-language",
+    "benchmark100__evoengineer-mastering-automated-cuda-kernel-code",
     "benchmark100__flashattention-2-faster-attention-with-better",
     "benchmark100__flashattention-3-fast-and-accurate-attention-with",
     "benchmark100__flashattention-fast-and-memory-efficient-exact",
     "benchmark100__flashdecoding-faster-large-language-model",
     "benchmark100__flashinfer-efficient-and-customizable-attention",
+    "benchmark100__gated-deltanet-2-decoupling-erase-and-write-in",
+    "benchmark100__geak-introducing-triton-kernel-ai-agent",
+    "benchmark100__judge-decoding-faster-speculative-sampling",
+    "benchmark100__kernelbench-can-llms-write-efficient-gpu-kernels",
+    "benchmark100__kevin-multi-turn-rl-for-generating-cuda-kernels",
     "benchmark100__kivi-a-tuning-free-asymmetric-2bit-quantization",
     "benchmark100__nanoflow-towards-optimal-large-language-model",
-    "benchmark100__sglang-efficient-execution-of-structured-language",
-    "benchmark100__taming-throughput-latency-tradeoff-in-llm",
-    "benchmark100__vattention-dynamic-memory-management-for-serving",
-    "benchmark100__turboquant-online-vector-quantization-with-near"
+    "benchmark100__pentagonal-photonic-crystal-mirrors-scalable",
+    "benchmark100__pm-kvq-progressive-mixed-precision-kv-cache",
+    "benchmark100__quest-query-aware-sparsity-for-efficient-long",
+    "benchmark100__recursive-self-improvement-in-ai-from-bounded",
+    "benchmark100__xgrammar-flexible-and-efficient-structured"
    ],
-   "pending": [
-    {
-     "slug": "kv-fold-one-step-kv-cache-recurrence-for-long-context-infere",
-     "title": "kv fold one step kv cache recurrence for long context infere",
-     "category": "kv-cache"
-    },
-    {
-     "slug": "scheduling-the-unschedulable-taming-black-box-llm-inference-",
-     "title": "scheduling the unschedulable taming black box llm inference ",
-     "category": "serving"
-    },
-    {
-     "slug": "kv-packet-recomputation-free-context-independent-kv-caching-",
-     "title": "kv packet recomputation free context independent kv caching ",
-     "category": "kv-cache"
-    },
-    {
-     "slug": "alloc-moe-budget-aware-expert-activation-allocation-for-effi",
-     "title": "alloc moe budget aware expert activation allocation for effi",
-     "category": "moe"
-    },
-    {
-     "slug": "dip-sd-distributed-pipelined-speculative-decoding-for-effici",
-     "title": "dip sd distributed pipelined speculative decoding for effici",
-     "category": "speculative-decoding"
-    },
-    {
-     "slug": "adaptive-test-time-compute-allocation-for-reasoning-llms-via",
-     "title": "adaptive test time compute allocation for reasoning llms via",
-     "category": "structured-decoding"
-    },
-    {
-     "slug": "pushing-the-limits-of-block-rotations-in-post-training-quant",
-     "title": "pushing the limits of block rotations in post training quant",
-     "category": "quantization"
-    },
-    {
-     "slug": "coda-rewriting-transformer-blocks-as-gemm-epilogue-programs",
-     "title": "coda rewriting transformer blocks as gemm epilogue programs",
-     "category": "kernels"
-    },
-    {
-     "slug": "stream-cqsa-avoiding-out-of-memory-in-attention-computation-",
-     "title": "stream cqsa avoiding out of memory in attention computation ",
-     "category": "serving"
-    },
-    {
-     "slug": "continuous-discovery-of-vulnerabilities-in-llm-serving-syste",
-     "title": "continuous discovery of vulnerabilities in llm serving syste",
-     "category": "serving"
-    },
-    {
-     "slug": "block-rotation-is-all-you-need-for-mxfp4-quantization",
-     "title": "block rotation is all you need for mxfp4 quantization",
-     "category": "quantization"
-    },
-    {
-     "slug": "why-low-precision-transformer-training-fails-an-analysis-on-",
-     "title": "why low precision transformer training fails an analysis on ",
-     "category": "quantization"
-    },
-    {
-     "slug": "fsa-an-alternative-efficient-implementation-of-native-sparse",
-     "title": "fsa an alternative efficient implementation of native sparse",
-     "category": "kernels"
-    },
-    {
-     "slug": "hybrid-jit-cuda-graph-optimization-for-low-latency-large-lan",
-     "title": "hybrid jit cuda graph optimization for low latency large lan",
-     "category": "kernels"
-    },
-    {
-     "slug": "qflash-bridging-quantization-and-memory-efficiency-in-vision",
-     "title": "qflash bridging quantization and memory efficiency in vision",
-     "category": "quantization"
-    },
-    {
-     "slug": "requests-of-a-feather-must-flock-together-batch-size-vs-pref",
-     "title": "requests of a feather must flock together batch size vs pref",
-     "category": "serving"
-    },
-    {
-     "slug": "starsd-one-for-many-speculative-decoding",
-     "title": "starsd one for many speculative decoding",
-     "category": "speculative-decoding"
-    }
-   ],
+   "pending": [],
    "criteria": "maturity(run-backed>graph>pending) > replicability > -gpu_hours; greedy category-coverage swap at each tier boundary"
   },
   {
@@ -1815,19 +2231,42 @@
     "researchbench20__the-illusion-of-equivalence-systematic-fp16",
     "researchbench20__ttkv-temporal-tiered-kv-cache-for-long-context",
     "researchbench20__tutti-making-ssd-backed-kv-cache-practical-for",
+    "benchmark100__turboquant-online-vector-quantization-with-near",
+    "benchmark100__a-systematic-survey-on-large-language-models-for",
+    "benchmark100__accelopt-a-self-improving-llm-agentic-system-for",
+    "benchmark100__an-ai-system-to-help-scientists-write-expert",
+    "benchmark100__astra-a-multi-agent-system-for-gpu-kernel",
+    "benchmark100__cuda-l1-improving-cuda-optimization-via",
+    "benchmark100__cuda-l2-surpassing-cublas-performance-for-matrix",
+    "benchmark100__dflash-block-diffusion-for-flash-speculative",
     "benchmark100__distserve-disaggregating-prefill-and-decoding-for",
+    "benchmark100__dspark-confidence-scheduled-speculative-decoding",
+    "benchmark100__eagle-3-scaling-up-inference-acceleration-of",
     "benchmark100__efficient-memory-management-for-large-language",
+    "benchmark100__evoengineer-mastering-automated-cuda-kernel-code",
     "benchmark100__flashattention-2-faster-attention-with-better",
     "benchmark100__flashattention-3-fast-and-accurate-attention-with",
     "benchmark100__flashattention-fast-and-memory-efficient-exact",
     "benchmark100__flashdecoding-faster-large-language-model",
     "benchmark100__flashinfer-efficient-and-customizable-attention",
+    "benchmark100__gated-deltanet-2-decoupling-erase-and-write-in",
+    "benchmark100__geak-introducing-triton-kernel-ai-agent",
+    "benchmark100__judge-decoding-faster-speculative-sampling",
+    "benchmark100__kernelbench-can-llms-write-efficient-gpu-kernels",
+    "benchmark100__kevin-multi-turn-rl-for-generating-cuda-kernels",
     "benchmark100__kivi-a-tuning-free-asymmetric-2bit-quantization",
     "benchmark100__nanoflow-towards-optimal-large-language-model",
+    "benchmark100__pentagonal-photonic-crystal-mirrors-scalable",
+    "benchmark100__pm-kvq-progressive-mixed-precision-kv-cache",
+    "benchmark100__quest-query-aware-sparsity-for-efficient-long",
+    "benchmark100__recursive-self-improvement-in-ai-from-bounded",
     "benchmark100__sglang-efficient-execution-of-structured-language",
+    "benchmark100__smoothquant-accurate-and-efficient-post-training",
     "benchmark100__taming-throughput-latency-tradeoff-in-llm",
+    "benchmark100__tritonrl-training-llms-to-think-and-code-triton",
     "benchmark100__vattention-dynamic-memory-management-for-serving",
-    "benchmark100__turboquant-online-vector-quantization-with-near"
+    "benchmark100__verbalizable-representations-form-a-global",
+    "benchmark100__xgrammar-flexible-and-efficient-structured"
    ],
    "pending": [
     {
@@ -2031,16 +2470,6 @@
      "category": "serving"
     },
     {
-     "slug": "a-systematic-survey-on-large-language-models-for-algorithm-d",
-     "title": "a systematic survey on large language models for algorithm d",
-     "category": "generative-optimization"
-    },
-    {
-     "slug": "accelopt-a-self-improving-llm-agentic-system-for-ai-accelera",
-     "title": "accelopt a self improving llm agentic system for ai accelera",
-     "category": "kernels"
-    },
-    {
      "slug": "alphaevolve-a-coding-agent-for-scientific-and-algorithmic-di",
      "title": "alphaevolve a coding agent for scientific and algorithmic di",
      "category": "generative-optimization"
@@ -2051,118 +2480,13 @@
      "category": "kernels"
     },
     {
-     "slug": "an-ai-system-to-help-scientists-write-expert-level-empirical",
-     "title": "an ai system to help scientists write expert level empirical",
-     "category": "generative-optimization"
-    },
-    {
      "slug": "an-empirical-study-of-qwen3-quantization",
      "title": "an empirical study of qwen3 quantization",
      "category": "quantization"
     },
     {
-     "slug": "astra-a-multi-agent-system-for-gpu-kernel-performance-optimi",
-     "title": "astra a multi agent system for gpu kernel performance optimi",
-     "category": "kernels"
-    },
-    {
      "slug": "autotriton-automatic-triton-programming-with-reinforcement-l",
      "title": "autotriton automatic triton programming with reinforcement l",
-     "category": "kernels"
-    },
-    {
-     "slug": "awq-activation-aware-weight-quantization-for-llm-compression",
-     "title": "awq activation aware weight quantization for llm compression",
-     "category": "quantization"
-    },
-    {
-     "slug": "chip-placement-with-deep-reinforcement-learning",
-     "title": "chip placement with deep reinforcement learning",
-     "category": "generative-optimization"
-    },
-    {
-     "slug": "cuda-l1-improving-cuda-optimization-via-contrastive-reinforc",
-     "title": "cuda l1 improving cuda optimization via contrastive reinforc",
-     "category": "kernels"
-    },
-    {
-     "slug": "cuda-l2-surpassing-cublas-performance-for-matrix-multiplicat",
-     "title": "cuda l2 surpassing cublas performance for matrix multiplicat",
-     "category": "kernels"
-    },
-    {
-     "slug": "deepspec-deepseek-full-stack-speculative-decoding-training-e",
-     "title": "deepspec deepseek full stack speculative decoding training e",
-     "category": "speculative-decoding"
-    },
-    {
-     "slug": "dflash-block-diffusion-for-flash-speculative-decoding",
-     "title": "dflash block diffusion for flash speculative decoding",
-     "category": "speculative-decoding"
-    },
-    {
-     "slug": "discovering-faster-matrix-multiplication-algorithms-with-rei",
-     "title": "discovering faster matrix multiplication algorithms with rei",
-     "category": "generative-optimization"
-    },
-    {
-     "slug": "dissecting-the-nvidia-volta-gpu-architecture-via-microbenchm",
-     "title": "dissecting the nvidia volta gpu architecture via microbenchm",
-     "category": "hardware-probing"
-    },
-    {
-     "slug": "dspark-confidence-scheduled-speculative-decoding-with-semi-a",
-     "title": "dspark confidence scheduled speculative decoding with semi a",
-     "category": "speculative-decoding"
-    },
-    {
-     "slug": "dualmap-enabling-both-cache-affinity-and-load-balancing-for-",
-     "title": "dualmap enabling both cache affinity and load balancing for ",
-     "category": "serving"
-    },
-    {
-     "slug": "eagle-3-scaling-up-inference-acceleration-of-large-language-",
-     "title": "eagle 3 scaling up inference acceleration of large language ",
-     "category": "speculative-decoding"
-    },
-    {
-     "slug": "every-bit-counts-a-theoretical-study-of-precision-expressivi",
-     "title": "every bit counts a theoretical study of precision expressivi",
-     "category": "quantization"
-    },
-    {
-     "slug": "evoengineer-mastering-automated-cuda-kernel-code-evolution-w",
-     "title": "evoengineer mastering automated cuda kernel code evolution w",
-     "category": "kernels"
-    },
-    {
-     "slug": "evoprompting-language-models-for-code-level-neural-architect",
-     "title": "evoprompting language models for code level neural architect",
-     "category": "generative-optimization"
-    },
-    {
-     "slug": "execution-centric-characterization-of-fp8-matrix-cores-async",
-     "title": "execution centric characterization of fp8 matrix cores async",
-     "category": "hardware-probing"
-    },
-    {
-     "slug": "flash-d-flashattention-with-hidden-softmax-division",
-     "title": "flash d flashattention with hidden softmax division",
-     "category": "kernels"
-    },
-    {
-     "slug": "fptquant-function-preserving-transforms-for-llm-quantization",
-     "title": "fptquant function preserving transforms for llm quantization",
-     "category": "serving"
-    },
-    {
-     "slug": "gated-deltanet-2-decoupling-erase-and-write-in-linear-attent",
-     "title": "gated deltanet 2 decoupling erase and write in linear attent",
-     "category": "other"
-    },
-    {
-     "slug": "geak-introducing-triton-kernel-ai-agent-evaluation-benchmark",
-     "title": "geak introducing triton kernel ai agent evaluation benchmark",
      "category": "kernels"
     }
    ],
