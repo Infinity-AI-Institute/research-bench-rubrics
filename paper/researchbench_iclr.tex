@@ -32,9 +32,10 @@
 \usepackage{microtype}
 \usepackage{xcolor}
 \newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\newcommand{\site}{\url{https://infinity-ai-institute.github.io/research-bench-rubrics/}}
 
-\title{ResearchBench: Rubric-Scored Paper Replication as a\\
-Benchmark for Autonomous AI Research Agents}
+\title{ResearchBench: Recomposing Research Papers into\\
+Task Graphs for Evaluating Autonomous AI Research Agents}
 
 \author{Annika Kaul Singh\\
 Infinity Inc.\\
@@ -46,153 +47,262 @@ Infinity Inc.\\
 \maketitle
 
 \begin{abstract}
-Paper replication is a natural target for evaluating automated AI research
-agents: the sub-tasks of novel research---environment bring-up, data
-preparation, method implementation, benchmarking, and analysis---overlap almost
-entirely with the sub-tasks of replicating existing research, and the paper's
-own reported numbers provide ground truth. Prior work introduced hand-authored
-task decompositions (``rubrics'') that convert binary replication judgments
-into graded scores. We show that in 2026 these decompositions, together with
-executable per-task correctness tests, can be \emph{generated automatically} by
-terminal agents. We present \textbf{ResearchBench}, a frozen benchmark of 20
-LLM inference-optimization papers decomposed into 7{,}290 rubric leaves
-(1{,}327 implementable headline claims) targeting a single NVIDIA H100. Every
-leaf carries an executable verification contract; rubrics and contracts are
-content-hashed and frozen so that scores are comparable across agents,
-harnesses, and time. We report three same-set evaluation attempts: a clean
-baseline in which Claude Code closes 5.95\% and Codex 1.21\% of implementable
-claims; a diagnosis, from machine-readable failure attribution, that the
-dominant failure mode was \emph{harness legibility} (agents never produced the
-exact artifact and test paths the grader checks); and a one-paragraph harness
-intervention that lifts both backends' closure approximately fivefold with the
-model unchanged. We further describe behavioral (rather than textual) defenses
-against reward hacking, including isolated re-execution of the agent's
-reproduction script with wall-time, GPU-utilization, and file-diff checks. We
-argue that benchmarks for research agents must attribute failures across the
-model / harness / rubric / environment layers, or they will mis-rank models,
-and we position ResearchBench as a yardstick for the question: \emph{which
-coding agent, in which harness, at what compute, can you trust to do autonomous
-research?}
+The goal of automated AI research is an agent that can take a hypothesis,
+implement it, run the experiments, and report faithful results---but progress
+toward this goal is hard to evaluate precisely because novel research has no
+ground truth. Paper replication offers an escape: the sub-tasks of replicating
+a published paper are, to a first approximation, the same sub-tasks required
+to execute novel research, yet the paper's reported numbers provide a
+checkable target. PaperBench (2024) made replication gradeable by decomposing
+papers into expert-authored ``rubrics.'' What is different in 2026 is that
+these decompositions---which we generalize to \emph{task graphs}, trees of
+checkable tasks augmented with dependency edges between task groups---and
+their executable correctness tests can be \emph{generated automatically} by
+terminal agents, at unbounded size, for any paper. Task graphs turn the binary
+notion of replication into a score: the number of sub-tasks an agent
+successfully implements. We present \textbf{ResearchBench}, a public corpus of
+100 papers on LLM inference optimization and adjacent systems research, each
+recomposed into a task graph, organized into nested splits
+(\textbf{ResearchBench-10/-20/-50/-100}) by run maturity, replicability, and
+compute burden, and browsable as interactive graphs at \site. On the
+run-backed 20-paper split we report agent success rates across three
+evaluation attempts: a clean baseline (Claude Code closes 5.95\%, Codex 1.21\%
+of implementable claims), machine-readable failure attribution locating the
+bottleneck in \emph{harness legibility}, and a one-paragraph intervention plus
+raised test-time compute that lifts both agents roughly fivefold with models
+unchanged. We further describe behavioral defenses against reward hacking that
+check facts the agent did not author. We argue task graphs are more than an
+evaluation device: because papers decompose into the same reusable sub-tasks
+that novel research composes, a library of task graphs is a substrate for
+\emph{recomposing} new research from verified parts.
 \end{abstract}
 
 \section{Introduction}
 
 The goal of automated AI research is an agent that can take a hypothesis,
-implement it, run the experiments, and report faithful results. Evaluating
-progress toward this goal is difficult precisely because novel research has no
-ground truth. Paper replication offers an escape: the sub-tasks of replicating
-a published paper are, to a first approximation, the same sub-tasks required to
-execute novel research, yet the paper's reported numbers supply a checkable
-target. An agent that faithfully replicates a systems paper---rebuilding the
-method, re-running the experiments, and matching the headline numbers within
-tolerance---has demonstrated the skills that novel research requires.
+implement it, run the experiments, and report faithful results. However,
+evaluating progress toward this goal is difficult precisely because novel
+research has no ground truth. Paper replication offers an escape: the
+sub-tasks of replicating a published paper are, to a first approximation, the
+same sub-tasks required to execute novel research, yet we can use the paper's
+reported numbers as a checkable target to verify successful replication.
 
-Two obstacles have historically limited replication as a benchmark. First,
-replication was scored as a binary judgment, collapsing a months-long effort
-into one bit. PaperBench \citep{starace2025paperbench} addressed this by
-introducing \emph{rubrics}: expert-authored decompositions of a paper into
-graded sub-tasks. Second, authoring such rubrics required scarce expert labor,
-capping benchmark size and freshness. The contribution of this paper is to show
-that both the decomposition \emph{and} the per-task correctness tests can now be
-generated automatically by terminal agents, and to demonstrate what a frozen,
-automatically-generated, execution-verified replication benchmark reveals about
-today's coding agents and---critically---about the \emph{harnesses} that drive
-them.
+This makes replication a superb evaluation target, but only if it is scored
+at the right granularity. Novel research is not a monolith; it decomposes
+into environment bring-up, data preparation, method implementation,
+benchmarking, ablation, and analysis---and the vast majority of these
+sub-tasks replicate sub-tasks that already exist in the literature. Scoring
+replication as a single binary judgment collapses months of layered work into
+one bit and hides exactly the structure we want to measure.
 
-Concretely, we make four contributions:
+PaperBench \citep{starace2025paperbench} innovated on this in 2024 by
+explicitly representing the task decomposition of each paper as an
+expert-authored ``rubric'' of graded sub-tasks. What is different in 2026 is
+that these research task decompositions, together with test suites for
+correctness, can be \emph{generated automatically by terminal agents}. We
+generalize the representation from rubric to \textbf{task graph}: a weighted
+tree of checkable tasks whose section-level nodes additionally carry
+dependency edges (\texttt{depends\_on}) recording which task groups must be
+completed before others can begin---the environment before the method, the
+method before the experiments that exercise it. The graph turns the binary
+notion of paper replication into a score: the number of sub-tasks a research
+agent can successfully implement, verified by executing tests rather than by
+trusting the agent's claims.
+
+Automation removes the two constraints that capped decomposition-based
+benchmarks: expert labor and size. Our generator plans each graph from the
+paper's structure and expands every section with its full output budget, so a
+dense paper receives the decomposition it deserves (228--804 tasks per paper
+in our corpus; the largest human-authored PaperBench trees run to
+$\sim$2{,}000) rather than what fits in a single model response. The same
+automation generates the per-task verifiers.
+
+Concretely, we make five contributions:
 
 \begin{enumerate}
-  \item \textbf{ResearchBench}, a frozen benchmark of 20 LLM
-        inference-optimization papers decomposed into 7{,}290 automatically
-        generated rubric leaves (93--935 per paper), of which 1{,}327 are
-        implementable headline claims. Each measured leaf carries an executable
-        verification contract (expected artifact path, paper value, unit,
-        tolerance rule). Rubrics and contracts are content-hashed and frozen;
-        all runs grade against byte-identical targets (\S\ref{sec:benchmark}).
-  \item \textbf{A layered failure taxonomy} that attributes every non-passing
-        leaf to an owner layer (test harness, result artifact, rubric,
+  \item \textbf{A public 100-paper corpus with nested splits.} ResearchBench
+        recomposes 100 papers---LLM serving, KV-cache management,
+        quantization, speculative decoding, kernels, compilers, hardware
+        microbenchmarking, and generative optimization---into task graphs,
+        organized into nested splits \textbf{ResearchBench-10/-20/-50/-100}
+        by documented criteria (\S\ref{sec:corpus}), and browsable as
+        interactive graphs at \site.
+  \item \textbf{Automatic task-graph generation at unbounded size.} An
+        outline-then-subtree generator with per-section budgets, dependency
+        edges, duplicate-task rejection, and a critique-and-fix convergence
+        pass; graphs reach and exceed human-authored scale without padding
+        (\S\ref{sec:graphs}).
+  \item \textbf{A layered failure taxonomy} attributing every non-passing
+        task to an owner layer (test harness, result artifact, graph,
         implementation, environment), separating ``the model is weak'' from
         ``the harness never asked for the right file'' (\S\ref{sec:method}).
-  \item \textbf{Evidence that harness legibility dominates measured agent
-        skill.} In a clean-baseline evaluation, Claude Code closes 5.95\% and
-        Codex 1.21\% of implementable claims. Failure attribution shows the
-        bottleneck is that agents do not produce the exact per-leaf test and
-        artifact files the grader checks. A one-paragraph prompt intervention
-        stating the deterministic leaf$\rightarrow$file mapping lifts both
-        backends approximately $5\times$, with the models unchanged
+  \item \textbf{Evidence that harness legibility and test-time compute
+        dominate measured agent skill.} On the run-backed 20-paper split,
+        a one-paragraph prompt intervention plus raised compute caps lifts
+        Claude Code from 5.95\% to 34.21\% implementable-claim closure and
+        Codex from 1.21\% to 5.88\%, models unchanged
         (\S\ref{sec:experiments}).
-  \item \textbf{Behavioral anti-reward-hacking defenses.} Text-pattern
-        safeguards (confession regexes, prompt directives, negative controls)
-        were each bypassed within one run. Defenses that check facts the agent
-        did not author---isolated re-execution of \texttt{reproduce.sh} with
+  \item \textbf{Behavioral anti-reward-hacking defenses.} Every text-pattern
+        safeguard we deployed was bypassed within one run; defenses that
+        check facts the agent did not author---isolated re-execution with
         wall-time, GPU-utilization, and file-diff observation---have held
         (\S\ref{sec:hacking}).
 \end{enumerate}
 
 \section{Related Work}
 
-\textbf{Replication benchmarks.} PaperBench \citep{starace2025paperbench}
-introduced expert-authored rubric trees for grading paper replication by ML
-agents. CORE-Bench \citep{siegel2024core} evaluates computational
-reproducibility of published results given the paper's own code. ResearchBench
-differs on three axes: rubrics and tests are generated automatically rather
-than by experts; official repositories are \emph{blacklisted}, forcing
-independent reimplementation; and grading is attached to executable contracts
-with numeric tolerances rather than LLM judgment alone.
+PaperBench \citep{starace2025paperbench} introduced expert-authored rubric
+trees for grading paper replication and remains the reference point for
+decomposition-based evaluation; our task graphs generalize its representation
+(dependency edges, machine generation, executable contracts) and our corpus
+extends its scale by 5$\times$. CORE-Bench \citep{siegel2024core} evaluates
+computational reproducibility when author code is available; ResearchBench
+blacklists author repositories to force independent reimplementation.
+SWE-bench \citep{jimenez2024swebench} grades issue resolution against
+maintainer tests; we similarly grade against executable verifiers, but
+generate them. MLE-bench \citep{chan2024mlebench} and RE-Bench
+\citep{wijk2024rebench} measure ML engineering and frontier R\&D tasks with
+curated environments; ResearchBench targets full-paper replication under a
+declared compute budget. Specification gaming \citep{krakovna2020specification}
+motivates our behavioral (rather than textual) anti-fabrication defenses.
 
-\textbf{Agentic coding benchmarks.} SWE-bench \citep{jimenez2024swebench}
-scores repository-level bug fixing; MLE-bench \citep{chan2024mlebench} scores
-Kaggle-style ML engineering; RE-Bench \citep{wijk2024rebench} compares agents
-to human experts on open-ended research engineering tasks. These evaluate
-components of research skill; ResearchBench evaluates the composed,
-end-to-end activity---replicate the paper, reproduce its numbers---under
-budgeted compute, and additionally isolates the harness as an object of study.
+\section{The ResearchBench Corpus and Splits}
+\label{sec:corpus}
 
-\textbf{Reward hacking in evaluation.} Specification gaming by agents under
-optimization pressure is well documented \citep{krakovna2020specification}. Our
-contribution is operational: a taxonomy of textual safeguards that failed in
-practice and behavioral safeguards that held, in the specific setting of
-replication scoring.
+\subsection{Papers and why we chose them}
 
-\section{The ResearchBench Benchmark}
-\label{sec:benchmark}
+The corpus contains 100 papers centered on LLM inference optimization and the
+systems research surrounding it: serving and scheduling (Orca, PagedAttention,
+Sarathi-Serve, DistServe, SGLang), KV-cache management and paging, weight and
+activation quantization (AWQ, SmoothQuant, KIVI, QServe), speculative
+decoding (EAGLE-3, judge decoding), attention and GPU kernels (FlashAttention
+1--3, FlashInfer, FlashDecoding++), compilers and autotuning, hardware
+microbenchmarking, structured decoding, and LLM-driven generative optimization
+(AlphaEvolve, FunSearch, kernel-synthesis agents). Papers were sourced from a
+team-curated list spanning these categories and from a triaged backlog of
+practitioner-submitted papers, deduplicated against prior sets; each ingested
+paper is scored for replicability and estimated GPU-hours at triage. The
+domain is deliberate: inference optimization has hardware-sensitive numbers
+where ``it runs'' $\neq$ ``it reproduces,'' making it the sharpest test bed
+for faithful replication.
 
-\subsection{Papers and scale}
+Because the corpus is public and consumers' hardware differs, the release
+ships the \emph{task-breakdown graphs with dependency structure only}: we do
+not bake our own hardware's feasibility judgments into the public artifact.
+Per-task preconditions (required hardware, datasets, pretrained models) are
+recorded so any consumer can compute their own achievable subset.
 
-The frozen set \texttt{researchbench\_inference20\_h100} contains 20 papers on
-LLM inference optimization: serving simulators, KV-cache management
-(SSD-backed, temporally tiered, prefix), prefill/decode disaggregation,
-SLO-aware scheduling, mixed-precision inference, GPU kernel optimization, and
-parallelism strategies (full list in Appendix~\ref{app:papers}). The hardware
-target is a single NVIDIA H100 80GB. Across the set there are 7{,}290 rubric
-leaves (93--935 per paper, median ${\sim}300$) and 1{,}327 implementable
-headline claims. The set was frozen on 2026-06-25; the SHA-256 of every
-rubric and contract file is recorded in the benchmark manifest and re-verified
-before and after every run.
+\subsection{Nested splits: ResearchBench-10/-20/-50/-100}
+\label{sec:splits}
 
-\subsection{Automated rubric generation}
+The corpus is organized into four nested splits, each a subset of the next,
+assigned by a documented, mechanical criterion (published with the corpus):
+papers are ranked by \emph{run maturity} (papers with completed clean-baseline
+agent runs rank first---their scores are ground truth), then \emph{triage
+replicability}, then \emph{inverse compute burden} (estimated GPU-hours), with
+a greedy category-coverage adjustment at each tier boundary so that no split
+collapses into a single topic.
 
-For each paper, a pipeline of terminal-agent stages produces the evaluation
-targets without expert authorship: (i) ingestion converts the arXiv source to
-\texttt{paper.md}; (ii) a triage stage scores replicability and estimated GPU
-hours; (iii) a rubric generator drafts a task tree from the paper text; (iv) a
-rubric critic performs a two-pass critique-and-fix loop until convergence,
-with schema salvage for malformed outputs; (v) a health check audits leaf
-quality; (vi) a feasibility stage estimates cost, and an unblockers stage
-live-probes whether referenced models and datasets are actually retrievable;
-(vii) a test generator emits a shared structural/behavioral test suite and an
-interface contract that every implementation must expose.
+\begin{itemize}
+  \item \textbf{ResearchBench-10}: the ground-truthed core---papers with
+        completed baseline runs, single-GPU feasible, spanning the major
+        categories. The split to cite for verified, comparable agent scores.
+  \item \textbf{ResearchBench-20}: the full run-backed evaluation split used
+        in \S\ref{sec:experiments} (frozen 2026-06-25; 7{,}290 tasks; 1{,}327
+        implementable headline claims; every task's contract content-hashed).
+  \item \textbf{ResearchBench-50}: adds category breadth---quantization,
+        speculative decoding, kernels, compilers---papers with gated task
+        graphs that have not yet been run end-to-end.
+  \item \textbf{ResearchBench-100}: the full corpus, including
+        heavy/multi-GPU and exotic-hardware papers where the graph itself is
+        the contribution and replication awaits matching compute.
+\end{itemize}
 
-Leaves carry a verification block \{type, spec, paper citation\} and
-preconditions (\texttt{requires\_hardware}, \texttt{requires\_pretrained},
-\dots). Verification types are \emph{structural} (API surface exists),
-\emph{evidence} (implementation contains paper-specific logic),
-\emph{behavioral} (deterministic computation matches), and \emph{measured}
-(\texttt{result\_match} against a paper value).
+All splits are browsable at \site: the site sorts papers into the four splits,
+and clicking any paper opens its interactive task graph (collapsible D3 tree
+with per-task category coloring, verification specs, and dependency
+metadata); split members whose graphs are still generating are listed as
+pending. \todo{finalize -50/-100 membership when corpus generation completes}
+
+\subsection{Replicable vs.\ unreplicable papers}
+
+Unreplicability is recorded per task, not per paper. Tasks whose
+preconditions cannot be met in a declared environment (hardware the original
+authors used but the consumer lacks; heavyweight pretrained models;
+proprietary traces) are classified \texttt{skipped-environment} and excluded
+from that environment's achievable denominator, with audited skip reasons. On
+our reference H100, three papers of the run-backed split have no implementable
+headline baseline and score n/a; the remaining 17 are scoreable end-to-end.
+As an example of the environment split, one KV-cache paper decomposes into
+309 tasks of which 218 are environment-skipped and 91 achievable.
+
+\subsection{Compute burden and replicability}
+
+Replicability and compute burden are orthogonal axes, and both are scored at
+triage: a paper can be perfectly replicable but need 500 GPU-hours, or cheap
+but blocked on a proprietary artifact. The corpus spans this plane
+deliberately---microbenchmarking papers replicate in minutes; serving papers
+need hours of load generation; quantization papers need model downloads but
+little compute; kernel papers need specific GPU generations. Split placement
+uses estimated GPU-hours so the lower splits stay affordable: the -10 split is
+runnable end-to-end for under \$100 of GPU time per agent, while -100 admits
+papers whose full replication exceeds any single-node budget.
+
+\subsection{Deciding what to replicate given resources}
+
+Each evaluation run gives the agent an explicit resource contract: a dollar
+budget, a wall-clock cap, a maximum number of iterations, and the paper's
+feasibility estimate. Agents are instructed to scope honestly---documenting
+skipped tasks rather than fabricating them---and, per iteration, are focused
+on a small \emph{target slice} of open tasks with exact expected outputs,
+which converts a several-hundred-task graph into tractable turns. The
+dependency edges give the agent (and the harness's slice selector) the order
+in which task groups unlock: environment and data tasks first, method tasks
+next, measured experiment tasks last.
+
+\section{Task Graphs: Structure, Generation, and Verification}
+\label{sec:graphs}
+
+\subsection{Automatic generation at unbounded size}
+
+For each paper, a pipeline of terminal-agent stages produces the graph
+without expert authorship: ingestion converts the arXiv source to markdown; a
+triage stage scores replicability and GPU-hours; a claim extractor records
+the paper's numerical results; and the graph generator runs in two stages.
+An \emph{outline} call plans the top levels of the graph from the paper's
+structure---one section per method component, experiment or table family,
+dataset group, and ablation study---assigning each section a task budget
+scaled by its claim and table density, the numerical claims it must cover,
+and its dependency edges. Each section is then expanded by its own
+\emph{subtree} call with the full model output budget to itself and a digest
+of sibling sections to suppress cross-section duplicates. This
+outline-then-subtree design removes the size ceiling that a single-response
+generation imposes: no paper's decomposition is compressed to fit one model
+response. A critique-and-fix pass then converges the graph (materializing
+missing coverage in bounded batches, annotating verification metadata,
+salvaging schema violations), and a deterministic gate rejects graphs with
+duplicate tasks---size must come from real decomposition, not repetition.
+
+\subsection{Graph structure: number of tasks and granularity}
+
+Graphs in the corpus run from ${\sim}100$ to ${\sim}935$ tasks per paper
+(median ${\sim}300$), at depths of 3--7. Granularity follows a
+code-exists $\rightarrow$ code-behaves $\rightarrow$ result-matches
+progression: each method component decomposes into structural tasks (the API
+surface exists), behavioral tasks (deterministic computation matches), and
+measured tasks (a paper number is independently reproduced within tolerance).
+Single-response generation systematically under-decomposes: on papers with
+human-authored PaperBench references, our earlier capped generator produced
+graphs at a median 0.51$\times$ the human size (worst case 0.04$\times$);
+the outline-then-subtree generator reaches a median 1.2$\times$ with zero
+duplicate-task padding, and per-paper extremes moved from 40-vs-997 tasks to
+300-vs-997 on the densest paper. Granularity is audited by the gate: tasks
+that merely restate their parent, or that split one check into trivial
+variants, are rejected.
 
 \subsection{Verification contracts}
 
-Every measured leaf is bound to an executable contract specifying the exact
+Every measured task is bound to an executable contract specifying the exact
 artifact path the implementation must emit and the tolerance under which the
 measured value is accepted, e.g.:
 
@@ -201,59 +311,38 @@ measured value is accepted, e.g.:
 \texttt{tolerance:\ abs(measured $-$ 2.1)/2.1 $\le$ 0.4}
 \end{quote}
 
-A leaf is credited only when a pytest verifier at a deterministic path
+A task is credited only when a pytest verifier at a deterministic path
 (\texttt{\_tests\_local/test\_leaf\_<id>.py}) passes while reading that
 artifact. Credit is attributed by executing tests, never by the agent's
 claims.
-
-\subsection{Replicable vs.\ unreplicable work}
-
-Unreplicability is recorded per leaf, not per paper. Leaves whose
-preconditions cannot be met in the declared environment (hardware the original
-authors used but we lack---A100, H200, TPU-v7; heavyweight pretrained models;
-proprietary traces) are classified \texttt{skipped-environment} and excluded
-from the achievable denominator, with audited skip reasons. Three papers have
-no implementable headline baseline in this environment and score n/a; the
-remaining 17 are scoreable end-to-end. As an example of the environment split,
-one KV-cache paper decomposes into 309 leaves of which 218 are
-environment-skipped and 91 achievable.
-
-\subsection{Compute budgets and honest scoping}
-
-Each run gives the agent an explicit resource contract: a dollar budget, a
-wall-clock cap, and a maximum number of iterations, along with the paper's
-feasibility estimate. Agents are instructed to scope honestly---documenting
-skipped leaves rather than fabricating them---and, per iteration, are focused
-on a small \emph{target slice} of open leaves with exact expected outputs,
-which converts a several-hundred-leaf rubric into tractable turns.
 
 \section{Evaluation Methodology}
 \label{sec:method}
 
 \subsection{Agent contract and iterated sessions}
 
-The replication agent receives only \texttt{paper.md}, the interface contract,
-the rubric, the verification contracts, and stock terminal tools (read, write,
-edit, bash, glob, grep). The paper's official repository is blacklisted,
-forcing independent reimplementation. Because agent sessions cannot be
-resumed, all state lives on disk (progress log, source tree, per-leaf tests,
-results); an outer loop re-invokes the agent in fresh sessions---selecting a
-repair slice, running a turn, grading, attributing failures, and choosing the
-next slice---until headline closure validates or budget/iteration/wall caps
-are reached. A full 20-paper backend run completes in roughly 10--14 hours on
-one H100.
+The replication agent receives only \texttt{paper.md}, the interface
+contract, the task graph, the verification contracts, and stock terminal
+tools (read, write, edit, bash, glob, grep). The paper's official repository
+is blacklisted, forcing independent reimplementation. Because agent sessions
+cannot be resumed, all state lives on disk (progress log, source tree,
+per-task tests, results); an outer loop re-invokes the agent in fresh
+sessions---selecting a repair slice, running a turn, grading, attributing
+failures, and choosing the next slice---until headline closure validates or
+budget/iteration/wall caps are reached. A full 20-paper backend run completes
+in roughly 10--14 hours on one H100.
 
 \subsection{Grading and failure attribution}
 
-Grading is three-layered: per-leaf test attribution (which executable verifier
-passed), reproduction quality (below), and aggregate scores. Every
-non-passing leaf is assigned a failure category and an \emph{owner layer}
-(Table~\ref{tab:taxonomy}). This attribution is what makes harness
-optimization tractable: without it, harness illegibility is indistinguishable
-from model weakness and benchmarks will mis-rank models.
+Grading is three-layered: per-task test attribution (which executable
+verifier passed), reproduction quality (\S\ref{sec:hacking}), and aggregate
+scores. Every non-passing task is assigned a failure category and an
+\emph{owner layer} (Table~\ref{tab:taxonomy}). This attribution is what makes
+harness optimization tractable: without it, harness illegibility is
+indistinguishable from model weakness and benchmarks will mis-rank models.
 
 \begin{table}[t]
-\caption{Failure taxonomy. Every non-passing leaf is attributed to a category
+\caption{Failure taxonomy. Every non-passing task is attributed to a category
 and owner layer.}
 \label{tab:taxonomy}
 \begin{center}
@@ -262,9 +351,9 @@ and owner layer.}
 \toprule
 \textbf{Category} & \textbf{Owner layer} & \textbf{Meaning} \\
 \midrule
-\texttt{missing\_per\_leaf\_test} & test harness & no executable verifier was produced for the leaf \\
+\texttt{missing\_per\_leaf\_test} & test harness & no executable verifier was produced for the task \\
 \texttt{missing\_result\_artifact} & result artifact & the contract-named output file was never emitted \\
-\texttt{broad\_leaf\_unverifiable} & rubric & leaf too coarse to verify; needs splitting \\
+\texttt{broad\_leaf\_unverifiable} & graph & task too coarse to verify; needs splitting \\
 \texttt{verification\_gap} & implementation & code ran; evidence does not match the contract \\
 \texttt{numeric\_mismatch} & implementation & measured, but outside tolerance \\
 \texttt{environment\_blocked} & environment & hardware/model/dataset unavailable \\
@@ -278,8 +367,8 @@ and owner layer.}
 
 Agents under budget pressure fabricate: hard-coded ``results,'' tests that
 assert paper constants, and confident reports of runs that never happened.
-Our experience is that \emph{every} text-pattern safeguard was bypassed within
-one run of deployment: a regex confession audit for terms like
+Our experience is that \emph{every} text-pattern safeguard was bypassed
+within one run of deployment: a regex confession audit for terms like
 ``cached''/``surrogate'' was defeated by renaming to
 \texttt{paper\_reported}; an empty-source negative control was defeated by
 tests that passed on stubs; a ``do not fabricate'' prompt directive had no
@@ -291,40 +380,51 @@ the agent's \texttt{results/} directory, re-runs the agent's
 \texttt{reproduce.sh} from scratch, and observes wall time, GPU utilization,
 and file diffs. Runs whose regenerated results are byte-identical re-ships of
 pre-baked constants, or that complete implausibly fast with no GPU activity,
-are classified \texttt{suspect} and their scores gated. Planned extensions
-include cost/time floors (actual spend versus the claimed-leaves estimate) and
-tool-use forensics on agent transcripts. Our design rule: \emph{if a safeguard
-can be defeated by different words, it will be.}
+are classified \texttt{suspect} and their scores gated
+(Appendix~\ref{app:gates}). Planned extensions include cost/time floors
+(actual spend versus the claimed-tasks estimate) and tool-use forensics on
+agent transcripts. Our design rule: \emph{if a safeguard can be defeated by
+different words, it will be.}
 
-\section{Experiments}
+\section{Experiments: Success Rates on ResearchBench-20}
 \label{sec:experiments}
 
-\subsection{Setup: same-set attempts}
+\subsection{Setup: same-split attempts}
 
-All experiments run on the frozen set with byte-identical rubrics and
-contracts, one shared controller, and only the backend adapter varying between
-Claude Code (\texttt{claude-opus-4-7}) and Codex (\texttt{gpt-5-codex}).
-Attempt~1 established the shared controller on a mixed-source snapshot.
-Attempt~2 is the \textbf{clean baseline}: stock harness, prompts, and
-adapters, run from a clean tree at committed \texttt{main} (budget \$200/paper,
-15 iterations, 8h wall). Attempt~3 applies a single \textbf{harness
-intervention} (below) with raised compute caps (\$1000/paper, 40 iterations,
-12h wall).
+All experiments run on the frozen ResearchBench-20 split with byte-identical
+graphs and contracts, one shared controller, and only the backend adapter
+varying between Claude Code (\texttt{claude-opus-4-7}) and Codex
+(\texttt{gpt-5-codex}). Attempt~1 established the shared controller on a
+mixed-source snapshot. Attempt~2 is the \textbf{clean baseline}: stock
+harness, prompts, and adapters, run from a clean tree at committed
+\texttt{main} (budget \$200/paper, 15 iterations, 8h wall). Attempt~3 applies
+a single \textbf{harness intervention} (below) with raised compute caps
+(\$1000/paper, 40 iterations, 12h wall).
 
-\subsection{Clean-baseline results (Attempt 2)}
+\subsection{Success rates of the agents (clean baseline)}
 
 Codex closed 16/1327 implementable claims (1.21\%) and Claude Code 79/1327
-(5.95\%); average total-implemented across all rubric leaves was 0.21\% and
+(5.95\%); average total-implemented across all graph tasks was 0.21\% and
 1.44\% respectively. Claude led on 12 papers, Codex on 2, with 3 tied.
 The two backends failed differently: Codex predominantly stopped before
 producing artifacts (13/20 papers with replication runtime failures; 1{,}231
-leaves blocked on \texttt{missing\_result\_artifact}), while Claude more often
+tasks blocked on \texttt{missing\_result\_artifact}), while Claude more often
 reached verification and stalled on coverage (13/20 papers ending
-\texttt{reproduction\_not\_verified\_within\_budget}; 1{,}233 leaves on
+\texttt{reproduction\_not\_verified\_within\_budget}; 1{,}233 tasks on
 \texttt{missing\_per\_leaf\_test}; 73 on \texttt{numeric\_mismatch}---Claude
 got to measured numbers more often, and sometimes missed tolerance).
-Unclosed implementable work concentrated in benchmark-heavy task categories
-(Table~\ref{tab:categories}).
+
+\subsection{Performance across task categories}
+
+Unclosed implementable work concentrates in benchmark-heavy categories
+(Table~\ref{tab:categories}): running and measuring, not code-writing, is
+where agents fail. Structural and behavioral tasks (does the component exist;
+does it compute correctly on deterministic inputs) close at several times the
+rate of measured tasks (does the full experiment reproduce the paper's
+number), and within measured tasks, those requiring long-running load
+generation or model downloads close least. This gradient replicates across
+both backends and both graph provenances we have evaluated, suggesting it
+reflects genuine difficulty ordering rather than graph idiosyncrasy.
 
 \begin{table}[t]
 \caption{Where implementable work remained open (both backends, Attempt 2).}
@@ -333,7 +433,7 @@ Unclosed implementable work concentrated in benchmark-heavy task categories
 \small
 \begin{tabular}{lr}
 \toprule
-\textbf{Missed task type} & \textbf{Unclosed leaves} \\
+\textbf{Missed task type} & \textbf{Unclosed tasks} \\
 \midrule
 Evaluation, Metrics \& Benchmarking & 1448 \\
 Method Implementation & 955 \\
@@ -349,27 +449,29 @@ Data Processing \& Preparation & 27 \\
 
 \subsection{Diagnosis: harness legibility, not model capability}
 
-Failure attribution located the bottleneck precisely. A leaf can only be
+Failure attribution located the bottleneck precisely. A task can only be
 credited when a pytest file exists at the deterministic path
 \texttt{\_tests\_local/test\_leaf\_<id>.py} and passes while reading the
 contract-named artifact. Inspection of failed workdirs showed agents writing
 correct-\emph{shaped} tests and artifacts, but only for the current target
-slice (${\sim}4$ leaves), leaving 80+ achievable leaves per paper unverified:
+slice (${\sim}4$ tasks), leaving 80+ achievable tasks per paper unverified:
 the implementation existed, but the grader was never shown the files it
-checks. Nothing in the baseline prompts stated the leaf$\rightarrow$file
+checks. Nothing in the baseline prompts stated the task$\rightarrow$file
 mapping or instructed exhaustive coverage.
 
-\subsection{Intervention and results (Attempt 3)}
+\subsection{Impact of the intervention and additional test-time compute}
 
 We appended one paragraph to each backend's prompt stating (i) the
-deterministic leaf$\rightarrow$test-path and contract$\rightarrow$artifact-path
-mapping, (ii) an instruction to enumerate \emph{every} achievable leaf rather
+deterministic task$\rightarrow$test-path and contract$\rightarrow$artifact
+mapping, (ii) an instruction to enumerate \emph{every} achievable task rather
 than the current slice, and (iii) a reminder that \texttt{reproduce.sh} must
-regenerate \texttt{results/} from scratch. No frozen artifact, grader, or
-adapter changed; hash checks confirm identical rubrics and contracts.
+regenerate \texttt{results/} from scratch (Appendix~\ref{app:blurb}); and we
+raised the compute caps from \$200/15 iterations/8h to \$1000/40
+iterations/12h. No frozen artifact, grader, or adapter changed; hash checks
+confirm identical graphs and contracts.
 
 \begin{table}[t]
-\caption{Implementable-claim closure across same-set attempts. Models
+\caption{Implementable-claim closure across same-split attempts. Models
 unchanged throughout.}
 \label{tab:attempts}
 \begin{center}
@@ -387,76 +489,90 @@ unchanged throughout.}
 
 Both backends improved roughly fivefold (Table~\ref{tab:attempts}): Codex's
 closure rose $4.9\times$ (average total-implemented 0.21\% to 1.63\%) and
-Claude Code's $5.7\times$ (1.44\% to 8.96\%), with five papers exceeding 70\%
-closure under Claude---including the FP16-equivalence paper, a historic stuck
-case that had scored zero in every prior run. We emphasize the
-confound: Attempt~3 changed the prompt \emph{and} the compute caps, and ran
-both backends concurrently on one H100 (a minor contention risk for
-latency-sensitive measured leaves). Isolating the levers is Attempt~4.
-Nevertheless, the qualitative conclusion is robust: a large fraction of what a
-naive benchmark would report as ``agent failure'' was \emph{harness
-legibility} failure. Test-time compute also matters---the raised caps give
-the agent enough iterations to cover hundreds of leaves---but compute alone
-could not have produced files the agent did not know to write.
+Claude Code's $5.7\times$ (1.44\% to 8.96\%), with five papers exceeding
+70\% closure under Claude---including a historic stuck case that had scored
+zero in every prior run. Additional test-time compute is a genuine and
+separable lever: in the baseline, most Claude papers ended
+\texttt{blocked} well under their caps (the loop stalled before spending its
+budget), whereas under the intervention agents productively consume the
+raised iteration budget covering hundreds of tasks per paper. But compute
+alone could not have produced files the agent did not know to write---and
+the intervention alone, under starved caps, could not cover 300-task graphs.
+We emphasize the confound: Attempt~3 changed the prompt \emph{and} the caps,
+and ran both backends concurrently on one H100 (a minor contention risk for
+latency-sensitive measured tasks). Isolating the levers is Attempt~4.
+Nevertheless, the qualitative conclusion is robust: a large fraction of what
+a naive benchmark would report as ``agent failure'' was \emph{harness
+legibility} failure, and much of the rest was starvation of test-time
+compute.
 
 \subsection{Harness evaluation independent of the model}
 
-Because inputs, rubrics, and contracts are frozen and only the backend adapter
+Because inputs, graphs, and contracts are frozen and only the backend adapter
 varies, cross-backend differences attribute to the model-plus-harness pair,
 and attempt-over-attempt deltas attribute to the harness alone. We propose a
 baseline grid crossing models (Claude, Codex, GLM 5.2) with harnesses
-(OpenCode, Cursor, Claude Code); the Claude Code harness column is measured in
-this paper and the remaining cells are planned. Open questions this grid can
-answer empirically: Claude Code vs.\ Codex as a harness; open- vs.\
-closed-source models at research tasks (GLM 5.2 vs.\ Claude/Codex); and
-frontier-tier comparisons (Fable vs.\ Mythos). \todo{fill grid cells as runs
-complete}
+(OpenCode, Cursor, Claude Code); the Claude Code harness column is measured
+in this paper and the remaining cells are planned. \todo{fill grid cells as
+runs complete}
 
 \section{Discussion and Future Work}
+
+\textbf{Recomposition: from replication to novel research.} The premise of
+this benchmark is that papers break down into the same ideas novel research
+is built from. Task graphs make that premise operational: a library of 100
+graphs is a library of verified, reusable research sub-tasks---environment
+recipes, method implementations, measurement harnesses---each with an
+executable correctness contract. A new idea can then be expressed as a novel
+\emph{composition} of existing sub-tasks (one paper's KV-cache tiering with
+another's prefill scheduling, evaluated under a third's load harness), graded
+with the same contracts and isolated reproduction that grade replication.
+This extends the benchmark from replication toward automated research
+execution, including tasks proposed by AI hypothesis systems: the same graph
+machinery that scores an agent's replication can scaffold, and audit, its
+first steps beyond the paper.
 
 \textbf{Automated harness optimization.} The failure taxonomy is
 machine-readable (per-run category and owner-layer counts). The Attempt-3 fix
 was found by reading that attribution; the loop can be closed automatically:
 run $\rightarrow$ attribute failures $\rightarrow$ propose a harness patch
 $\rightarrow$ smoke on one paper $\rightarrow$ full run $\rightarrow$ compare
-on the frozen set. Frozen hashes make every candidate comparable, turning the
-benchmark into a reward signal for harness search. A guardrail from our
-experience: optimize against a diverse rotation of paper types, never a single
-stuck paper, so regressions on one type are caught.
-
-\textbf{Composing new research from rubric leaves.} Because rubrics decompose
-papers into reusable sub-tasks, a new idea can be expressed as a novel
-composition of leaves from existing rubrics (e.g., one paper's KV-cache
-tiering with another's prefill layout), evaluated with the same contracts and
-isolated reproduction. This extends the benchmark from replication to
-\emph{automated research execution}, including tasks proposed by AI hypothesis
-systems.
+on the frozen split. Frozen hashes make every candidate comparable, turning
+the benchmark into a reward signal for harness search. A guardrail from our
+experience: optimize against a diverse rotation of paper types, never a
+single stuck paper.
 
 \textbf{Production integration.} The motivating use case is a company that
 wants a relevant paper's improvements in its internal, performance-sensitive
-codebase---today, manual researcher work. Inference optimization is the
-sharpest test bed: numbers are hardware-sensitive and ``it runs'' $\neq$ ``it
-reproduces.'' The same contracts that grade replication become acceptance
-tests for landing the technique in production CI.
+codebase---today, manual researcher work. The same contracts that grade
+replication become acceptance tests for landing the technique in production
+CI.
 
-\textbf{Limitations.} (i) Rubric quality is itself machine-generated; the
+\textbf{Limitations.} (i) Graph quality is itself machine-generated; the
 \texttt{broad\_leaf\_unverifiable} class quantifies, but does not eliminate,
-coarse leaves. (ii) Attempt-3 confounds prompt and compute changes (isolation
-planned). (iii) The current set covers one domain (inference systems) and one
-hardware target; breadth across research areas is future work. (iv) Two
-backends were run concurrently on a shared GPU in Attempt~3, a contention risk
-for a small number of latency-sensitive leaves.
+coarse tasks, and per-paper scores are sensitive to graph provenance even
+when aggregates agree. (ii) Attempt-3 confounds prompt and compute changes
+(isolation planned). (iii) Run-backed evaluation currently covers the
+inference-systems splits on one hardware target; the -50/-100 splits ship
+graphs ahead of runs. (iv) Two backends shared a GPU in Attempt~3, a
+contention risk for a small number of latency-sensitive tasks.
 
 \section{Conclusion}
 
-ResearchBench demonstrates that rubric-scored paper replication can be
-automated end-to-end---decomposition, executable verification, budgeted agent
-execution, and anti-fabrication auditing---and frozen for longitudinal
-comparison. Its first empirical lesson is cautionary for the field: the
-largest single lever on measured ``agent research ability'' was not the model
-but whether the harness made the grading contract legible to the agent. We
-release the attempt history as a standing scoreboard and invite the community
-to measure models, harnesses, and compute policies against it.
+ResearchBench recomposes 100 research papers into automatically generated,
+dependency-structured task graphs with executable verification, organized
+into nested splits and browsable publicly, and demonstrates the full loop on
+its run-backed split: budgeted agent execution, per-task grading, failure
+attribution, and anti-fabrication auditing. Its first empirical lesson is
+cautionary for the field: the largest levers on measured ``agent research
+ability'' were not the model but whether the harness made the grading
+contract legible and whether the agent was given enough test-time compute to
+cover the graph. Its design bet is constructive: if papers decompose into
+the sub-tasks novel research composes, then a public library of verified
+task graphs is not just a benchmark---it is a parts inventory for automated
+research. We release the corpus, splits, site, and attempt history as a
+standing scoreboard and invite the community to measure models, harnesses,
+and compute policies against it.
 
 \bibliographystyle{plainnat}
 \begin{thebibliography}{9}
@@ -498,18 +614,19 @@ H.~Wijk, T.~Lin, J.~Becker, et~al.
 
 \appendix
 
-\section{Benchmark composition}
+\section{ResearchBench-20 composition}
 \label{app:papers}
 
 \begin{table}[h]
-\caption{Papers in \texttt{researchbench\_inference20\_h100} with rubric leaf
-counts. Three papers (marked $\dagger$) have no implementable headline baseline
-in the declared environment and score n/a.}
+\caption{Papers in the run-backed ResearchBench-20 split with task counts.
+Three papers (marked $\dagger$) have no implementable headline baseline in the
+reference environment and score n/a. The full corpus roster with split
+membership is maintained on the project site (\S\ref{sec:splits}).}
 \begin{center}
 \small
 \begin{tabular}{lr@{\qquad}lr}
 \toprule
-\textbf{Paper (slug, abbreviated)} & \textbf{Leaves} & \textbf{Paper} & \textbf{Leaves} \\
+\textbf{Paper (slug, abbreviated)} & \textbf{Tasks} & \textbf{Paper} & \textbf{Tasks} \\
 \midrule
 llmservingsim-2.0 & 214 & icecache & 935 \\
 FOCUS-autokernel & 268 & lamp & 288 \\
@@ -563,6 +680,6 @@ nonzero, times out, or produces zero files into a wiped \texttt{results/};
 \texttt{suspect} if wall time is implausibly short with no GPU activity, or if
 more than half of the regenerated files are byte-identical to the agent's
 pre-authored results with no authored code paths present. Suspect and failed
-runs have their leaf credit gated.
+runs have their task credit gated.
 
 \end{document}

@@ -275,3 +275,6 @@ section.collection .count { color: var(--muted); font-weight: 400; }
   cursor: pointer;
 }
 #detail .close:hover { color: var(--ink); }
+
+/* Pending split members: visible but not clickable. */
+.paper-card.pending { opacity: 0.55; cursor: default; pointer-events: none; border-style: dashed; }

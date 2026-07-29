@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="1030" viewBox="0 0 1050 1030" font-family='system-ui, -apple-system, "Segoe UI", sans-serif'>
+<rect width="1050" height="1030" rx="6" fill="#fcfcfb"/>
+<text x="16" y="30" font-size="15" font-weight="600" fill="#0b0b0b">paperbench23 task completion - Attempt 2 procedure (clean baseline)</text>
+<text x="16" y="48" font-size="11" fill="#52514e">verified-pass leaves per paper, ordered by best done-percentage across backends</text>
+<rect x="16" y="60" width="10" height="10" rx="2" fill="#008300"/>
+<text x="31" y="69" font-size="11" fill="#52514e">done</text>
+<rect x="83" y="60" width="10" height="10" rx="2" fill="#e66767"/>
+<text x="98" y="69" font-size="11" fill="#52514e">possible on H100, not done</text>
+<rect x="304" y="60" width="10" height="10" rx="2" fill="#52514e"/>
+<text x="319" y="69" font-size="11" fill="#52514e">not achievable on H100</text>
+<line x1="396.0" y1="86" x2="396.0" y2="1004" stroke="#e1e0d9" stroke-width="1"/>
+<text x="396.0" y="80" font-size="10" fill="#898781" text-anchor="start">0%</text>
+<line x1="526.0" y1="86" x2="526.0" y2="1004" stroke="#e1e0d9" stroke-width="1"/>
+<text x="526.0" y="80" font-size="10" fill="#898781" text-anchor="middle">25%</text>
+<line x1="656.0" y1="86" x2="656.0" y2="1004" stroke="#e1e0d9" stroke-width="1"/>
+<text x="656.0" y="80" font-size="10" fill="#898781" text-anchor="middle">50%</text>
+<line x1="786.0" y1="86" x2="786.0" y2="1004" stroke="#e1e0d9" stroke-width="1"/>
+<text x="786.0" y="80" font-size="10" fill="#898781" text-anchor="middle">75%</text>
+<line x1="916.0" y1="86" x2="916.0" y2="1004" stroke="#e1e0d9" stroke-width="1"/>
+<text x="916.0" y="80" font-size="10" fill="#898781" text-anchor="end">100%</text>
+<text x="330" y="109.0" font-size="12" fill="#0b0b0b" text-anchor="end">self-composing-policies</text>
+<text x="388" y="100" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>self-composing-policies - Claude: 279 done, 75 possible not done, 5 not achievable (77.7% of 359 leaves)</title><rect x="396" y="90" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="90" width="402.1" height="13" rx="2" fill="#008300"/><rect x="800.1" y="90" width="106.6" height="13" rx="2" fill="#e66767"/><rect x="908.8" y="90" width="5.2" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="100" font-size="11" fill="#52514e">77.7% (279/359)</text>
+<text x="388" y="117" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>self-composing-policies - Codex: 0 done, 354 possible not done, 5 not achievable (0.0% of 359 leaves)</title><rect x="396" y="107" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="107" width="510.8" height="13" rx="2" fill="#e66767"/><rect x="908.8" y="107" width="5.2" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="117" font-size="11" fill="#52514e">0.0% (0/359)</text>
+<text x="330" y="153.0" font-size="12" fill="#0b0b0b" text-anchor="end">ftrl</text>
+<text x="388" y="144" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>ftrl - Claude: 179 done, 72 possible not done, 0 not achievable (71.3% of 251 leaves)</title><rect x="396" y="134" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="134" width="368.8" height="13" rx="2" fill="#008300"/><rect x="766.8" y="134" width="147.2" height="13" rx="2" fill="#e66767"/></g>
+<text x="924" y="144" font-size="11" fill="#52514e">71.3% (179/251)</text>
+<text x="388" y="161" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>ftrl - Codex: 52 done, 199 possible not done, 0 not achievable (20.7% of 251 leaves)</title><rect x="396" y="151" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="151" width="105.7" height="13" rx="2" fill="#008300"/><rect x="503.7" y="151" width="410.3" height="13" rx="2" fill="#e66767"/></g>
+<text x="924" y="161" font-size="11" fill="#52514e">20.7% (52/251)</text>
+<text x="330" y="197.0" font-size="12" fill="#0b0b0b" text-anchor="end">self-expansion</text>
+<text x="388" y="188" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>self-expansion - Claude: 45 done, 34 possible not done, 42 not achievable (37.2% of 121 leaves)</title><rect x="396" y="178" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="178" width="191.4" height="13" rx="2" fill="#008300"/><rect x="589.4" y="178" width="144.1" height="13" rx="2" fill="#e66767"/><rect x="735.5" y="178" width="178.5" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="188" font-size="11" fill="#52514e">37.2% (45/121)</text>
+<text x="388" y="205" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>self-expansion - Codex: 15 done, 64 possible not done, 42 not achievable (12.4% of 121 leaves)</title><rect x="396" y="195" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="195" width="62.5" height="13" rx="2" fill="#008300"/><rect x="460.5" y="195" width="273.0" height="13" rx="2" fill="#e66767"/><rect x="735.5" y="195" width="178.5" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="205" font-size="11" fill="#52514e">12.4% (15/121)</text>
+<text x="330" y="241.0" font-size="12" fill="#0b0b0b" text-anchor="end">pinn</text>
+<text x="388" y="232" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>pinn - Claude: 0 done, 161 possible not done, 0 not achievable (0.0% of 161 leaves)</title><rect x="396" y="222" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="222" width="520.0" height="13" rx="2" fill="#e66767"/></g>
+<text x="924" y="232" font-size="11" fill="#52514e">0.0% (0/161)</text>
+<text x="388" y="249" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>pinn - Codex: 44 done, 117 possible not done, 0 not achievable (27.3% of 161 leaves)</title><rect x="396" y="239" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="239" width="140.1" height="13" rx="2" fill="#008300"/><rect x="538.1" y="239" width="375.9" height="13" rx="2" fill="#e66767"/></g>
+<text x="924" y="249" font-size="11" fill="#52514e">27.3% (44/161)</text>
+<text x="330" y="285.0" font-size="12" fill="#0b0b0b" text-anchor="end">bridging-data-gaps</text>
+<text x="388" y="276" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>bridging-data-gaps - Claude: 60 done, 165 possible not done, 13 not achievable (25.2% of 238 leaves)</title><rect x="396" y="266" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="266" width="129.1" height="13" rx="2" fill="#008300"/><rect x="527.1" y="266" width="358.5" height="13" rx="2" fill="#e66767"/><rect x="887.6" y="266" width="26.4" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="276" font-size="11" fill="#52514e">25.2% (60/238)</text>
+<text x="388" y="293" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>bridging-data-gaps - Codex: 28 done, 197 possible not done, 13 not achievable (11.8% of 238 leaves)</title><rect x="396" y="283" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="283" width="59.2" height="13" rx="2" fill="#008300"/><rect x="457.2" y="283" width="428.4" height="13" rx="2" fill="#e66767"/><rect x="887.6" y="283" width="26.4" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="293" font-size="11" fill="#52514e">11.8% (28/238)</text>
+<text x="330" y="329.0" font-size="12" fill="#0b0b0b" text-anchor="end">bbox</text>
+<text x="388" y="320" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>bbox - Claude: 132 done, 321 possible not done, 125 not achievable (22.8% of 578 leaves)</title><rect x="396" y="310" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="310" width="116.8" height="13" rx="2" fill="#008300"/><rect x="514.8" y="310" width="286.8" height="13" rx="2" fill="#e66767"/><rect x="803.5" y="310" width="110.5" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="320" font-size="11" fill="#52514e">22.8% (132/578)</text>
+<text x="388" y="337" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>bbox - Codex: 16 done, 437 possible not done, 125 not achievable (2.8% of 578 leaves)</title><rect x="396" y="327" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="327" width="12.4" height="13" rx="2" fill="#008300"/><rect x="410.4" y="327" width="391.1" height="13" rx="2" fill="#e66767"/><rect x="803.5" y="327" width="110.5" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="337" font-size="11" fill="#52514e">2.8% (16/578)</text>
+<text x="330" y="373.0" font-size="12" fill="#0b0b0b" text-anchor="end">robust-clip</text>
+<text x="388" y="364" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>robust-clip - Claude: 4 done, 126 possible not done, 50 not achievable (2.2% of 180 leaves)</title><rect x="396" y="354" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="354" width="9.6" height="13" rx="2" fill="#008300"/><rect x="407.6" y="354" width="362.0" height="13" rx="2" fill="#e66767"/><rect x="771.6" y="354" width="142.4" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="364" font-size="11" fill="#52514e">2.2% (4/180)</text>
+<text x="388" y="381" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>robust-clip - Codex: 28 done, 102 possible not done, 50 not achievable (15.6% of 180 leaves)</title><rect x="396" y="371" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="371" width="78.9" height="13" rx="2" fill="#008300"/><rect x="476.9" y="371" width="292.7" height="13" rx="2" fill="#e66767"/><rect x="771.6" y="371" width="142.4" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="381" font-size="11" fill="#52514e">15.6% (28/180)</text>
+<text x="330" y="417.0" font-size="12" fill="#0b0b0b" text-anchor="end">stochastic-interpolants</text>
+<text x="388" y="408" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>stochastic-interpolants - Claude: 13 done, 54 possible not done, 24 not achievable (14.3% of 91 leaves)</title><rect x="396" y="398" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="398" width="72.3" height="13" rx="2" fill="#008300"/><rect x="470.3" y="398" width="306.6" height="13" rx="2" fill="#e66767"/><rect x="778.9" y="398" width="135.1" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="408" font-size="11" fill="#52514e">14.3% (13/91)</text>
+<text x="388" y="425" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>stochastic-interpolants - Codex: 9 done, 58 possible not done, 24 not achievable (9.9% of 91 leaves)</title><rect x="396" y="415" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="415" width="49.4" height="13" rx="2" fill="#008300"/><rect x="447.4" y="415" width="329.4" height="13" rx="2" fill="#e66767"/><rect x="778.9" y="415" width="135.1" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="425" font-size="11" fill="#52514e">9.9% (9/91)</text>
+<text x="330" y="461.0" font-size="12" fill="#0b0b0b" text-anchor="end">sample-specific-masks</text>
+<text x="388" y="452" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>sample-specific-masks - Claude: 20 done, 111 possible not done, 33 not achievable (12.2% of 164 leaves)</title><rect x="396" y="442" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="442" width="61.4" height="13" rx="2" fill="#008300"/><rect x="459.4" y="442" width="350.0" height="13" rx="2" fill="#e66767"/><rect x="811.4" y="442" width="102.6" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="452" font-size="11" fill="#52514e">12.2% (20/164)</text>
+<text x="388" y="469" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>sample-specific-masks - Codex: 15 done, 116 possible not done, 33 not achievable (9.1% of 164 leaves)</title><rect x="396" y="459" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="459" width="45.6" height="13" rx="2" fill="#008300"/><rect x="443.6" y="459" width="365.8" height="13" rx="2" fill="#e66767"/><rect x="811.4" y="459" width="102.6" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="469" font-size="11" fill="#52514e">9.1% (15/164)</text>
+<text x="330" y="505.0" font-size="12" fill="#0b0b0b" text-anchor="end">sequential-neural-score-estimation</text>
+<text x="388" y="496" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>sequential-neural-score-estimation - Claude: 13 done, 97 possible not done, 0 not achievable (11.8% of 110 leaves)</title><rect x="396" y="486" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="486" width="59.5" height="13" rx="2" fill="#008300"/><rect x="457.5" y="486" width="456.5" height="13" rx="2" fill="#e66767"/></g>
+<text x="924" y="496" font-size="11" fill="#52514e">11.8% (13/110)</text>
+<text x="388" y="513" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>sequential-neural-score-estimation - Codex: 0 done, 110 possible not done, 0 not achievable (0.0% of 110 leaves)</title><rect x="396" y="503" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="503" width="520.0" height="13" rx="2" fill="#e66767"/></g>
+<text x="924" y="513" font-size="11" fill="#52514e">0.0% (0/110)</text>
+<text x="330" y="549.0" font-size="12" fill="#0b0b0b" text-anchor="end">bam</text>
+<text x="388" y="540" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>bam - Claude: 84 done, 713 possible not done, 20 not achievable (10.3% of 817 leaves)</title><rect x="396" y="530" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="530" width="51.5" height="13" rx="2" fill="#008300"/><rect x="449.5" y="530" width="451.8" height="13" rx="2" fill="#e66767"/><rect x="903.3" y="530" width="10.7" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="540" font-size="11" fill="#52514e">10.3% (84/817)</text>
+<text x="388" y="557" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>bam - Codex: 1 done, 796 possible not done, 20 not achievable (0.1% of 817 leaves)</title><rect x="396" y="547" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="547" width="1.5" height="13" rx="2" fill="#008300"/><rect x="396.6" y="547" width="504.6" height="13" rx="2" fill="#e66767"/><rect x="903.3" y="547" width="10.7" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="557" font-size="11" fill="#52514e">0.1% (1/817)</text>
+<text x="330" y="593.0" font-size="12" fill="#0b0b0b" text-anchor="end">rice</text>
+<text x="388" y="584" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>rice - Claude: 4 done, 404 possible not done, 0 not achievable (1.0% of 408 leaves)</title><rect x="396" y="574" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="574" width="3.1" height="13" rx="2" fill="#008300"/><rect x="401.1" y="574" width="512.9" height="13" rx="2" fill="#e66767"/></g>
+<text x="924" y="584" font-size="11" fill="#52514e">1.0% (4/408)</text>
+<text x="388" y="601" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>rice - Codex: 40 done, 368 possible not done, 0 not achievable (9.8% of 408 leaves)</title><rect x="396" y="591" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="591" width="49.0" height="13" rx="2" fill="#008300"/><rect x="447.0" y="591" width="467.0" height="13" rx="2" fill="#e66767"/></g>
+<text x="924" y="601" font-size="11" fill="#52514e">9.8% (40/408)</text>
+<text x="330" y="637.0" font-size="12" fill="#0b0b0b" text-anchor="end">adaptive-pruning</text>
+<text x="388" y="628" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>adaptive-pruning - Claude: 12 done, 102 possible not done, 84 not achievable (6.1% of 198 leaves)</title><rect x="396" y="618" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="618" width="29.5" height="13" rx="2" fill="#008300"/><rect x="427.5" y="618" width="265.9" height="13" rx="2" fill="#e66767"/><rect x="695.4" y="618" width="218.6" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="628" font-size="11" fill="#52514e">6.1% (12/198)</text>
+<text x="388" y="645" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>adaptive-pruning - Codex: 2 done, 112 possible not done, 84 not achievable (1.0% of 198 leaves)</title><rect x="396" y="635" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="635" width="3.3" height="13" rx="2" fill="#008300"/><rect x="401.3" y="635" width="292.1" height="13" rx="2" fill="#e66767"/><rect x="695.4" y="635" width="218.6" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="645" font-size="11" fill="#52514e">1.0% (2/198)</text>
+<text x="330" y="681.0" font-size="12" fill="#0b0b0b" text-anchor="end">test-time-model-adaptation</text>
+<text x="388" y="672" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>test-time-model-adaptation - Claude: 9 done, 141 possible not done, 153 not achievable (3.0% of 303 leaves)</title><rect x="396" y="662" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="662" width="13.4" height="13" rx="2" fill="#008300"/><rect x="411.4" y="662" width="240.0" height="13" rx="2" fill="#e66767"/><rect x="653.4" y="662" width="260.6" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="672" font-size="11" fill="#52514e">3.0% (9/303)</text>
+<text x="388" y="689" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>test-time-model-adaptation - Codex: 0 done, 150 possible not done, 153 not achievable (0.0% of 303 leaves)</title><rect x="396" y="679" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="679" width="255.4" height="13" rx="2" fill="#e66767"/><rect x="653.4" y="679" width="260.6" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="689" font-size="11" fill="#52514e">0.0% (0/303)</text>
+<text x="330" y="725.0" font-size="12" fill="#0b0b0b" text-anchor="end">what-will-my-model-forget</text>
+<text x="388" y="716" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>what-will-my-model-forget - Claude: 16 done, 333 possible not done, 335 not achievable (2.3% of 684 leaves)</title><rect x="396" y="706" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="706" width="10.2" height="13" rx="2" fill="#008300"/><rect x="408.2" y="706" width="251.2" height="13" rx="2" fill="#e66767"/><rect x="661.3" y="706" width="252.7" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="716" font-size="11" fill="#52514e">2.3% (16/684)</text>
+<text x="388" y="733" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>what-will-my-model-forget - Codex: 0 done, 349 possible not done, 335 not achievable (0.0% of 684 leaves)</title><rect x="396" y="723" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="723" width="263.3" height="13" rx="2" fill="#e66767"/><rect x="661.3" y="723" width="252.7" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="733" font-size="11" fill="#52514e">0.0% (0/684)</text>
+<text x="330" y="769.0" font-size="12" fill="#0b0b0b" text-anchor="end">stay-on-topic-with-classifier-free-guidance</text>
+<text x="388" y="760" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>stay-on-topic-with-classifier-free-guidance - Claude: 4 done, 67 possible not done, 151 not achievable (1.8% of 222 leaves)</title><rect x="396" y="750" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="750" width="7.4" height="13" rx="2" fill="#008300"/><rect x="405.4" y="750" width="154.9" height="13" rx="2" fill="#e66767"/><rect x="562.3" y="750" width="351.7" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="760" font-size="11" fill="#52514e">1.8% (4/222)</text>
+<text x="388" y="777" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>stay-on-topic-with-classifier-free-guidance - Codex: 4 done, 67 possible not done, 151 not achievable (1.8% of 222 leaves)</title><rect x="396" y="767" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="767" width="7.4" height="13" rx="2" fill="#008300"/><rect x="405.4" y="767" width="154.9" height="13" rx="2" fill="#e66767"/><rect x="562.3" y="767" width="351.7" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="777" font-size="11" fill="#52514e">1.8% (4/222)</text>
+<text x="330" y="813.0" font-size="12" fill="#0b0b0b" text-anchor="end">sapg</text>
+<text x="388" y="804" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>sapg - Claude: 4 done, 244 possible not done, 4 not achievable (1.6% of 252 leaves)</title><rect x="396" y="794" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="794" width="6.3" height="13" rx="2" fill="#008300"/><rect x="404.3" y="794" width="501.5" height="13" rx="2" fill="#e66767"/><rect x="907.7" y="794" width="6.3" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="804" font-size="11" fill="#52514e">1.6% (4/252)</text>
+<text x="388" y="821" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>sapg - Codex: 0 done, 248 possible not done, 4 not achievable (0.0% of 252 leaves)</title><rect x="396" y="811" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="811" width="509.7" height="13" rx="2" fill="#e66767"/><rect x="907.7" y="811" width="6.3" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="821" font-size="11" fill="#52514e">0.0% (0/252)</text>
+<text x="330" y="857.0" font-size="12" fill="#0b0b0b" text-anchor="end">semantic-self-consistency</text>
+<text x="388" y="848" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>semantic-self-consistency - Claude: 4 done, 220 possible not done, 189 not achievable (1.0% of 413 leaves)</title><rect x="396" y="838" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="838" width="3.0" height="13" rx="2" fill="#008300"/><rect x="401.0" y="838" width="275.0" height="13" rx="2" fill="#e66767"/><rect x="678.0" y="838" width="236.0" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="848" font-size="11" fill="#52514e">1.0% (4/413)</text>
+<text x="388" y="865" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>semantic-self-consistency - Codex: 4 done, 220 possible not done, 189 not achievable (1.0% of 413 leaves)</title><rect x="396" y="855" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="855" width="3.0" height="13" rx="2" fill="#008300"/><rect x="401.0" y="855" width="275.0" height="13" rx="2" fill="#e66767"/><rect x="678.0" y="855" width="236.0" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="865" font-size="11" fill="#52514e">1.0% (4/413)</text>
+<text x="330" y="901.0" font-size="12" fill="#0b0b0b" text-anchor="end">all-in-one</text>
+<text x="388" y="892" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>all-in-one - Claude: 0 done, 242 possible not done, 0 not achievable (0.0% of 242 leaves)</title><rect x="396" y="882" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="882" width="520.0" height="13" rx="2" fill="#e66767"/></g>
+<text x="924" y="892" font-size="11" fill="#52514e">0.0% (0/242)</text>
+<text x="388" y="909" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>all-in-one - Codex: 2 done, 240 possible not done, 0 not achievable (0.8% of 242 leaves)</title><rect x="396" y="899" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="899" width="2.3" height="13" rx="2" fill="#008300"/><rect x="400.3" y="899" width="513.7" height="13" rx="2" fill="#e66767"/></g>
+<text x="924" y="909" font-size="11" fill="#52514e">0.8% (2/242)</text>
+<text x="330" y="945.0" font-size="12" fill="#0b0b0b" text-anchor="end">lbcs</text>
+<text x="388" y="936" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>lbcs - Claude: 4 done, 898 possible not done, 95 not achievable (0.4% of 997 leaves)</title><rect x="396" y="926" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="926" width="1.5" height="13" rx="2" fill="#008300"/><rect x="398.1" y="926" width="466.4" height="13" rx="2" fill="#e66767"/><rect x="866.5" y="926" width="47.5" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="936" font-size="11" fill="#52514e">0.4% (4/997)</text>
+<text x="388" y="953" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>lbcs - Codex: 8 done, 894 possible not done, 95 not achievable (0.8% of 997 leaves)</title><rect x="396" y="943" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="943" width="2.2" height="13" rx="2" fill="#008300"/><rect x="400.2" y="943" width="464.3" height="13" rx="2" fill="#e66767"/><rect x="866.5" y="943" width="47.5" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="953" font-size="11" fill="#52514e">0.8% (8/997)</text>
+<text x="330" y="989.0" font-size="12" fill="#0b0b0b" text-anchor="end">fre</text>
+<text x="388" y="980" font-size="10" fill="#898781" text-anchor="end">Claude</text>
+<g><title>fre - Claude: 0 done, 450 possible not done, 49 not achievable (0.0% of 499 leaves)</title><rect x="396" y="970" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="970" width="466.9" height="13" rx="2" fill="#e66767"/><rect x="864.9" y="970" width="49.1" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="980" font-size="11" fill="#52514e">0.0% (0/499)</text>
+<text x="388" y="997" font-size="10" fill="#898781" text-anchor="end">Codex</text>
+<g><title>fre - Codex: 0 done, 450 possible not done, 49 not achievable (0.0% of 499 leaves)</title><rect x="396" y="987" width="520" height="13" rx="3" fill="#e1e0d9" opacity="0.35"/><rect x="396.0" y="987" width="466.9" height="13" rx="2" fill="#e66767"/><rect x="864.9" y="987" width="49.1" height="13" rx="2" fill="#52514e"/></g>
+<text x="924" y="997" font-size="11" fill="#52514e">0.0% (0/499)</text>
+</svg>

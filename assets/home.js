@@ -82,6 +82,14 @@ function paperCard(p) {
     </a>`;
 }
 
+function pendingCard(p) {
+  return `
+    <div class="paper-card pending" aria-disabled="true" title="Task graph not generated yet">
+      <p class="title">${escapeHtml(p.title || p.slug)}</p>
+      <p class="meta"><span class="slug">${escapeHtml(p.slug)}</span> · ${escapeHtml(p.category || "uncategorized")} · task graph pending</p>
+    </div>`;
+}
+
 function render(query) {
   const root = document.getElementById("collections");
   if (!INDEX) return;
@@ -101,6 +109,16 @@ function render(query) {
       <section class="collection">
         <h2>${escapeHtml(coll.label)} <span class="count">· ${papers.length} paper${papers.length === 1 ? "" : "s"}</span></h2>
         <div class="paper-list">${papers.map(paperCard).join("")}</div>
+      </section>`);
+  }
+  const pending = (view && view.pending || []).filter(
+    (p) => !query || (p.title || p.slug).toLowerCase().includes(query) || p.slug.toLowerCase().includes(query),
+  );
+  if (pending.length) {
+    sections.push(`
+      <section class="collection">
+        <h2>Task graphs pending <span class="count">· ${pending.length} paper${pending.length === 1 ? "" : "s"}</span></h2>
+        <div class="paper-list">${pending.map(pendingCard).join("")}</div>
       </section>`);
   }
   root.innerHTML = sections.join("") || `<p class="empty">No papers match “${escapeHtml(query)}”.</p>`;

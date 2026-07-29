@@ -14,7 +14,7 @@ The benchmark does not regenerate rubrics during comparison runs.
 
 ## Named Benchmark Sets
 
-Frozen tasks live under named roots such as `data/frozen_benchmarks/researchbench_inference_gate3/`.
+Frozen tasks live under named roots such as `data/frozen_benchmarks/researchbench20/`.
 
 Each set manifest records:
 - `benchmark_name`
@@ -23,7 +23,7 @@ Each set manifest records:
 - paper slug list
 - per-paper source path, title, rubric hash, and contracts hash
 
-This keeps the 3-paper gate set intact while allowing a future `researchbench_inference20_h100` set to coexist.
+This keeps the 3-paper gate set intact while allowing a future `researchbench20` set to coexist.
 
 ## Run Procedure
 
@@ -63,7 +63,7 @@ If those checks fail, the harness remains in iteration. The correct next step is
 
 ### 20-paper expansion gate
 
-The future `researchbench_inference20_h100` set is only considered real when all of the following are true:
+The future `researchbench20` set is only considered real when all of the following are true:
 
 1. Each selected paper has local assets, a rubric, tests, contracts, and an initial feasibility review.
 2. The set freezes successfully into a named benchmark root.

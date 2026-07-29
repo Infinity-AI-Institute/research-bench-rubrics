@@ -1,6 +1,293 @@
 {
  "collections": [
   {
+   "id": "benchmark100",
+   "label": "ResearchBench 100 corpus",
+   "papers": [
+    {
+     "key": "benchmark100__distserve-disaggregating-prefill-and-decoding-for",
+     "slug": "distserve-disaggregating-prefill-and-decoding-for",
+     "title": "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving",
+     "stats": {
+      "nodes": 461,
+      "leaves": 360,
+      "max_depth": 3,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 120,
+       "Data Processing & Preparation": 18,
+       "Analysis & Presentation": 7,
+       "Experimental Setup": 51,
+       "Method Implementation": 111,
+       "Logging": 6,
+       "Environment & Infrastructure Setup": 18,
+       "Logging, Analysis & Presentation": 9,
+       "Evaluation": 10,
+       "Metrics & Benchmarking": 3,
+       "Dataset and Model Acquisition": 7
+      }
+     }
+    },
+    {
+     "key": "benchmark100__efficient-memory-management-for-large-language",
+     "slug": "efficient-memory-management-for-large-language",
+     "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+     "stats": {
+      "nodes": 916,
+      "leaves": 804,
+      "max_depth": 4,
+      "categories": {
+       "Method Implementation": 206,
+       "Experimental Setup": 124,
+       "Evaluation, Metrics & Benchmarking": 446,
+       "Ablation": 1,
+       "Environment & Infrastructure Setup": 5,
+       "Logging, Analysis & Presentation": 13,
+       "Data Processing & Preparation": 9
+      },
+      "estimated_minutes": 44359,
+      "estimated_dollars": 11753.7
+     }
+    },
+    {
+     "key": "benchmark100__flashattention-2-faster-attention-with-better",
+     "slug": "flashattention-2-faster-attention-with-better",
+     "title": "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning",
+     "stats": {
+      "nodes": 428,
+      "leaves": 339,
+      "max_depth": 4,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 110,
+       "Logging, Analysis & Presentation": 14,
+       "Experimental Setup": 33,
+       "Method Implementation": 120,
+       "Environment & Infrastructure Setup": 18,
+       "Data Processing & Preparation": 1,
+       "Metrics & Benchmarking": 40,
+       "Dataset and Model Acquisition": 3
+      }
+     }
+    },
+    {
+     "key": "benchmark100__flashattention-3-fast-and-accurate-attention-with",
+     "slug": "flashattention-3-fast-and-accurate-attention-with",
+     "title": "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision",
+     "stats": {
+      "nodes": 519,
+      "leaves": 415,
+      "max_depth": 3,
+      "categories": {
+       "Logging, Analysis & Presentation": 25,
+       "Experimental Setup": 38,
+       "Evaluation, Metrics & Benchmarking": 56,
+       "Method Implementation": 188,
+       "Data Processing & Preparation": 4,
+       "Evaluation": 21,
+       "Metrics & Benchmarking": 62,
+       "Dataset and Model Acquisition": 5,
+       "Environment & Infrastructure Setup": 16
+      }
+     }
+    },
+    {
+     "key": "benchmark100__flashattention-fast-and-memory-efficient-exact",
+     "slug": "flashattention-fast-and-memory-efficient-exact",
+     "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+     "stats": {
+      "nodes": 481,
+      "leaves": 371,
+      "max_depth": 4,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 137,
+       "Experimental Setup": 28,
+       "Method Implementation": 142,
+       "Logging, Analysis & Presentation": 10,
+       "Environment & Infrastructure Setup": 14,
+       "Data Processing & Preparation": 28,
+       "Dataset and Model Acquisition": 10,
+       "Analysis & Presentation": 1,
+       "Logging": 1
+      }
+     }
+    },
+    {
+     "key": "benchmark100__flashdecoding-faster-large-language-model",
+     "slug": "flashdecoding-faster-large-language-model",
+     "title": "FlashDecoding++: Faster Large Language Model Inference on GPUs",
+     "stats": {
+      "nodes": 647,
+      "leaves": 535,
+      "max_depth": 4,
+      "categories": {
+       "Method Implementation": 191,
+       "Evaluation, Metrics & Benchmarking": 233,
+       "Experimental Setup": 41,
+       "Logging, Analysis & Presentation": 31,
+       "Environment & Infrastructure Setup": 23,
+       "Data Processing & Preparation": 1,
+       "Evaluation": 11,
+       "Dataset and Model Acquisition": 4
+      },
+      "estimated_minutes": 20517,
+      "estimated_dollars": 4315.7
+     }
+    },
+    {
+     "key": "benchmark100__flashinfer-efficient-and-customizable-attention",
+     "slug": "flashinfer-efficient-and-customizable-attention",
+     "title": "FlashInfer: Efficient and Customizable Attention Engine for LLM Inference Serving",
+     "stats": {
+      "nodes": 430,
+      "leaves": 325,
+      "max_depth": 4,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 89,
+       "Method Implementation": 143,
+       "Experimental Setup": 28,
+       "Data Processing & Preparation": 16,
+       "Logging, Analysis & Presentation": 11,
+       "Environment & Infrastructure Setup": 19,
+       "Analysis & Presentation": 1,
+       "Evaluation": 8,
+       "Dataset and Model Acquisition": 10
+      }
+     }
+    },
+    {
+     "key": "benchmark100__kivi-a-tuning-free-asymmetric-2bit-quantization",
+     "slug": "kivi-a-tuning-free-asymmetric-2bit-quantization",
+     "title": "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache",
+     "stats": {
+      "nodes": 565,
+      "leaves": 461,
+      "max_depth": 4,
+      "categories": {
+       "Logging, Analysis & Presentation": 15,
+       "Evaluation, Metrics & Benchmarking": 247,
+       "Experimental Setup": 17,
+       "Environment & Infrastructure Setup": 16,
+       "Method Implementation": 120,
+       "Data Processing & Preparation": 8,
+       "Analysis & Presentation": 3,
+       "Dataset and Model Acquisition": 32,
+       "Logging": 3
+      }
+     }
+    },
+    {
+     "key": "benchmark100__nanoflow-towards-optimal-large-language-model",
+     "slug": "nanoflow-towards-optimal-large-language-model",
+     "title": "NanoFlow: Towards Optimal Large Language Model Serving Throughput",
+     "stats": {
+      "nodes": 738,
+      "leaves": 651,
+      "max_depth": 3,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 381,
+       "Method Implementation": 147,
+       "Experimental Setup": 72,
+       "Metrics & Benchmarking": 20,
+       "Analysis & Presentation": 8,
+       "Logging, Analysis & Presentation": 9,
+       "Environment & Infrastructure Setup": 6,
+       "Data Processing & Preparation": 5,
+       "Logging": 3
+      },
+      "estimated_minutes": 42585,
+      "estimated_dollars": 9809.3
+     }
+    },
+    {
+     "key": "benchmark100__sglang-efficient-execution-of-structured-language",
+     "slug": "sglang-efficient-execution-of-structured-language",
+     "title": "SGLang: Efficient Execution of Structured Language Model Programs",
+     "stats": {
+      "nodes": 612,
+      "leaves": 507,
+      "max_depth": 4,
+      "categories": {
+       "Method Implementation": 182,
+       "Experimental Setup": 42,
+       "Evaluation, Metrics & Benchmarking": 246,
+       "Logging, Analysis & Presentation": 10,
+       "Data Processing & Preparation": 3,
+       "Logging": 2,
+       "Dataset and Model Acquisition": 1,
+       "Analysis & Presentation": 3,
+       "Environment & Infrastructure Setup": 18
+      },
+      "estimated_minutes": 23298,
+      "estimated_dollars": 4724.3
+     }
+    },
+    {
+     "key": "benchmark100__taming-throughput-latency-tradeoff-in-llm",
+     "slug": "taming-throughput-latency-tradeoff-in-llm",
+     "title": "Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve",
+     "stats": {
+      "nodes": 423,
+      "leaves": 328,
+      "max_depth": 3,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 101,
+       "Experimental Setup": 46,
+       "Logging, Analysis & Presentation": 18,
+       "Method Implementation": 106,
+       "Data Processing & Preparation": 12,
+       "Evaluation": 8,
+       "Metrics & Benchmarking": 5,
+       "Environment & Infrastructure Setup": 17,
+       "Analysis & Presentation": 5,
+       "Logging": 4,
+       "Dataset and Model Acquisition": 6
+      }
+     }
+    },
+    {
+     "key": "benchmark100__turboquant-online-vector-quantization-with-near",
+     "slug": "turboquant-online-vector-quantization-with-near",
+     "title": "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate",
+     "stats": {
+      "nodes": 348,
+      "leaves": 271,
+      "max_depth": 3,
+      "categories": {
+       "Experimental Setup": 15,
+       "Evaluation, Metrics & Benchmarking": 97,
+       "Logging, Analysis & Presentation": 13,
+       "Method Implementation": 107,
+       "Data Processing & Preparation": 17,
+       "Dataset and Model Acquisition": 12,
+       "Analysis & Presentation": 1,
+       "Environment & Infrastructure Setup": 9
+      }
+     }
+    },
+    {
+     "key": "benchmark100__vattention-dynamic-memory-management-for-serving",
+     "slug": "vattention-dynamic-memory-management-for-serving",
+     "title": "vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention",
+     "stats": {
+      "nodes": 471,
+      "leaves": 371,
+      "max_depth": 3,
+      "categories": {
+       "Logging": 2,
+       "Environment & Infrastructure Setup": 23,
+       "Evaluation, Metrics & Benchmarking": 138,
+       "Method Implementation": 125,
+       "Experimental Setup": 44,
+       "Analysis & Presentation": 4,
+       "Logging, Analysis & Presentation": 18,
+       "Data Processing & Preparation": 9,
+       "Dataset and Model Acquisition": 5,
+       "Metrics & Benchmarking": 3
+      }
+     }
+    }
+   ]
+  },
+  {
    "id": "exemplar_papers",
    "label": "Exemplar papers",
    "papers": [
@@ -9,17 +296,19 @@
      "slug": "adaptive-pruning",
      "title": "APT: Adaptive Pruning and Tuning Pretrained Language Models for Efficient Training and Inference",
      "stats": {
-      "nodes": 172,
-      "leaves": 123,
+      "nodes": 247,
+      "leaves": 198,
       "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 40,
+       "Method Implementation": 61,
+       "Evaluation, Metrics & Benchmarking": 105,
+       "Experimental Setup": 26,
        "Logging, Analysis & Presentation": 1,
-       "Experimental Setup": 23,
-       "Method Implementation": 54,
        "Dataset and Model Acquisition": 4,
        "Data Processing & Preparation": 1
-      }
+      },
+      "estimated_minutes": 15288,
+      "estimated_dollars": 2377.6
      }
     },
     {
@@ -27,16 +316,18 @@
      "slug": "all-in-one",
      "title": "All-in-one simulation-based inference",
      "stats": {
-      "nodes": 234,
-      "leaves": 174,
+      "nodes": 303,
+      "leaves": 242,
       "max_depth": 6,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 35,
-       "Method Implementation": 66,
-       "Logging, Analysis & Presentation": 4,
-       "Experimental Setup": 54,
-       "Data Processing & Preparation": 15
-      }
+       "Experimental Setup": 47,
+       "Evaluation, Metrics & Benchmarking": 108,
+       "Method Implementation": 80,
+       "Logging, Analysis & Presentation": 3,
+       "Data Processing & Preparation": 4
+      },
+      "estimated_minutes": 14617,
+      "estimated_dollars": 2166.95
      }
     },
     {
@@ -44,16 +335,18 @@
      "slug": "bam",
      "title": "Batch and match: black-box variational inference with a score-based divergence",
      "stats": {
-      "nodes": 1021,
-      "leaves": 789,
+      "nodes": 1055,
+      "leaves": 817,
       "max_depth": 9,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 196,
-       "Method Implementation": 142,
-       "Experimental Setup": 447,
+       "Method Implementation": 152,
+       "Experimental Setup": 451,
+       "Evaluation, Metrics & Benchmarking": 210,
        "Dataset and Model Acquisition": 3,
        "Data Processing & Preparation": 1
-      }
+      },
+      "estimated_minutes": 10829,
+      "estimated_dollars": 1622.3
      }
     },
     {
@@ -61,18 +354,20 @@
      "slug": "bbox",
      "title": "BBox-Adapter: Lightweight Adapting for Black-Box Large Language Models",
      "stats": {
-      "nodes": 422,
-      "leaves": 279,
+      "nodes": 735,
+      "leaves": 578,
       "max_depth": 7,
       "categories": {
+       "Method Implementation": 60,
+       "Experimental Setup": 67,
+       "Evaluation, Metrics & Benchmarking": 385,
        "Logging, Analysis & Presentation": 44,
-       "Evaluation, Metrics & Benchmarking": 129,
-       "Experimental Setup": 43,
-       "Method Implementation": 40,
-       "Environment & Infrastructure Setup": 2,
+       "Environment & Infrastructure Setup": 1,
        "Data Processing & Preparation": 9,
        "Dataset and Model Acquisition": 12
-      }
+      },
+      "estimated_minutes": 49333,
+      "estimated_dollars": 11772.3
      }
     },
     {
@@ -80,17 +375,19 @@
      "slug": "bridging-data-gaps",
      "title": "Bridging Data Gaps in Diffusion Models with Adversarial Noise-Based Transfer Learning",
      "stats": {
-      "nodes": 207,
-      "leaves": 172,
+      "nodes": 280,
+      "leaves": 238,
       "max_depth": 4,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 71,
-       "Method Implementation": 58,
+       "Method Implementation": 68,
+       "Experimental Setup": 39,
+       "Evaluation, Metrics & Benchmarking": 122,
        "Logging, Analysis & Presentation": 4,
-       "Experimental Setup": 34,
        "Dataset and Model Acquisition": 4,
        "Data Processing & Preparation": 1
-      }
+      },
+      "estimated_minutes": 25442,
+      "estimated_dollars": 4183.4
      }
     },
     {
@@ -98,16 +395,18 @@
      "slug": "fre",
      "title": "Unsupervised Zero-Shot Reinforcement Learning via Functional Reward Encodings",
      "stats": {
-      "nodes": 636,
-      "leaves": 437,
+      "nodes": 681,
+      "leaves": 499,
       "max_depth": 6,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 244,
-       "Experimental Setup": 71,
-       "Data Processing & Preparation": 10,
-       "Method Implementation": 110,
+       "Method Implementation": 88,
+       "Experimental Setup": 50,
+       "Evaluation, Metrics & Benchmarking": 355,
+       "Data Processing & Preparation": 4,
        "Dataset and Model Acquisition": 2
-      }
+      },
+      "estimated_minutes": 60261,
+      "estimated_dollars": 9253.7
      }
     },
     {
@@ -115,18 +414,20 @@
      "slug": "ftrl",
      "title": "Fine-tuning Reinforcement Learning Models is Secretly a Forgetting Mitigation Problem",
      "stats": {
-      "nodes": 233,
-      "leaves": 178,
+      "nodes": 312,
+      "leaves": 251,
       "max_depth": 7,
       "categories": {
+       "Method Implementation": 42,
+       "Experimental Setup": 91,
+       "Evaluation, Metrics & Benchmarking": 105,
        "Logging, Analysis & Presentation": 5,
-       "Evaluation, Metrics & Benchmarking": 48,
-       "Experimental Setup": 85,
-       "Method Implementation": 32,
        "Data Processing & Preparation": 4,
        "Environment & Infrastructure Setup": 3,
        "Dataset and Model Acquisition": 1
-      }
+      },
+      "estimated_minutes": 83031,
+      "estimated_dollars": 5139.8
      }
     },
     {
@@ -134,17 +435,19 @@
      "slug": "lbcs",
      "title": "Refined Coreset Selection: Towards Minimal Coreset Size under Model Performance Constraints",
      "stats": {
-      "nodes": 1471,
-      "leaves": 916,
+      "nodes": 1557,
+      "leaves": 997,
       "max_depth": 7,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 694,
-       "Method Implementation": 86,
-       "Experimental Setup": 116,
+       "Method Implementation": 94,
+       "Experimental Setup": 119,
+       "Evaluation, Metrics & Benchmarking": 764,
        "Logging, Analysis & Presentation": 4,
        "Data Processing & Preparation": 8,
        "Dataset and Model Acquisition": 8
-      }
+      },
+      "estimated_minutes": 75177,
+      "estimated_dollars": 9138.5
      }
     },
     {
@@ -187,16 +490,17 @@
      "slug": "pinn",
      "title": "Challenges in Training PINNs: A Loss Landscape Perspective",
      "stats": {
-      "nodes": 2551,
-      "leaves": 1963,
-      "max_depth": 8,
+      "nodes": 211,
+      "leaves": 161,
+      "max_depth": 6,
       "categories": {
-       "Logging, Analysis & Presentation": 19,
-       "Evaluation, Metrics & Benchmarking": 316,
-       "Experimental Setup": 1348,
-       "Method Implementation": 31,
-       "Data Processing & Preparation": 249
-      }
+       "Method Implementation": 20,
+       "Evaluation, Metrics & Benchmarking": 105,
+       "Experimental Setup": 17,
+       "Logging, Analysis & Presentation": 19
+      },
+      "estimated_minutes": 11057,
+      "estimated_dollars": 1378.05
      }
     },
     {
@@ -204,17 +508,19 @@
      "slug": "rice",
      "title": "RICE: Breaking Through the Training Bottlenecks of Reinforcement Learning with Explanation",
      "stats": {
-      "nodes": 489,
-      "leaves": 361,
+      "nodes": 519,
+      "leaves": 408,
       "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 134,
-       "Experimental Setup": 100,
-       "Logging, Analysis & Presentation": 19,
-       "Method Implementation": 88,
+       "Evaluation, Metrics & Benchmarking": 189,
+       "Method Implementation": 101,
+       "Experimental Setup": 89,
+       "Logging, Analysis & Presentation": 9,
        "Data Processing & Preparation": 3,
        "Environment & Infrastructure Setup": 17
-      }
+      },
+      "estimated_minutes": 23798,
+      "estimated_dollars": 3733.4
      }
     },
     {
@@ -222,17 +528,19 @@
      "slug": "robust-clip",
      "title": "Robust CLIP: Unsupervised Adversarial Fine-Tuning of Vision Embeddings for Robust Large Vision-Language Models",
      "stats": {
-      "nodes": 146,
-      "leaves": 106,
+      "nodes": 226,
+      "leaves": 180,
       "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 49,
-       "Experimental Setup": 17,
-       "Method Implementation": 24,
+       "Experimental Setup": 26,
+       "Method Implementation": 37,
+       "Evaluation, Metrics & Benchmarking": 101,
        "Data Processing & Preparation": 5,
        "Logging, Analysis & Presentation": 6,
        "Dataset and Model Acquisition": 5
-      }
+      },
+      "estimated_minutes": 18230,
+      "estimated_dollars": 2404.8
      }
     },
     {
@@ -240,17 +548,18 @@
      "slug": "sample-specific-masks",
      "title": "Sample-specific Masks for Visual Reprogramming-based Prompting",
      "stats": {
-      "nodes": 396,
-      "leaves": 331,
-      "max_depth": 6,
+      "nodes": 190,
+      "leaves": 164,
+      "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 170,
-       "Logging, Analysis & Presentation": 1,
-       "Method Implementation": 51,
-       "Data Processing & Preparation": 10,
-       "Experimental Setup": 85,
+       "Method Implementation": 59,
+       "Experimental Setup": 8,
+       "Evaluation, Metrics & Benchmarking": 74,
+       "Data Processing & Preparation": 9,
        "Dataset and Model Acquisition": 14
-      }
+      },
+      "estimated_minutes": 22051,
+      "estimated_dollars": 2395.6
      }
     },
     {
@@ -258,16 +567,18 @@
      "slug": "sapg",
      "title": "SAPG: Split and Aggregate Policy Gradients",
      "stats": {
-      "nodes": 279,
-      "leaves": 206,
+      "nodes": 331,
+      "leaves": 252,
       "max_depth": 5,
       "categories": {
+       "Method Implementation": 44,
+       "Experimental Setup": 78,
+       "Evaluation, Metrics & Benchmarking": 104,
        "Logging, Analysis & Presentation": 17,
-       "Experimental Setup": 75,
-       "Evaluation, Metrics & Benchmarking": 68,
-       "Method Implementation": 37,
        "Environment & Infrastructure Setup": 9
-      }
+      },
+      "estimated_minutes": 479844,
+      "estimated_dollars": 17056.1
      }
     },
     {
@@ -275,16 +586,18 @@
      "slug": "self-composing-policies",
      "title": "Self-Composing Policies for Scalable Continual Reinforcement Learning",
      "stats": {
-      "nodes": 357,
-      "leaves": 275,
+      "nodes": 438,
+      "leaves": 359,
       "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 62,
+       "Method Implementation": 57,
+       "Experimental Setup": 103,
+       "Evaluation, Metrics & Benchmarking": 156,
        "Logging, Analysis & Presentation": 28,
-       "Method Implementation": 75,
-       "Experimental Setup": 95,
        "Environment & Infrastructure Setup": 15
-      }
+      },
+      "estimated_minutes": 79058,
+      "estimated_dollars": 5017.2
      }
     },
     {
@@ -292,17 +605,18 @@
      "slug": "self-expansion",
      "title": "Self-Expansion of Pre-trained Models with Mixture of Adapters for Continual Learning",
      "stats": {
-      "nodes": 363,
-      "leaves": 253,
-      "max_depth": 6,
+      "nodes": 140,
+      "leaves": 121,
+      "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 134,
-       "Experimental Setup": 72,
-       "Logging, Analysis & Presentation": 4,
-       "Method Implementation": 37,
+       "Method Implementation": 27,
+       "Experimental Setup": 6,
+       "Evaluation, Metrics & Benchmarking": 82,
        "Data Processing & Preparation": 2,
        "Dataset and Model Acquisition": 4
-      }
+      },
+      "estimated_minutes": 10527,
+      "estimated_dollars": 1770.1
      }
     },
     {
@@ -310,16 +624,18 @@
      "slug": "semantic-self-consistency",
      "title": "Semantic Self-Consistency: Enhancing Language Model Reasoning via Semantic Weighting",
      "stats": {
-      "nodes": 100,
-      "leaves": 77,
+      "nodes": 446,
+      "leaves": 413,
       "max_depth": 4,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 36,
-       "Experimental Setup": 14,
-       "Method Implementation": 22,
+       "Experimental Setup": 50,
+       "Evaluation, Metrics & Benchmarking": 337,
+       "Method Implementation": 21,
        "Data Processing & Preparation": 2,
        "Dataset and Model Acquisition": 3
-      }
+      },
+      "estimated_minutes": 34033,
+      "estimated_dollars": 7206.8
      }
     },
     {
@@ -327,15 +643,17 @@
      "slug": "sequential-neural-score-estimation",
      "title": "Sequential Neural Score Estimation: Likelihood-Free Inference with Conditional Score Based Diffusion Models",
      "stats": {
-      "nodes": 123,
-      "leaves": 92,
+      "nodes": 147,
+      "leaves": 110,
       "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 25,
-       "Experimental Setup": 18,
-       "Data Processing & Preparation": 13,
-       "Method Implementation": 36
-      }
+       "Method Implementation": 48,
+       "Experimental Setup": 20,
+       "Evaluation, Metrics & Benchmarking": 30,
+       "Data Processing & Preparation": 12
+      },
+      "estimated_minutes": 8940,
+      "estimated_dollars": 881.2
      }
     },
     {
@@ -343,16 +661,18 @@
      "slug": "stay-on-topic-with-classifier-free-guidance",
      "title": "Stay on topic with Classifier-Free Guidance",
      "stats": {
-      "nodes": 186,
-      "leaves": 121,
-      "max_depth": 7,
+      "nodes": 271,
+      "leaves": 222,
+      "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 62,
-       "Experimental Setup": 15,
-       "Method Implementation": 22,
-       "Dataset and Model Acquisition": 18,
+       "Evaluation, Metrics & Benchmarking": 137,
+       "Method Implementation": 18,
+       "Experimental Setup": 48,
+       "Dataset and Model Acquisition": 15,
        "Logging, Analysis & Presentation": 4
-      }
+      },
+      "estimated_minutes": 16018,
+      "estimated_dollars": 2369.5
      }
     },
     {
@@ -360,16 +680,18 @@
      "slug": "stochastic-interpolants",
      "title": "Stochastic Interpolants with Data-Dependent Couplings",
      "stats": {
-      "nodes": 94,
-      "leaves": 69,
+      "nodes": 123,
+      "leaves": 91,
       "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 9,
-       "Experimental Setup": 18,
-       "Method Implementation": 36,
+       "Method Implementation": 43,
+       "Experimental Setup": 26,
+       "Evaluation, Metrics & Benchmarking": 16,
        "Data Processing & Preparation": 5,
        "Dataset and Model Acquisition": 1
-      }
+      },
+      "estimated_minutes": 23136,
+      "estimated_dollars": 1907.6
      }
     },
     {
@@ -377,17 +699,19 @@
      "slug": "test-time-model-adaptation",
      "title": "Test-Time Model Adaptation with Only Forward Passes",
      "stats": {
-      "nodes": 236,
-      "leaves": 163,
+      "nodes": 380,
+      "leaves": 303,
       "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 75,
-       "Experimental Setup": 38,
+       "Method Implementation": 43,
+       "Experimental Setup": 44,
+       "Evaluation, Metrics & Benchmarking": 203,
        "Dataset and Model Acquisition": 7,
        "Data Processing & Preparation": 5,
-       "Method Implementation": 37,
        "Logging, Analysis & Presentation": 1
-      }
+      },
+      "estimated_minutes": 20526,
+      "estimated_dollars": 3128.0
      }
     },
     {
@@ -395,236 +719,443 @@
      "slug": "what-will-my-model-forget",
      "title": "What Will My Model Forget? Forecasting Forgotten Examples in Language Model Refinement",
      "stats": {
-      "nodes": 1146,
-      "leaves": 921,
+      "nodes": 836,
+      "leaves": 684,
       "max_depth": 5,
       "categories": {
-       "Evaluation, Metrics & Benchmarking": 425,
-       "Data Processing & Preparation": 107,
-       "Dataset and Model Acquisition": 82,
-       "Method Implementation": 177,
-       "Experimental Setup": 128,
-       "Logging, Analysis & Presentation": 2
-      }
+       "Method Implementation": 133,
+       "Evaluation, Metrics & Benchmarking": 350,
+       "Experimental Setup": 82,
+       "Data Processing & Preparation": 70,
+       "Dataset and Model Acquisition": 48,
+       "Logging, Analysis & Presentation": 1
+      },
+      "estimated_minutes": 38746,
+      "estimated_dollars": 6146.2
      }
     }
    ]
   },
   {
-   "id": "researchbench_inference10_h100_stage1",
-   "label": "researchbench_inference10_h100_stage1",
+   "id": "paperbench23",
+   "label": "paperbench23",
    "papers": [
     {
-     "key": "researchbench_inference10_h100_stage1__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
-     "slug": "FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
-     "title": "AutoKernel: Autonomous GPU Kernel Optimization via Iterative Agent-Driven Search",
+     "key": "paperbench23__adaptive-pruning",
+     "slug": "adaptive-pruning",
+     "title": "APT: Adaptive Pruning and Tuning Pretrained Language Models for Efficient Training and Inference",
      "stats": {
-      "nodes": 293,
-      "leaves": 268,
-      "max_depth": 3,
+      "nodes": 247,
+      "leaves": 198,
+      "max_depth": 5,
       "categories": {
-       "Method Implementation": 86,
-       "Evaluation, Metrics & Benchmarking": 155,
-       "Experimental Setup": 15,
-       "Logging, Analysis & Presentation": 3,
-       "Dataset and Model Acquisition": 2,
-       "Environment & Infrastructure Setup": 7
+       "Method Implementation": 61,
+       "Evaluation, Metrics & Benchmarking": 105,
+       "Experimental Setup": 26,
+       "Logging, Analysis & Presentation": 1,
+       "Dataset and Model Acquisition": 4,
+       "Data Processing & Preparation": 1
       },
-      "estimated_minutes": 7619,
-      "estimated_dollars": 1311.75
+      "estimated_minutes": 15288,
+      "estimated_dollars": 2377.6
      }
     },
     {
-     "key": "researchbench_inference10_h100_stage1__asynctls-efficient-generative-llm-inference-with",
-     "slug": "asynctls-efficient-generative-llm-inference-with",
-     "title": "AsyncTLS: Efficient Generative LLM Inference with Asynchronous Two-level Sparse Attention",
+     "key": "paperbench23__all-in-one",
+     "slug": "all-in-one",
+     "title": "All-in-one simulation-based inference",
      "stats": {
-      "nodes": 532,
-      "leaves": 475,
-      "max_depth": 3,
+      "nodes": 303,
+      "leaves": 242,
+      "max_depth": 6,
+      "categories": {
+       "Experimental Setup": 47,
+       "Evaluation, Metrics & Benchmarking": 108,
+       "Method Implementation": 80,
+       "Logging, Analysis & Presentation": 3,
+       "Data Processing & Preparation": 4
+      },
+      "estimated_minutes": 14617,
+      "estimated_dollars": 2166.95
+     }
+    },
+    {
+     "key": "paperbench23__bam",
+     "slug": "bam",
+     "title": "Batch and match: black-box variational inference with a score-based divergence",
+     "stats": {
+      "nodes": 1055,
+      "leaves": 817,
+      "max_depth": 9,
+      "categories": {
+       "Method Implementation": 152,
+       "Experimental Setup": 451,
+       "Evaluation, Metrics & Benchmarking": 210,
+       "Dataset and Model Acquisition": 3,
+       "Data Processing & Preparation": 1
+      },
+      "estimated_minutes": 10829,
+      "estimated_dollars": 1622.3
+     }
+    },
+    {
+     "key": "paperbench23__bbox",
+     "slug": "bbox",
+     "title": "BBox-Adapter: Lightweight Adapting for Black-Box Large Language Models",
+     "stats": {
+      "nodes": 735,
+      "leaves": 578,
+      "max_depth": 7,
+      "categories": {
+       "Method Implementation": 60,
+       "Experimental Setup": 67,
+       "Evaluation, Metrics & Benchmarking": 385,
+       "Logging, Analysis & Presentation": 44,
+       "Environment & Infrastructure Setup": 1,
+       "Data Processing & Preparation": 9,
+       "Dataset and Model Acquisition": 12
+      },
+      "estimated_minutes": 49333,
+      "estimated_dollars": 11772.3
+     }
+    },
+    {
+     "key": "paperbench23__bridging-data-gaps",
+     "slug": "bridging-data-gaps",
+     "title": "Bridging Data Gaps in Diffusion Models with Adversarial Noise-Based Transfer Learning",
+     "stats": {
+      "nodes": 280,
+      "leaves": 238,
+      "max_depth": 4,
+      "categories": {
+       "Method Implementation": 68,
+       "Experimental Setup": 39,
+       "Evaluation, Metrics & Benchmarking": 122,
+       "Logging, Analysis & Presentation": 4,
+       "Dataset and Model Acquisition": 4,
+       "Data Processing & Preparation": 1
+      },
+      "estimated_minutes": 25442,
+      "estimated_dollars": 4183.4
+     }
+    },
+    {
+     "key": "paperbench23__fre",
+     "slug": "fre",
+     "title": "Unsupervised Zero-Shot Reinforcement Learning via Functional Reward Encodings",
+     "stats": {
+      "nodes": 681,
+      "leaves": 499,
+      "max_depth": 6,
+      "categories": {
+       "Method Implementation": 88,
+       "Experimental Setup": 50,
+       "Evaluation, Metrics & Benchmarking": 355,
+       "Data Processing & Preparation": 4,
+       "Dataset and Model Acquisition": 2
+      },
+      "estimated_minutes": 60261,
+      "estimated_dollars": 9253.7
+     }
+    },
+    {
+     "key": "paperbench23__ftrl",
+     "slug": "ftrl",
+     "title": "Fine-tuning Reinforcement Learning Models is Secretly a Forgetting Mitigation Problem",
+     "stats": {
+      "nodes": 312,
+      "leaves": 251,
+      "max_depth": 7,
+      "categories": {
+       "Method Implementation": 42,
+       "Experimental Setup": 91,
+       "Evaluation, Metrics & Benchmarking": 105,
+       "Logging, Analysis & Presentation": 5,
+       "Data Processing & Preparation": 4,
+       "Environment & Infrastructure Setup": 3,
+       "Dataset and Model Acquisition": 1
+      },
+      "estimated_minutes": 83031,
+      "estimated_dollars": 5139.8
+     }
+    },
+    {
+     "key": "paperbench23__lbcs",
+     "slug": "lbcs",
+     "title": "Refined Coreset Selection: Towards Minimal Coreset Size under Model Performance Constraints",
+     "stats": {
+      "nodes": 1557,
+      "leaves": 997,
+      "max_depth": 7,
       "categories": {
        "Method Implementation": 94,
-       "Experimental Setup": 29,
-       "Evaluation, Metrics & Benchmarking": 342,
-       "Logging, Analysis & Presentation": 1,
-       "Environment & Infrastructure Setup": 3,
-       "Data Processing & Preparation": 1,
-       "Dataset and Model Acquisition": 5
+       "Experimental Setup": 119,
+       "Evaluation, Metrics & Benchmarking": 764,
+       "Logging, Analysis & Presentation": 4,
+       "Data Processing & Preparation": 8,
+       "Dataset and Model Acquisition": 8
       },
-      "estimated_minutes": 47857,
-      "estimated_dollars": 8949.9
+      "estimated_minutes": 75177,
+      "estimated_dollars": 9138.5
      }
     },
     {
-     "key": "researchbench_inference10_h100_stage1__cacheflow-efficient-llm-serving-with-3d-parallel",
-     "slug": "cacheflow-efficient-llm-serving-with-3d-parallel",
-     "title": "CacheFlow: Efficient LLM Serving with 3D-Parallel KV Cache Restoration",
+     "key": "paperbench23__pinn",
+     "slug": "pinn",
+     "title": "Challenges in Training PINNs: A Loss Landscape Perspective",
      "stats": {
-      "nodes": 205,
-      "leaves": 177,
-      "max_depth": 3,
+      "nodes": 211,
+      "leaves": 161,
+      "max_depth": 6,
       "categories": {
-       "Method Implementation": 28,
-       "Experimental Setup": 13,
-       "Evaluation, Metrics & Benchmarking": 113,
-       "Logging, Analysis & Presentation": 6,
-       "Environment & Infrastructure Setup": 9,
-       "Data Processing & Preparation": 2,
-       "Dataset and Model Acquisition": 6
+       "Method Implementation": 20,
+       "Evaluation, Metrics & Benchmarking": 105,
+       "Experimental Setup": 17,
+       "Logging, Analysis & Presentation": 19
       },
-      "estimated_minutes": 8445,
-      "estimated_dollars": 1920.4
+      "estimated_minutes": 11057,
+      "estimated_dollars": 1378.05
      }
     },
     {
-     "key": "researchbench_inference10_h100_stage1__duetserve-harmonizing-prefill-and-decode-for-llm",
-     "slug": "duetserve-harmonizing-prefill-and-decode-for-llm",
-     "title": "DuetServe: Harmonizing Prefill and Decode for LLM Serving via Adaptive GPU Multiplexing",
+     "key": "paperbench23__rice",
+     "slug": "rice",
+     "title": "RICE: Breaking Through the Training Bottlenecks of Reinforcement Learning with Explanation",
      "stats": {
-      "nodes": 402,
-      "leaves": 350,
-      "max_depth": 3,
+      "nodes": 519,
+      "leaves": 408,
+      "max_depth": 5,
       "categories": {
-       "Method Implementation": 79,
-       "Experimental Setup": 30,
-       "Evaluation, Metrics & Benchmarking": 228,
-       "Logging, Analysis & Presentation": 2,
-       "Environment & Infrastructure Setup": 5,
-       "Data Processing & Preparation": 1,
-       "Dataset and Model Acquisition": 5
-      },
-      "estimated_minutes": 16992,
-      "estimated_dollars": 3723.4
-     }
-    },
-    {
-     "key": "researchbench_inference10_h100_stage1__fast-heterogeneous-serving-scalable-mixed-scale",
-     "slug": "fast-heterogeneous-serving-scalable-mixed-scale",
-     "title": "Fast Heterogeneous Serving: Scalable Mixed-Scale LLM Allocation for SLO-Constrained Inference",
-     "stats": {
-      "nodes": 108,
-      "leaves": 93,
-      "max_depth": 3,
-      "categories": {
-       "Logging, Analysis & Presentation": 3,
-       "Evaluation, Metrics & Benchmarking": 31,
-       "Method Implementation": 41,
-       "Experimental Setup": 15,
-       "Data Processing & Preparation": 1,
-       "Environment & Infrastructure Setup": 1,
-       "Dataset and Model Acquisition": 1
-      }
-     }
-    },
-    {
-     "key": "researchbench_inference10_h100_stage1__flexicache-leveraging-temporal-stability-of",
-     "slug": "flexicache-leveraging-temporal-stability-of",
-     "title": "FlexiCache: Leveraging Temporal Stability of Attention Heads for Efficient KV Cache Management",
-     "stats": {
-      "nodes": 114,
-      "leaves": 96,
-      "max_depth": 2,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 38,
-       "Experimental Setup": 15,
-       "Logging, Analysis & Presentation": 1,
-       "Method Implementation": 32,
-       "Dataset and Model Acquisition": 7,
-       "Environment & Infrastructure Setup": 3
-      }
-     }
-    },
-    {
-     "key": "researchbench_inference10_h100_stage1__lamp-look-ahead-mixed-precision-inference-of",
-     "slug": "lamp-look-ahead-mixed-precision-inference-of",
-     "title": "LAMP: Look-Ahead Mixed-Precision Inference of Large Language Models",
-     "stats": {
-      "nodes": 321,
-      "leaves": 288,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 69,
-       "Evaluation, Metrics & Benchmarking": 182,
-       "Experimental Setup": 24,
-       "Logging, Analysis & Presentation": 3,
-       "Data Processing & Preparation": 1,
-       "Environment & Infrastructure Setup": 2,
-       "Dataset and Model Acquisition": 7
-      },
-      "estimated_minutes": 15908,
-      "estimated_dollars": 2295.9
-     }
-    },
-    {
-     "key": "researchbench_inference10_h100_stage1__llmservingsim-2-0-a-unified-simulator-for",
-     "slug": "llmservingsim-2-0-a-unified-simulator-for",
-     "title": "LLMServingSim 2.0: A Unified Simulator for Heterogeneous and Disaggregated LLM Serving Infrastructure",
-     "stats": {
-      "nodes": 245,
-      "leaves": 214,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 57,
-       "Experimental Setup": 49,
-       "Evaluation, Metrics & Benchmarking": 101,
+       "Evaluation, Metrics & Benchmarking": 189,
+       "Method Implementation": 101,
+       "Experimental Setup": 89,
+       "Logging, Analysis & Presentation": 9,
        "Data Processing & Preparation": 3,
-       "Dataset and Model Acquisition": 2,
-       "Environment & Infrastructure Setup": 2
+       "Environment & Infrastructure Setup": 17
       },
-      "estimated_minutes": 8293,
-      "estimated_dollars": 1487.8
+      "estimated_minutes": 23798,
+      "estimated_dollars": 3733.4
      }
     },
     {
-     "key": "researchbench_inference10_h100_stage1__the-illusion-of-equivalence-systematic-fp16",
-     "slug": "the-illusion-of-equivalence-systematic-fp16",
-     "title": "The Illusion of Equivalence: Systematic FP16 Divergence in KV-Cached Autoregressive Inference",
+     "key": "paperbench23__robust-clip",
+     "slug": "robust-clip",
+     "title": "Robust CLIP: Unsupervised Adversarial Fine-Tuning of Vision Embeddings for Robust Large Vision-Language Models",
      "stats": {
-      "nodes": 703,
-      "leaves": 650,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 72,
-       "Experimental Setup": 49,
-       "Evaluation, Metrics & Benchmarking": 518,
-       "Logging, Analysis & Presentation": 3,
-       "Data Processing & Preparation": 1,
-       "Dataset and Model Acquisition": 4,
-       "Environment & Infrastructure Setup": 3
-      },
-      "estimated_minutes": 76314,
-      "estimated_dollars": 12026.05
-     }
-    },
-    {
-     "key": "researchbench_inference10_h100_stage1__tutti-making-ssd-backed-kv-cache-practical-for",
-     "slug": "tutti-making-ssd-backed-kv-cache-practical-for",
-     "title": "Tutti: Making SSD-Backed KV Cache Practical for Long-Context LLM Serving",
-     "stats": {
-      "nodes": 240,
-      "leaves": 220,
-      "max_depth": 3,
+      "nodes": 226,
+      "leaves": 180,
+      "max_depth": 5,
       "categories": {
        "Experimental Setup": 26,
        "Method Implementation": 37,
-       "Evaluation, Metrics & Benchmarking": 138,
-       "Logging, Analysis & Presentation": 5,
-       "Data Processing & Preparation": 1,
-       "Dataset and Model Acquisition": 8,
-       "Environment & Infrastructure Setup": 5
+       "Evaluation, Metrics & Benchmarking": 101,
+       "Data Processing & Preparation": 5,
+       "Logging, Analysis & Presentation": 6,
+       "Dataset and Model Acquisition": 5
       },
-      "estimated_minutes": 11166,
-      "estimated_dollars": 2524.7
+      "estimated_minutes": 18230,
+      "estimated_dollars": 2404.8
+     }
+    },
+    {
+     "key": "paperbench23__sample-specific-masks",
+     "slug": "sample-specific-masks",
+     "title": "Sample-specific Masks for Visual Reprogramming-based Prompting",
+     "stats": {
+      "nodes": 190,
+      "leaves": 164,
+      "max_depth": 5,
+      "categories": {
+       "Method Implementation": 59,
+       "Experimental Setup": 8,
+       "Evaluation, Metrics & Benchmarking": 74,
+       "Data Processing & Preparation": 9,
+       "Dataset and Model Acquisition": 14
+      },
+      "estimated_minutes": 22051,
+      "estimated_dollars": 2395.6
+     }
+    },
+    {
+     "key": "paperbench23__sapg",
+     "slug": "sapg",
+     "title": "SAPG: Split and Aggregate Policy Gradients",
+     "stats": {
+      "nodes": 331,
+      "leaves": 252,
+      "max_depth": 5,
+      "categories": {
+       "Method Implementation": 44,
+       "Experimental Setup": 78,
+       "Evaluation, Metrics & Benchmarking": 104,
+       "Logging, Analysis & Presentation": 17,
+       "Environment & Infrastructure Setup": 9
+      },
+      "estimated_minutes": 479844,
+      "estimated_dollars": 17056.1
+     }
+    },
+    {
+     "key": "paperbench23__self-composing-policies",
+     "slug": "self-composing-policies",
+     "title": "Self-Composing Policies for Scalable Continual Reinforcement Learning",
+     "stats": {
+      "nodes": 438,
+      "leaves": 359,
+      "max_depth": 5,
+      "categories": {
+       "Method Implementation": 57,
+       "Experimental Setup": 103,
+       "Evaluation, Metrics & Benchmarking": 156,
+       "Logging, Analysis & Presentation": 28,
+       "Environment & Infrastructure Setup": 15
+      },
+      "estimated_minutes": 79058,
+      "estimated_dollars": 5017.2
+     }
+    },
+    {
+     "key": "paperbench23__self-expansion",
+     "slug": "self-expansion",
+     "title": "Self-Expansion of Pre-trained Models with Mixture of Adapters for Continual Learning",
+     "stats": {
+      "nodes": 140,
+      "leaves": 121,
+      "max_depth": 5,
+      "categories": {
+       "Method Implementation": 27,
+       "Experimental Setup": 6,
+       "Evaluation, Metrics & Benchmarking": 82,
+       "Data Processing & Preparation": 2,
+       "Dataset and Model Acquisition": 4
+      },
+      "estimated_minutes": 10527,
+      "estimated_dollars": 1770.1
+     }
+    },
+    {
+     "key": "paperbench23__semantic-self-consistency",
+     "slug": "semantic-self-consistency",
+     "title": "Semantic Self-Consistency: Enhancing Language Model Reasoning via Semantic Weighting",
+     "stats": {
+      "nodes": 446,
+      "leaves": 413,
+      "max_depth": 4,
+      "categories": {
+       "Experimental Setup": 50,
+       "Evaluation, Metrics & Benchmarking": 337,
+       "Method Implementation": 21,
+       "Data Processing & Preparation": 2,
+       "Dataset and Model Acquisition": 3
+      },
+      "estimated_minutes": 34033,
+      "estimated_dollars": 7206.8
+     }
+    },
+    {
+     "key": "paperbench23__sequential-neural-score-estimation",
+     "slug": "sequential-neural-score-estimation",
+     "title": "Sequential Neural Score Estimation: Likelihood-Free Inference with Conditional Score Based Diffusion Models",
+     "stats": {
+      "nodes": 147,
+      "leaves": 110,
+      "max_depth": 5,
+      "categories": {
+       "Method Implementation": 48,
+       "Experimental Setup": 20,
+       "Evaluation, Metrics & Benchmarking": 30,
+       "Data Processing & Preparation": 12
+      },
+      "estimated_minutes": 8940,
+      "estimated_dollars": 881.2
+     }
+    },
+    {
+     "key": "paperbench23__stay-on-topic-with-classifier-free-guidance",
+     "slug": "stay-on-topic-with-classifier-free-guidance",
+     "title": "Stay on topic with Classifier-Free Guidance",
+     "stats": {
+      "nodes": 271,
+      "leaves": 222,
+      "max_depth": 5,
+      "categories": {
+       "Evaluation, Metrics & Benchmarking": 137,
+       "Method Implementation": 18,
+       "Experimental Setup": 48,
+       "Dataset and Model Acquisition": 15,
+       "Logging, Analysis & Presentation": 4
+      },
+      "estimated_minutes": 16018,
+      "estimated_dollars": 2369.5
+     }
+    },
+    {
+     "key": "paperbench23__stochastic-interpolants",
+     "slug": "stochastic-interpolants",
+     "title": "Stochastic Interpolants with Data-Dependent Couplings",
+     "stats": {
+      "nodes": 123,
+      "leaves": 91,
+      "max_depth": 5,
+      "categories": {
+       "Method Implementation": 43,
+       "Experimental Setup": 26,
+       "Evaluation, Metrics & Benchmarking": 16,
+       "Data Processing & Preparation": 5,
+       "Dataset and Model Acquisition": 1
+      },
+      "estimated_minutes": 23136,
+      "estimated_dollars": 1907.6
+     }
+    },
+    {
+     "key": "paperbench23__test-time-model-adaptation",
+     "slug": "test-time-model-adaptation",
+     "title": "Test-Time Model Adaptation with Only Forward Passes",
+     "stats": {
+      "nodes": 380,
+      "leaves": 303,
+      "max_depth": 5,
+      "categories": {
+       "Method Implementation": 43,
+       "Experimental Setup": 44,
+       "Evaluation, Metrics & Benchmarking": 203,
+       "Dataset and Model Acquisition": 7,
+       "Data Processing & Preparation": 5,
+       "Logging, Analysis & Presentation": 1
+      },
+      "estimated_minutes": 20526,
+      "estimated_dollars": 3128.0
+     }
+    },
+    {
+     "key": "paperbench23__what-will-my-model-forget",
+     "slug": "what-will-my-model-forget",
+     "title": "What Will My Model Forget? Forecasting Forgotten Examples in Language Model Refinement",
+     "stats": {
+      "nodes": 836,
+      "leaves": 684,
+      "max_depth": 5,
+      "categories": {
+       "Method Implementation": 133,
+       "Evaluation, Metrics & Benchmarking": 350,
+       "Experimental Setup": 82,
+       "Data Processing & Preparation": 70,
+       "Dataset and Model Acquisition": 48,
+       "Logging, Analysis & Presentation": 1
+      },
+      "estimated_minutes": 38746,
+      "estimated_dollars": 6146.2
      }
     }
    ]
   },
   {
-   "id": "researchbench_inference20_h100",
-   "label": "researchbench_inference20_h100",
+   "id": "researchbench20",
+   "label": "researchbench20",
    "papers": [
     {
-     "key": "researchbench_inference20_h100__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
+     "key": "researchbench20__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
      "slug": "FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
      "title": "AutoKernel: Autonomous GPU Kernel Optimization via Iterative Agent-Driven Search",
      "stats": {
@@ -644,7 +1175,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__adaserve-accelerating-multi-slo-llm-serving-with",
+     "key": "researchbench20__adaserve-accelerating-multi-slo-llm-serving-with",
      "slug": "adaserve-accelerating-multi-slo-llm-serving-with",
      "title": "AdaServe: Accelerating Multi-SLO LLM Serving with SLO-Customized Speculative Decoding",
      "stats": {
@@ -664,7 +1195,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__asynctls-efficient-generative-llm-inference-with",
+     "key": "researchbench20__asynctls-efficient-generative-llm-inference-with",
      "slug": "asynctls-efficient-generative-llm-inference-with",
      "title": "AsyncTLS: Efficient Generative LLM Inference with Asynchronous Two-level Sparse Attention",
      "stats": {
@@ -685,7 +1216,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__cacheflow-efficient-llm-serving-with-3d-parallel",
+     "key": "researchbench20__cacheflow-efficient-llm-serving-with-3d-parallel",
      "slug": "cacheflow-efficient-llm-serving-with-3d-parallel",
      "title": "CacheFlow: Efficient LLM Serving with 3D-Parallel KV Cache Restoration",
      "stats": {
@@ -706,7 +1237,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__contiguouskv-accelerating-llm-prefill-with",
+     "key": "researchbench20__contiguouskv-accelerating-llm-prefill-with",
      "slug": "contiguouskv-accelerating-llm-prefill-with",
      "title": "ContiguousKV: Accelerating LLM Prefill with Granularity-Aligned KV Cache Management",
      "stats": {
@@ -726,7 +1257,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__duetserve-harmonizing-prefill-and-decode-for-llm",
+     "key": "researchbench20__duetserve-harmonizing-prefill-and-decode-for-llm",
      "slug": "duetserve-harmonizing-prefill-and-decode-for-llm",
      "title": "DuetServe: Harmonizing Prefill and Decode for LLM Serving via Adaptive GPU Multiplexing",
      "stats": {
@@ -747,7 +1278,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__fast-heterogeneous-serving-scalable-mixed-scale",
+     "key": "researchbench20__fast-heterogeneous-serving-scalable-mixed-scale",
      "slug": "fast-heterogeneous-serving-scalable-mixed-scale",
      "title": "Fast Heterogeneous Serving: Scalable Mixed-Scale LLM Allocation for SLO-Constrained Inference",
      "stats": {
@@ -766,7 +1297,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__flexicache-leveraging-temporal-stability-of",
+     "key": "researchbench20__flexicache-leveraging-temporal-stability-of",
      "slug": "flexicache-leveraging-temporal-stability-of",
      "title": "FlexiCache: Leveraging Temporal Stability of Attention Heads for Efficient KV Cache Management",
      "stats": {
@@ -784,7 +1315,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__hexgen-flow-optimizing-llm-inference-request",
+     "key": "researchbench20__hexgen-flow-optimizing-llm-inference-request",
      "slug": "hexgen-flow-optimizing-llm-inference-request",
      "title": "HEXGEN-FLOW: Optimizing LLM Inference Request Scheduling for Agentic Text-to-SQL",
      "stats": {
@@ -803,7 +1334,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__icecache-memory-efficient-kv-cache-management-for",
+     "key": "researchbench20__icecache-memory-efficient-kv-cache-management-for",
      "slug": "icecache-memory-efficient-kv-cache-management-for",
      "title": "IceCache: Memory-efficient KV-cache Management for Long-Sequence LLMs",
      "stats": {
@@ -823,7 +1354,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__lamp-look-ahead-mixed-precision-inference-of",
+     "key": "researchbench20__lamp-look-ahead-mixed-precision-inference-of",
      "slug": "lamp-look-ahead-mixed-precision-inference-of",
      "title": "LAMP: Look-Ahead Mixed-Precision Inference of Large Language Models",
      "stats": {
@@ -844,7 +1375,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__llmservingsim-2-0-a-unified-simulator-for",
+     "key": "researchbench20__llmservingsim-2-0-a-unified-simulator-for",
      "slug": "llmservingsim-2-0-a-unified-simulator-for",
      "title": "LLMServingSim 2.0: A Unified Simulator for Heterogeneous and Disaggregated LLM Serving Infrastructure",
      "stats": {
@@ -864,7 +1395,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__nexus-proactive-intra-gpu-disaggregation-of",
+     "key": "researchbench20__nexus-proactive-intra-gpu-disaggregation-of",
      "slug": "nexus-proactive-intra-gpu-disaggregation-of",
      "title": "Nexus:Proactive Intra-GPU Disaggregation of Prefill and Decode in LLM Serving",
      "stats": {
@@ -884,7 +1415,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__niyama-breaking-the-silos-of-llm-inference-serving",
+     "key": "researchbench20__niyama-breaking-the-silos-of-llm-inference-serving",
      "slug": "niyama-breaking-the-silos-of-llm-inference-serving",
      "title": "Niyama : Breaking the Silos of LLM Inference Serving",
      "stats": {
@@ -905,7 +1436,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__prefill-as-a-service-kvcache-of-next-generation",
+     "key": "researchbench20__prefill-as-a-service-kvcache-of-next-generation",
      "slug": "prefill-as-a-service-kvcache-of-next-generation",
      "title": "Prefill-as-a-Service: KVCache of Next-Generation Models Could Go Cross-Datacenter",
      "stats": {
@@ -926,7 +1457,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__ragged-paged-attention-a-high-performance-and",
+     "key": "researchbench20__ragged-paged-attention-a-high-performance-and",
      "slug": "ragged-paged-attention-a-high-performance-and",
      "title": "Ragged Paged Attention: A High-Performance and Flexible LLM Inference Kernel for TPU",
      "stats": {
@@ -946,7 +1477,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__shift-parallelism-low-latency-high-throughput-llm",
+     "key": "researchbench20__shift-parallelism-low-latency-high-throughput-llm",
      "slug": "shift-parallelism-low-latency-high-throughput-llm",
      "title": "Shift Parallelism: Low-Latency, High-Throughput LLM Inference for Dynamic Workloads",
      "stats": {
@@ -967,7 +1498,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__the-illusion-of-equivalence-systematic-fp16",
+     "key": "researchbench20__the-illusion-of-equivalence-systematic-fp16",
      "slug": "the-illusion-of-equivalence-systematic-fp16",
      "title": "The Illusion of Equivalence: Systematic FP16 Divergence in KV-Cached Autoregressive Inference",
      "stats": {
@@ -988,7 +1519,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__ttkv-temporal-tiered-kv-cache-for-long-context",
+     "key": "researchbench20__ttkv-temporal-tiered-kv-cache-for-long-context",
      "slug": "ttkv-temporal-tiered-kv-cache-for-long-context",
      "title": "TTKV: Temporal-Tiered KV Cache for Long-Context LLM Inference",
      "stats": {
@@ -1008,7 +1539,7 @@
      }
     },
     {
-     "key": "researchbench_inference20_h100__tutti-making-ssd-backed-kv-cache-practical-for",
+     "key": "researchbench20__tutti-making-ssd-backed-kv-cache-practical-for",
      "slug": "tutti-making-ssd-backed-kv-cache-practical-for",
      "title": "Tutti: Making SSD-Backed KV Cache Practical for Long-Context LLM Serving",
      "stats": {
@@ -1029,265 +1560,6 @@
      }
     }
    ]
-  },
-  {
-   "id": "researchbench_inference9_h100_stage2",
-   "label": "researchbench_inference9_h100_stage2",
-   "papers": [
-    {
-     "key": "researchbench_inference9_h100_stage2__an-interpretable-latency-model-for-speculative",
-     "slug": "an-interpretable-latency-model-for-speculative",
-     "title": "An Interpretable Latency Model for Speculative Decoding in LLM Serving",
-     "stats": {
-      "nodes": 217,
-      "leaves": 190,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 37,
-       "Experimental Setup": 21,
-       "Evaluation, Metrics & Benchmarking": 113,
-       "Analysis & Presentation": 5,
-       "Logging": 1,
-       "Data Processing & Preparation": 3,
-       "Dataset and Model Acquisition": 6,
-       "Environment & Infrastructure Setup": 4
-      },
-      "estimated_minutes": 28339,
-      "estimated_dollars": 4586.6
-     }
-    },
-    {
-     "key": "researchbench_inference9_h100_stage2__from-buffers-to-registers-unlocking-fine-grained",
-     "slug": "from-buffers-to-registers-unlocking-fine-grained",
-     "title": "From Buffers to Registers: Unlocking Fine-Grained FlashAttention with Hybrid-Bonded 3D NPU Co-Design",
-     "stats": {
-      "nodes": 154,
-      "leaves": 138,
-      "max_depth": 3,
-      "categories": {
-       "Experimental Setup": 14,
-       "Evaluation, Metrics & Benchmarking": 88,
-       "Method Implementation": 27,
-       "Analysis & Presentation": 3,
-       "Data Processing & Preparation": 1,
-       "Dataset and Model Acquisition": 2,
-       "Environment & Infrastructure Setup": 3
-      },
-      "estimated_minutes": 6210,
-      "estimated_dollars": 1284.8
-     }
-    },
-    {
-     "key": "researchbench_inference9_h100_stage2__frontier-towards-comprehensive-and-accurate-llm",
-     "slug": "frontier-towards-comprehensive-and-accurate-llm",
-     "title": "Frontier: Towards Comprehensive and Accurate LLM Inference Simulation",
-     "stats": {
-      "nodes": 686,
-      "leaves": 638,
-      "max_depth": 3,
-      "categories": {
-       "Experimental Setup": 62,
-       "Method Implementation": 67,
-       "Evaluation, Metrics & Benchmarking": 486,
-       "Environment & Infrastructure Setup": 10,
-       "Data Processing & Preparation": 5,
-       "Logging, Analysis & Presentation": 1,
-       "Dataset and Model Acquisition": 7
-      },
-      "estimated_minutes": 38214,
-      "estimated_dollars": 7797.3
-     }
-    },
-    {
-     "key": "researchbench_inference9_h100_stage2__fsa-an-alternative-efficient-implementation-of",
-     "slug": "fsa-an-alternative-efficient-implementation-of",
-     "title": "FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel",
-     "stats": {
-      "nodes": 283,
-      "leaves": 265,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 27,
-       "Experimental Setup": 20,
-       "Evaluation, Metrics & Benchmarking": 206,
-       "Analysis & Presentation": 5,
-       "Dataset and Model Acquisition": 4,
-       "Environment & Infrastructure Setup": 3
-      },
-      "estimated_minutes": 15177,
-      "estimated_dollars": 3648.1
-     }
-    },
-    {
-     "key": "researchbench_inference9_h100_stage2__hardware-efficient-attention-for-fast-decoding",
-     "slug": "hardware-efficient-attention-for-fast-decoding",
-     "title": "Hardware-Efficient Attention for Fast Decoding",
-     "stats": {
-      "nodes": 434,
-      "leaves": 402,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 80,
-       "Experimental Setup": 36,
-       "Evaluation, Metrics & Benchmarking": 278,
-       "Dataset and Model Acquisition": 7,
-       "Environment & Infrastructure Setup": 1
-      },
-      "estimated_minutes": 625124,
-      "estimated_dollars": 62097.2
-     }
-    },
-    {
-     "key": "researchbench_inference9_h100_stage2__llm-42-enabling-determinism-in-llm-inference-with",
-     "slug": "llm-42-enabling-determinism-in-llm-inference-with",
-     "title": "LLM-42: Enabling Determinism in LLM Inference with Verified Speculation",
-     "stats": {
-      "nodes": 244,
-      "leaves": 224,
-      "max_depth": 3,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 185,
-       "Method Implementation": 16,
-       "Experimental Setup": 13,
-       "Logging, Analysis & Presentation": 1,
-       "Data Processing & Preparation": 2,
-       "Dataset and Model Acquisition": 3,
-       "Environment & Infrastructure Setup": 4
-      },
-      "estimated_minutes": 21094,
-      "estimated_dollars": 5089.0
-     }
-    },
-    {
-     "key": "researchbench_inference9_h100_stage2__pam-processing-across-memory-hierarchy-for",
-     "slug": "pam-processing-across-memory-hierarchy-for",
-     "title": "PAM: Processing Across Memory Hierarchy for Efficient KV-centric LLM Serving System",
-     "stats": {
-      "nodes": 311,
-      "leaves": 277,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 61,
-       "Evaluation, Metrics & Benchmarking": 165,
-       "Experimental Setup": 38,
-       "Dataset and Model Acquisition": 9,
-       "Environment & Infrastructure Setup": 4
-      },
-      "estimated_minutes": 11219,
-      "estimated_dollars": 2208.6
-     }
-    },
-    {
-     "key": "researchbench_inference9_h100_stage2__pat-accelerating-llm-decoding-via-prefix-aware",
-     "slug": "pat-accelerating-llm-decoding-via-prefix-aware",
-     "title": "PAT: Accelerating LLM Decoding via Prefix-Aware Attention with Resource Efficient Multi-Tile Kernel",
-     "stats": {
-      "nodes": 446,
-      "leaves": 416,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 66,
-       "Evaluation, Metrics & Benchmarking": 290,
-       "Experimental Setup": 43,
-       "Logging, Analysis & Presentation": 3,
-       "Data Processing & Preparation": 3,
-       "Dataset and Model Acquisition": 6,
-       "Environment & Infrastructure Setup": 5
-      },
-      "estimated_minutes": 30868,
-      "estimated_dollars": 4893.8
-     }
-    },
-    {
-     "key": "researchbench_inference9_h100_stage2__tpla-tensor-parallel-latent-attention-for",
-     "slug": "tpla-tensor-parallel-latent-attention-for",
-     "title": "TPLA: Tensor Parallel Latent Attention for Efficient Disaggregated Prefill and Decode Inference",
-     "stats": {
-      "nodes": 384,
-      "leaves": 353,
-      "max_depth": 3,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 248,
-       "Method Implementation": 67,
-       "Experimental Setup": 22,
-       "Logging, Analysis & Presentation": 2,
-       "Environment & Infrastructure Setup": 3,
-       "Data Processing & Preparation": 1,
-       "Dataset and Model Acquisition": 10
-      },
-      "estimated_minutes": 54623,
-      "estimated_dollars": 8886.75
-     }
-    }
-   ]
-  },
-  {
-   "id": "researchbench_inference_gate3",
-   "label": "researchbench_inference_gate3",
-   "papers": [
-    {
-     "key": "researchbench_inference_gate3__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
-     "slug": "FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
-     "title": "AutoKernel: Autonomous GPU Kernel Optimization via Iterative Agent-Driven Search",
-     "stats": {
-      "nodes": 293,
-      "leaves": 268,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 86,
-       "Evaluation, Metrics & Benchmarking": 155,
-       "Experimental Setup": 15,
-       "Logging, Analysis & Presentation": 3,
-       "Dataset and Model Acquisition": 2,
-       "Environment & Infrastructure Setup": 7
-      },
-      "estimated_minutes": 7619,
-      "estimated_dollars": 1311.75
-     }
-    },
-    {
-     "key": "researchbench_inference_gate3__llmservingsim-2-0-a-unified-simulator-for",
-     "slug": "llmservingsim-2-0-a-unified-simulator-for",
-     "title": "LLMServingSim 2.0: A Unified Simulator for Heterogeneous and Disaggregated LLM Serving Infrastructure",
-     "stats": {
-      "nodes": 187,
-      "leaves": 162,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 52,
-       "Evaluation, Metrics & Benchmarking": 74,
-       "Experimental Setup": 28,
-       "Logging, Analysis & Presentation": 1,
-       "Data Processing & Preparation": 3,
-       "Dataset and Model Acquisition": 2,
-       "Environment & Infrastructure Setup": 2
-      },
-      "estimated_minutes": 6014,
-      "estimated_dollars": 1096.8
-     }
-    },
-    {
-     "key": "researchbench_inference_gate3__the-illusion-of-equivalence-systematic-fp16",
-     "slug": "the-illusion-of-equivalence-systematic-fp16",
-     "title": "The Illusion of Equivalence: Systematic FP16 Divergence in KV-Cached Autoregressive Inference",
-     "stats": {
-      "nodes": 656,
-      "leaves": 607,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 66,
-       "Experimental Setup": 46,
-       "Evaluation, Metrics & Benchmarking": 482,
-       "Logging, Analysis & Presentation": 5,
-       "Data Processing & Preparation": 1,
-       "Dataset and Model Acquisition": 4,
-       "Environment & Infrastructure Setup": 3
-      },
-      "estimated_minutes": 71318,
-      "estimated_dollars": 11165.15
-     }
-    }
-   ]
   }
  ],
  "views": [
@@ -1295,91 +1567,606 @@
    "id": "paperbench",
    "label": "PaperBench",
    "keys": [
-    "exemplar_papers__adaptive-pruning",
-    "exemplar_papers__all-in-one",
-    "exemplar_papers__bam",
-    "exemplar_papers__bbox",
-    "exemplar_papers__bridging-data-gaps",
-    "exemplar_papers__fre",
-    "exemplar_papers__ftrl",
-    "exemplar_papers__lbcs",
+    "paperbench23__adaptive-pruning",
+    "paperbench23__all-in-one",
+    "paperbench23__bam",
+    "paperbench23__bbox",
+    "paperbench23__bridging-data-gaps",
+    "paperbench23__fre",
+    "paperbench23__ftrl",
+    "paperbench23__lbcs",
+    "paperbench23__pinn",
+    "paperbench23__rice",
+    "paperbench23__robust-clip",
+    "paperbench23__sample-specific-masks",
+    "paperbench23__sapg",
+    "paperbench23__self-composing-policies",
+    "paperbench23__self-expansion",
+    "paperbench23__semantic-self-consistency",
+    "paperbench23__sequential-neural-score-estimation",
+    "paperbench23__stay-on-topic-with-classifier-free-guidance",
+    "paperbench23__stochastic-interpolants",
+    "paperbench23__test-time-model-adaptation",
+    "paperbench23__what-will-my-model-forget",
     "exemplar_papers__lca-on-the-line",
-    "exemplar_papers__mechanistic-understanding",
-    "exemplar_papers__pinn",
-    "exemplar_papers__rice",
-    "exemplar_papers__robust-clip",
-    "exemplar_papers__sample-specific-masks",
-    "exemplar_papers__sapg",
-    "exemplar_papers__self-composing-policies",
-    "exemplar_papers__self-expansion",
-    "exemplar_papers__semantic-self-consistency",
-    "exemplar_papers__sequential-neural-score-estimation",
-    "exemplar_papers__stay-on-topic-with-classifier-free-guidance",
-    "exemplar_papers__stochastic-interpolants",
-    "exemplar_papers__test-time-model-adaptation",
-    "exemplar_papers__what-will-my-model-forget"
+    "exemplar_papers__mechanistic-understanding"
    ]
   },
   {
    "id": "researchbench-all",
    "label": "ResearchBench All",
    "keys": [
-    "researchbench_inference20_h100__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
-    "researchbench_inference20_h100__adaserve-accelerating-multi-slo-llm-serving-with",
-    "researchbench_inference20_h100__asynctls-efficient-generative-llm-inference-with",
-    "researchbench_inference20_h100__cacheflow-efficient-llm-serving-with-3d-parallel",
-    "researchbench_inference20_h100__contiguouskv-accelerating-llm-prefill-with",
-    "researchbench_inference20_h100__duetserve-harmonizing-prefill-and-decode-for-llm",
-    "researchbench_inference20_h100__fast-heterogeneous-serving-scalable-mixed-scale",
-    "researchbench_inference20_h100__flexicache-leveraging-temporal-stability-of",
-    "researchbench_inference20_h100__hexgen-flow-optimizing-llm-inference-request",
-    "researchbench_inference20_h100__icecache-memory-efficient-kv-cache-management-for",
-    "researchbench_inference20_h100__lamp-look-ahead-mixed-precision-inference-of",
-    "researchbench_inference20_h100__llmservingsim-2-0-a-unified-simulator-for",
-    "researchbench_inference20_h100__nexus-proactive-intra-gpu-disaggregation-of",
-    "researchbench_inference20_h100__niyama-breaking-the-silos-of-llm-inference-serving",
-    "researchbench_inference20_h100__prefill-as-a-service-kvcache-of-next-generation",
-    "researchbench_inference20_h100__ragged-paged-attention-a-high-performance-and",
-    "researchbench_inference20_h100__shift-parallelism-low-latency-high-throughput-llm",
-    "researchbench_inference20_h100__the-illusion-of-equivalence-systematic-fp16",
-    "researchbench_inference20_h100__ttkv-temporal-tiered-kv-cache-for-long-context",
-    "researchbench_inference20_h100__tutti-making-ssd-backed-kv-cache-practical-for",
-    "researchbench_inference9_h100_stage2__an-interpretable-latency-model-for-speculative",
-    "researchbench_inference9_h100_stage2__from-buffers-to-registers-unlocking-fine-grained",
-    "researchbench_inference9_h100_stage2__frontier-towards-comprehensive-and-accurate-llm",
-    "researchbench_inference9_h100_stage2__fsa-an-alternative-efficient-implementation-of",
-    "researchbench_inference9_h100_stage2__hardware-efficient-attention-for-fast-decoding",
-    "researchbench_inference9_h100_stage2__llm-42-enabling-determinism-in-llm-inference-with",
-    "researchbench_inference9_h100_stage2__pam-processing-across-memory-hierarchy-for",
-    "researchbench_inference9_h100_stage2__pat-accelerating-llm-decoding-via-prefix-aware",
-    "researchbench_inference9_h100_stage2__tpla-tensor-parallel-latent-attention-for"
+    "researchbench20__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
+    "researchbench20__adaserve-accelerating-multi-slo-llm-serving-with",
+    "researchbench20__asynctls-efficient-generative-llm-inference-with",
+    "researchbench20__cacheflow-efficient-llm-serving-with-3d-parallel",
+    "researchbench20__contiguouskv-accelerating-llm-prefill-with",
+    "researchbench20__duetserve-harmonizing-prefill-and-decode-for-llm",
+    "researchbench20__fast-heterogeneous-serving-scalable-mixed-scale",
+    "researchbench20__flexicache-leveraging-temporal-stability-of",
+    "researchbench20__hexgen-flow-optimizing-llm-inference-request",
+    "researchbench20__icecache-memory-efficient-kv-cache-management-for",
+    "researchbench20__lamp-look-ahead-mixed-precision-inference-of",
+    "researchbench20__llmservingsim-2-0-a-unified-simulator-for",
+    "researchbench20__nexus-proactive-intra-gpu-disaggregation-of",
+    "researchbench20__niyama-breaking-the-silos-of-llm-inference-serving",
+    "researchbench20__prefill-as-a-service-kvcache-of-next-generation",
+    "researchbench20__ragged-paged-attention-a-high-performance-and",
+    "researchbench20__shift-parallelism-low-latency-high-throughput-llm",
+    "researchbench20__the-illusion-of-equivalence-systematic-fp16",
+    "researchbench20__ttkv-temporal-tiered-kv-cache-for-long-context",
+    "researchbench20__tutti-making-ssd-backed-kv-cache-practical-for"
    ]
+  },
+  {
+   "id": "researchbench-10",
+   "label": "ResearchBench 10",
+   "keys": [
+    "researchbench20__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
+    "researchbench20__adaserve-accelerating-multi-slo-llm-serving-with",
+    "researchbench20__asynctls-efficient-generative-llm-inference-with",
+    "researchbench20__cacheflow-efficient-llm-serving-with-3d-parallel",
+    "researchbench20__contiguouskv-accelerating-llm-prefill-with",
+    "researchbench20__duetserve-harmonizing-prefill-and-decode-for-llm",
+    "researchbench20__fast-heterogeneous-serving-scalable-mixed-scale",
+    "benchmark100__turboquant-online-vector-quantization-with-near",
+    "benchmark100__kivi-a-tuning-free-asymmetric-2bit-quantization",
+    "benchmark100__flashattention-2-faster-attention-with-better"
+   ],
+   "pending": [],
+   "criteria": "maturity(run-backed>graph>pending) > replicability > -gpu_hours; greedy category-coverage swap at each tier boundary"
   },
   {
    "id": "researchbench-20",
    "label": "ResearchBench 20",
    "keys": [
-    "researchbench_inference20_h100__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
-    "researchbench_inference20_h100__adaserve-accelerating-multi-slo-llm-serving-with",
-    "researchbench_inference20_h100__asynctls-efficient-generative-llm-inference-with",
-    "researchbench_inference20_h100__cacheflow-efficient-llm-serving-with-3d-parallel",
-    "researchbench_inference20_h100__contiguouskv-accelerating-llm-prefill-with",
-    "researchbench_inference20_h100__duetserve-harmonizing-prefill-and-decode-for-llm",
-    "researchbench_inference20_h100__fast-heterogeneous-serving-scalable-mixed-scale",
-    "researchbench_inference20_h100__flexicache-leveraging-temporal-stability-of",
-    "researchbench_inference20_h100__hexgen-flow-optimizing-llm-inference-request",
-    "researchbench_inference20_h100__icecache-memory-efficient-kv-cache-management-for",
-    "researchbench_inference20_h100__lamp-look-ahead-mixed-precision-inference-of",
-    "researchbench_inference20_h100__llmservingsim-2-0-a-unified-simulator-for",
-    "researchbench_inference20_h100__nexus-proactive-intra-gpu-disaggregation-of",
-    "researchbench_inference20_h100__niyama-breaking-the-silos-of-llm-inference-serving",
-    "researchbench_inference20_h100__prefill-as-a-service-kvcache-of-next-generation",
-    "researchbench_inference20_h100__ragged-paged-attention-a-high-performance-and",
-    "researchbench_inference20_h100__shift-parallelism-low-latency-high-throughput-llm",
-    "researchbench_inference20_h100__the-illusion-of-equivalence-systematic-fp16",
-    "researchbench_inference20_h100__ttkv-temporal-tiered-kv-cache-for-long-context",
-    "researchbench_inference20_h100__tutti-making-ssd-backed-kv-cache-practical-for"
-   ]
+    "researchbench20__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
+    "researchbench20__adaserve-accelerating-multi-slo-llm-serving-with",
+    "researchbench20__asynctls-efficient-generative-llm-inference-with",
+    "researchbench20__cacheflow-efficient-llm-serving-with-3d-parallel",
+    "researchbench20__contiguouskv-accelerating-llm-prefill-with",
+    "researchbench20__duetserve-harmonizing-prefill-and-decode-for-llm",
+    "researchbench20__fast-heterogeneous-serving-scalable-mixed-scale",
+    "researchbench20__flexicache-leveraging-temporal-stability-of",
+    "researchbench20__hexgen-flow-optimizing-llm-inference-request",
+    "researchbench20__icecache-memory-efficient-kv-cache-management-for",
+    "researchbench20__lamp-look-ahead-mixed-precision-inference-of",
+    "researchbench20__llmservingsim-2-0-a-unified-simulator-for",
+    "researchbench20__nexus-proactive-intra-gpu-disaggregation-of",
+    "researchbench20__niyama-breaking-the-silos-of-llm-inference-serving",
+    "researchbench20__prefill-as-a-service-kvcache-of-next-generation",
+    "researchbench20__ragged-paged-attention-a-high-performance-and",
+    "researchbench20__shift-parallelism-low-latency-high-throughput-llm",
+    "benchmark100__turboquant-online-vector-quantization-with-near",
+    "benchmark100__kivi-a-tuning-free-asymmetric-2bit-quantization",
+    "benchmark100__flashattention-2-faster-attention-with-better"
+   ],
+   "pending": [],
+   "criteria": "maturity(run-backed>graph>pending) > replicability > -gpu_hours; greedy category-coverage swap at each tier boundary"
+  },
+  {
+   "id": "researchbench-50",
+   "label": "ResearchBench 50",
+   "keys": [
+    "researchbench20__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
+    "researchbench20__adaserve-accelerating-multi-slo-llm-serving-with",
+    "researchbench20__asynctls-efficient-generative-llm-inference-with",
+    "researchbench20__cacheflow-efficient-llm-serving-with-3d-parallel",
+    "researchbench20__contiguouskv-accelerating-llm-prefill-with",
+    "researchbench20__duetserve-harmonizing-prefill-and-decode-for-llm",
+    "researchbench20__fast-heterogeneous-serving-scalable-mixed-scale",
+    "researchbench20__flexicache-leveraging-temporal-stability-of",
+    "researchbench20__hexgen-flow-optimizing-llm-inference-request",
+    "researchbench20__icecache-memory-efficient-kv-cache-management-for",
+    "researchbench20__lamp-look-ahead-mixed-precision-inference-of",
+    "researchbench20__llmservingsim-2-0-a-unified-simulator-for",
+    "researchbench20__nexus-proactive-intra-gpu-disaggregation-of",
+    "researchbench20__niyama-breaking-the-silos-of-llm-inference-serving",
+    "researchbench20__prefill-as-a-service-kvcache-of-next-generation",
+    "researchbench20__ragged-paged-attention-a-high-performance-and",
+    "researchbench20__shift-parallelism-low-latency-high-throughput-llm",
+    "researchbench20__the-illusion-of-equivalence-systematic-fp16",
+    "researchbench20__ttkv-temporal-tiered-kv-cache-for-long-context",
+    "researchbench20__tutti-making-ssd-backed-kv-cache-practical-for",
+    "benchmark100__distserve-disaggregating-prefill-and-decoding-for",
+    "benchmark100__efficient-memory-management-for-large-language",
+    "benchmark100__flashattention-2-faster-attention-with-better",
+    "benchmark100__flashattention-3-fast-and-accurate-attention-with",
+    "benchmark100__flashattention-fast-and-memory-efficient-exact",
+    "benchmark100__flashdecoding-faster-large-language-model",
+    "benchmark100__flashinfer-efficient-and-customizable-attention",
+    "benchmark100__kivi-a-tuning-free-asymmetric-2bit-quantization",
+    "benchmark100__nanoflow-towards-optimal-large-language-model",
+    "benchmark100__sglang-efficient-execution-of-structured-language",
+    "benchmark100__taming-throughput-latency-tradeoff-in-llm",
+    "benchmark100__vattention-dynamic-memory-management-for-serving",
+    "benchmark100__turboquant-online-vector-quantization-with-near"
+   ],
+   "pending": [
+    {
+     "slug": "kv-fold-one-step-kv-cache-recurrence-for-long-context-infere",
+     "title": "kv fold one step kv cache recurrence for long context infere",
+     "category": "kv-cache"
+    },
+    {
+     "slug": "scheduling-the-unschedulable-taming-black-box-llm-inference-",
+     "title": "scheduling the unschedulable taming black box llm inference ",
+     "category": "serving"
+    },
+    {
+     "slug": "kv-packet-recomputation-free-context-independent-kv-caching-",
+     "title": "kv packet recomputation free context independent kv caching ",
+     "category": "kv-cache"
+    },
+    {
+     "slug": "alloc-moe-budget-aware-expert-activation-allocation-for-effi",
+     "title": "alloc moe budget aware expert activation allocation for effi",
+     "category": "moe"
+    },
+    {
+     "slug": "dip-sd-distributed-pipelined-speculative-decoding-for-effici",
+     "title": "dip sd distributed pipelined speculative decoding for effici",
+     "category": "speculative-decoding"
+    },
+    {
+     "slug": "adaptive-test-time-compute-allocation-for-reasoning-llms-via",
+     "title": "adaptive test time compute allocation for reasoning llms via",
+     "category": "structured-decoding"
+    },
+    {
+     "slug": "pushing-the-limits-of-block-rotations-in-post-training-quant",
+     "title": "pushing the limits of block rotations in post training quant",
+     "category": "quantization"
+    },
+    {
+     "slug": "coda-rewriting-transformer-blocks-as-gemm-epilogue-programs",
+     "title": "coda rewriting transformer blocks as gemm epilogue programs",
+     "category": "kernels"
+    },
+    {
+     "slug": "stream-cqsa-avoiding-out-of-memory-in-attention-computation-",
+     "title": "stream cqsa avoiding out of memory in attention computation ",
+     "category": "serving"
+    },
+    {
+     "slug": "continuous-discovery-of-vulnerabilities-in-llm-serving-syste",
+     "title": "continuous discovery of vulnerabilities in llm serving syste",
+     "category": "serving"
+    },
+    {
+     "slug": "block-rotation-is-all-you-need-for-mxfp4-quantization",
+     "title": "block rotation is all you need for mxfp4 quantization",
+     "category": "quantization"
+    },
+    {
+     "slug": "why-low-precision-transformer-training-fails-an-analysis-on-",
+     "title": "why low precision transformer training fails an analysis on ",
+     "category": "quantization"
+    },
+    {
+     "slug": "fsa-an-alternative-efficient-implementation-of-native-sparse",
+     "title": "fsa an alternative efficient implementation of native sparse",
+     "category": "kernels"
+    },
+    {
+     "slug": "hybrid-jit-cuda-graph-optimization-for-low-latency-large-lan",
+     "title": "hybrid jit cuda graph optimization for low latency large lan",
+     "category": "kernels"
+    },
+    {
+     "slug": "qflash-bridging-quantization-and-memory-efficiency-in-vision",
+     "title": "qflash bridging quantization and memory efficiency in vision",
+     "category": "quantization"
+    },
+    {
+     "slug": "requests-of-a-feather-must-flock-together-batch-size-vs-pref",
+     "title": "requests of a feather must flock together batch size vs pref",
+     "category": "serving"
+    },
+    {
+     "slug": "starsd-one-for-many-speculative-decoding",
+     "title": "starsd one for many speculative decoding",
+     "category": "speculative-decoding"
+    }
+   ],
+   "criteria": "maturity(run-backed>graph>pending) > replicability > -gpu_hours; greedy category-coverage swap at each tier boundary"
+  },
+  {
+   "id": "researchbench-100",
+   "label": "ResearchBench 100",
+   "keys": [
+    "researchbench20__FOCUS_autokernel-autonomous-gpu-kernel-optimization-via",
+    "researchbench20__adaserve-accelerating-multi-slo-llm-serving-with",
+    "researchbench20__asynctls-efficient-generative-llm-inference-with",
+    "researchbench20__cacheflow-efficient-llm-serving-with-3d-parallel",
+    "researchbench20__contiguouskv-accelerating-llm-prefill-with",
+    "researchbench20__duetserve-harmonizing-prefill-and-decode-for-llm",
+    "researchbench20__fast-heterogeneous-serving-scalable-mixed-scale",
+    "researchbench20__flexicache-leveraging-temporal-stability-of",
+    "researchbench20__hexgen-flow-optimizing-llm-inference-request",
+    "researchbench20__icecache-memory-efficient-kv-cache-management-for",
+    "researchbench20__lamp-look-ahead-mixed-precision-inference-of",
+    "researchbench20__llmservingsim-2-0-a-unified-simulator-for",
+    "researchbench20__nexus-proactive-intra-gpu-disaggregation-of",
+    "researchbench20__niyama-breaking-the-silos-of-llm-inference-serving",
+    "researchbench20__prefill-as-a-service-kvcache-of-next-generation",
+    "researchbench20__ragged-paged-attention-a-high-performance-and",
+    "researchbench20__shift-parallelism-low-latency-high-throughput-llm",
+    "researchbench20__the-illusion-of-equivalence-systematic-fp16",
+    "researchbench20__ttkv-temporal-tiered-kv-cache-for-long-context",
+    "researchbench20__tutti-making-ssd-backed-kv-cache-practical-for",
+    "benchmark100__distserve-disaggregating-prefill-and-decoding-for",
+    "benchmark100__efficient-memory-management-for-large-language",
+    "benchmark100__flashattention-2-faster-attention-with-better",
+    "benchmark100__flashattention-3-fast-and-accurate-attention-with",
+    "benchmark100__flashattention-fast-and-memory-efficient-exact",
+    "benchmark100__flashdecoding-faster-large-language-model",
+    "benchmark100__flashinfer-efficient-and-customizable-attention",
+    "benchmark100__kivi-a-tuning-free-asymmetric-2bit-quantization",
+    "benchmark100__nanoflow-towards-optimal-large-language-model",
+    "benchmark100__sglang-efficient-execution-of-structured-language",
+    "benchmark100__taming-throughput-latency-tradeoff-in-llm",
+    "benchmark100__vattention-dynamic-memory-management-for-serving",
+    "benchmark100__turboquant-online-vector-quantization-with-near"
+   ],
+   "pending": [
+    {
+     "slug": "kv-fold-one-step-kv-cache-recurrence-for-long-context-infere",
+     "title": "kv fold one step kv cache recurrence for long context infere",
+     "category": "kv-cache"
+    },
+    {
+     "slug": "scheduling-the-unschedulable-taming-black-box-llm-inference-",
+     "title": "scheduling the unschedulable taming black box llm inference ",
+     "category": "serving"
+    },
+    {
+     "slug": "kv-packet-recomputation-free-context-independent-kv-caching-",
+     "title": "kv packet recomputation free context independent kv caching ",
+     "category": "kv-cache"
+    },
+    {
+     "slug": "alloc-moe-budget-aware-expert-activation-allocation-for-effi",
+     "title": "alloc moe budget aware expert activation allocation for effi",
+     "category": "moe"
+    },
+    {
+     "slug": "dip-sd-distributed-pipelined-speculative-decoding-for-effici",
+     "title": "dip sd distributed pipelined speculative decoding for effici",
+     "category": "speculative-decoding"
+    },
+    {
+     "slug": "adaptive-test-time-compute-allocation-for-reasoning-llms-via",
+     "title": "adaptive test time compute allocation for reasoning llms via",
+     "category": "structured-decoding"
+    },
+    {
+     "slug": "pushing-the-limits-of-block-rotations-in-post-training-quant",
+     "title": "pushing the limits of block rotations in post training quant",
+     "category": "quantization"
+    },
+    {
+     "slug": "coda-rewriting-transformer-blocks-as-gemm-epilogue-programs",
+     "title": "coda rewriting transformer blocks as gemm epilogue programs",
+     "category": "kernels"
+    },
+    {
+     "slug": "stream-cqsa-avoiding-out-of-memory-in-attention-computation-",
+     "title": "stream cqsa avoiding out of memory in attention computation ",
+     "category": "serving"
+    },
+    {
+     "slug": "continuous-discovery-of-vulnerabilities-in-llm-serving-syste",
+     "title": "continuous discovery of vulnerabilities in llm serving syste",
+     "category": "serving"
+    },
+    {
+     "slug": "block-rotation-is-all-you-need-for-mxfp4-quantization",
+     "title": "block rotation is all you need for mxfp4 quantization",
+     "category": "quantization"
+    },
+    {
+     "slug": "why-low-precision-transformer-training-fails-an-analysis-on-",
+     "title": "why low precision transformer training fails an analysis on ",
+     "category": "quantization"
+    },
+    {
+     "slug": "fsa-an-alternative-efficient-implementation-of-native-sparse",
+     "title": "fsa an alternative efficient implementation of native sparse",
+     "category": "kernels"
+    },
+    {
+     "slug": "hybrid-jit-cuda-graph-optimization-for-low-latency-large-lan",
+     "title": "hybrid jit cuda graph optimization for low latency large lan",
+     "category": "kernels"
+    },
+    {
+     "slug": "qflash-bridging-quantization-and-memory-efficiency-in-vision",
+     "title": "qflash bridging quantization and memory efficiency in vision",
+     "category": "quantization"
+    },
+    {
+     "slug": "requests-of-a-feather-must-flock-together-batch-size-vs-pref",
+     "title": "requests of a feather must flock together batch size vs pref",
+     "category": "serving"
+    },
+    {
+     "slug": "starsd-one-for-many-speculative-decoding",
+     "title": "starsd one for many speculative decoding",
+     "category": "speculative-decoding"
+    },
+    {
+     "slug": "baps-a-fine-grained-low-precision-scheme-for-softmax-in-atte",
+     "title": "baps a fine grained low precision scheme for softmax in atte",
+     "category": "quantization"
+    },
+    {
+     "slug": "codecomp-structural-kv-cache-compression-for-agentic-coding",
+     "title": "codecomp structural kv cache compression for agentic coding",
+     "category": "kv-cache"
+    },
+    {
+     "slug": "rethinking-latency-denial-of-service-attacking-the-llm-servi",
+     "title": "rethinking latency denial of service attacking the llm servi",
+     "category": "serving"
+    },
+    {
+     "slug": "mapping-space-exploration-for-multi-chiplet-accelerators-tar",
+     "title": "mapping space exploration for multi chiplet accelerators tar",
+     "category": "serving"
+    },
+    {
+     "slug": "llm-42-enabling-determinism-in-llm-inference-with-verified-s",
+     "title": "llm 42 enabling determinism in llm inference with verified s",
+     "category": "speculative-decoding"
+    },
+    {
+     "slug": "tinyserve-query-aware-cache-selection-for-efficient-llm-serv",
+     "title": "tinyserve query aware cache selection for efficient llm serv",
+     "category": "serving"
+    },
+    {
+     "slug": "a-two-stage-gpu-kernel-tuner-combining-semantic-refactoring-",
+     "title": "a two stage gpu kernel tuner combining semantic refactoring ",
+     "category": "kernels"
+    },
+    {
+     "slug": "batquant-outlier-resilient-mxfp4-quantization-via-learnable-",
+     "title": "batquant outlier resilient mxfp4 quantization via learnable ",
+     "category": "quantization"
+    },
+    {
+     "slug": "cutegen-an-llm-based-agentic-framework-for-generation-and-op",
+     "title": "cutegen an llm based agentic framework for generation and op",
+     "category": "kernels"
+    },
+    {
+     "slug": "demystifying-the-silence-of-correctness-bugs-in-pytorch-comp",
+     "title": "demystifying the silence of correctness bugs in pytorch comp",
+     "category": "compilers"
+    },
+    {
+     "slug": "gpu-kernel-optimization-beyond-full-builds-an-llm-framework-",
+     "title": "gpu kernel optimization beyond full builds an llm framework ",
+     "category": "kernels"
+    },
+    {
+     "slug": "making-llms-optimize-multi-scenario-cuda-kernels-like-expert",
+     "title": "making llms optimize multi scenario cuda kernels like expert",
+     "category": "kernels"
+    },
+    {
+     "slug": "speculating-experts-accelerates-inference-for-mixture-of-exp",
+     "title": "speculating experts accelerates inference for mixture of exp",
+     "category": "speculative-decoding"
+    },
+    {
+     "slug": "tokendance-scaling-multi-agent-llm-serving-via-collective-kv",
+     "title": "tokendance scaling multi agent llm serving via collective kv",
+     "category": "serving"
+    },
+    {
+     "slug": "wavetune-wave-aware-bilinear-modeling-for-efficient-gpu-kern",
+     "title": "wavetune wave aware bilinear modeling for efficient gpu kern",
+     "category": "kernels"
+    },
+    {
+     "slug": "adaexplore-failure-driven-adaptation-and-diversity-preservin",
+     "title": "adaexplore failure driven adaptation and diversity preservin",
+     "category": "serving"
+    },
+    {
+     "slug": "routerwise-joint-resource-allocation-and-routing-for-latency",
+     "title": "routerwise joint resource allocation and routing for latency",
+     "category": "serving"
+    },
+    {
+     "slug": "an-interpretable-latency-model-for-speculative-decoding-in-l",
+     "title": "an interpretable latency model for speculative decoding in l",
+     "category": "serving"
+    },
+    {
+     "slug": "calibrated-speculative-decoding-frequency-guided-candidate-s",
+     "title": "calibrated speculative decoding frequency guided candidate s",
+     "category": "speculative-decoding"
+    },
+    {
+     "slug": "tcl-enabling-fast-and-efficient-cross-hardware-tensor-progra",
+     "title": "tcl enabling fast and efficient cross hardware tensor progra",
+     "category": "compilers"
+    },
+    {
+     "slug": "ban-pick-ehancing-performance-and-efficiency-of-moe-llms-via",
+     "title": "ban pick ehancing performance and efficiency of moe llms via",
+     "category": "moe"
+    },
+    {
+     "slug": "ai-observability-for-large-language-model-systems-a-multi-la",
+     "title": "ai observability for large language model systems a multi la",
+     "category": "serving"
+    },
+    {
+     "slug": "position-llm-serving-needs-mathematical-optimization-and-alg",
+     "title": "position llm serving needs mathematical optimization and alg",
+     "category": "serving"
+    },
+    {
+     "slug": "a-systematic-survey-on-large-language-models-for-algorithm-d",
+     "title": "a systematic survey on large language models for algorithm d",
+     "category": "generative-optimization"
+    },
+    {
+     "slug": "accelopt-a-self-improving-llm-agentic-system-for-ai-accelera",
+     "title": "accelopt a self improving llm agentic system for ai accelera",
+     "category": "kernels"
+    },
+    {
+     "slug": "alphaevolve-a-coding-agent-for-scientific-and-algorithmic-di",
+     "title": "alphaevolve a coding agent for scientific and algorithmic di",
+     "category": "generative-optimization"
+    },
+    {
+     "slug": "amla-mul-by-add-in-flashattention-rescaling",
+     "title": "amla mul by add in flashattention rescaling",
+     "category": "kernels"
+    },
+    {
+     "slug": "an-ai-system-to-help-scientists-write-expert-level-empirical",
+     "title": "an ai system to help scientists write expert level empirical",
+     "category": "generative-optimization"
+    },
+    {
+     "slug": "an-empirical-study-of-qwen3-quantization",
+     "title": "an empirical study of qwen3 quantization",
+     "category": "quantization"
+    },
+    {
+     "slug": "astra-a-multi-agent-system-for-gpu-kernel-performance-optimi",
+     "title": "astra a multi agent system for gpu kernel performance optimi",
+     "category": "kernels"
+    },
+    {
+     "slug": "autotriton-automatic-triton-programming-with-reinforcement-l",
+     "title": "autotriton automatic triton programming with reinforcement l",
+     "category": "kernels"
+    },
+    {
+     "slug": "awq-activation-aware-weight-quantization-for-llm-compression",
+     "title": "awq activation aware weight quantization for llm compression",
+     "category": "quantization"
+    },
+    {
+     "slug": "chip-placement-with-deep-reinforcement-learning",
+     "title": "chip placement with deep reinforcement learning",
+     "category": "generative-optimization"
+    },
+    {
+     "slug": "cuda-l1-improving-cuda-optimization-via-contrastive-reinforc",
+     "title": "cuda l1 improving cuda optimization via contrastive reinforc",
+     "category": "kernels"
+    },
+    {
+     "slug": "cuda-l2-surpassing-cublas-performance-for-matrix-multiplicat",
+     "title": "cuda l2 surpassing cublas performance for matrix multiplicat",
+     "category": "kernels"
+    },
+    {
+     "slug": "deepspec-deepseek-full-stack-speculative-decoding-training-e",
+     "title": "deepspec deepseek full stack speculative decoding training e",
+     "category": "speculative-decoding"
+    },
+    {
+     "slug": "dflash-block-diffusion-for-flash-speculative-decoding",
+     "title": "dflash block diffusion for flash speculative decoding",
+     "category": "speculative-decoding"
+    },
+    {
+     "slug": "discovering-faster-matrix-multiplication-algorithms-with-rei",
+     "title": "discovering faster matrix multiplication algorithms with rei",
+     "category": "generative-optimization"
+    },
+    {
+     "slug": "dissecting-the-nvidia-volta-gpu-architecture-via-microbenchm",
+     "title": "dissecting the nvidia volta gpu architecture via microbenchm",
+     "category": "hardware-probing"
+    },
+    {
+     "slug": "dspark-confidence-scheduled-speculative-decoding-with-semi-a",
+     "title": "dspark confidence scheduled speculative decoding with semi a",
+     "category": "speculative-decoding"
+    },
+    {
+     "slug": "dualmap-enabling-both-cache-affinity-and-load-balancing-for-",
+     "title": "dualmap enabling both cache affinity and load balancing for ",
+     "category": "serving"
+    },
+    {
+     "slug": "eagle-3-scaling-up-inference-acceleration-of-large-language-",
+     "title": "eagle 3 scaling up inference acceleration of large language ",
+     "category": "speculative-decoding"
+    },
+    {
+     "slug": "every-bit-counts-a-theoretical-study-of-precision-expressivi",
+     "title": "every bit counts a theoretical study of precision expressivi",
+     "category": "quantization"
+    },
+    {
+     "slug": "evoengineer-mastering-automated-cuda-kernel-code-evolution-w",
+     "title": "evoengineer mastering automated cuda kernel code evolution w",
+     "category": "kernels"
+    },
+    {
+     "slug": "evoprompting-language-models-for-code-level-neural-architect",
+     "title": "evoprompting language models for code level neural architect",
+     "category": "generative-optimization"
+    },
+    {
+     "slug": "execution-centric-characterization-of-fp8-matrix-cores-async",
+     "title": "execution centric characterization of fp8 matrix cores async",
+     "category": "hardware-probing"
+    },
+    {
+     "slug": "flash-d-flashattention-with-hidden-softmax-division",
+     "title": "flash d flashattention with hidden softmax division",
+     "category": "kernels"
+    },
+    {
+     "slug": "fptquant-function-preserving-transforms-for-llm-quantization",
+     "title": "fptquant function preserving transforms for llm quantization",
+     "category": "serving"
+    },
+    {
+     "slug": "gated-deltanet-2-decoupling-erase-and-write-in-linear-attent",
+     "title": "gated deltanet 2 decoupling erase and write in linear attent",
+     "category": "other"
+    },
+    {
+     "slug": "geak-introducing-triton-kernel-ai-agent-evaluation-benchmark",
+     "title": "geak introducing triton kernel ai agent evaluation benchmark",
+     "category": "kernels"
+    }
+   ],
+   "criteria": "maturity(run-backed>graph>pending) > replicability > -gpu_hours; greedy category-coverage swap at each tier boundary"
   }
  ]
 }
