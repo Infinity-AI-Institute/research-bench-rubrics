@@ -113,74 +113,6 @@
      }
     },
     {
-     "key": "benchmark100__agentic-harness-for-real-world-compilers",
-     "slug": "agentic-harness-for-real-world-compilers",
-     "title": "Agentic Harness for Real-World Compilers",
-     "stats": {
-      "nodes": 1454,
-      "leaves": 1322,
-      "max_depth": 3,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 1016,
-       "Experimental Setup": 97,
-       "Method Implementation": 151,
-       "Logging, Analysis & Presentation": 26,
-       "Data Processing & Preparation": 15,
-       "Environment & Infrastructure Setup": 16,
-       "Dataset and Model Acquisition": 1
-      },
-      "estimated_minutes": 813553,
-      "estimated_dollars": 200752.3
-     }
-    },
-    {
-     "key": "benchmark100__agentkernelarena-generalization-aware",
-     "slug": "agentkernelarena-generalization-aware",
-     "title": "AgentKernelArena: Generalization-Aware Benchmarking of GPU Kernel Optimization Agents",
-     "stats": {
-      "nodes": 632,
-      "leaves": 545,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 64,
-       "Evaluation, Metrics & Benchmarking": 352,
-       "Experimental Setup": 30,
-       "Logging, Analysis & Presentation": 18,
-       "Analysis & Presentation": 5,
-       "Data Processing & Preparation": 2,
-       "Logging": 1,
-       "Evaluation": 27,
-       "Metrics & Benchmarking": 5,
-       "Environment & Infrastructure Setup": 27,
-       "Dataset and Model Acquisition": 14
-      },
-      "estimated_minutes": 154908,
-      "estimated_dollars": 44498.9
-     }
-    },
-    {
-     "key": "benchmark100__ahasd-asynchronous-heterogeneous-architecture-for",
-     "slug": "ahasd-asynchronous-heterogeneous-architecture-for",
-     "title": "AHASD: Asynchronous Heterogeneous Architecture for LLM Adaptive Drafting Speculative Decoding on Mobile Devices",
-     "stats": {
-      "nodes": 460,
-      "leaves": 382,
-      "max_depth": 3,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 174,
-       "Experimental Setup": 38,
-       "Method Implementation": 108,
-       "Logging, Analysis & Presentation": 23,
-       "Environment & Infrastructure Setup": 19,
-       "Metrics & Benchmarking": 11,
-       "Data Processing & Preparation": 2,
-       "Dataset and Model Acquisition": 7
-      },
-      "estimated_minutes": 21222,
-      "estimated_dollars": 3643.7
-     }
-    },
-    {
      "key": "benchmark100__alloc-moe-budget-aware-expert-activation",
      "slug": "alloc-moe-budget-aware-expert-activation",
      "title": "Alloc-MoE: Budget-Aware Expert Activation Allocation for Efficient Mixture-of-Experts Inference",
@@ -398,27 +330,6 @@
      }
     },
     {
-     "key": "benchmark100__blink-cpu-free-llm-inference-by-delegating-the",
-     "slug": "blink-cpu-free-llm-inference-by-delegating-the",
-     "title": "Blink: CPU-Free LLM Inference by Delegating the Serving Stack to GPU and SmartNIC",
-     "stats": {
-      "nodes": 564,
-      "leaves": 469,
-      "max_depth": 4,
-      "categories": {
-       "Logging, Analysis & Presentation": 39,
-       "Evaluation, Metrics & Benchmarking": 154,
-       "Experimental Setup": 57,
-       "Data Processing & Preparation": 3,
-       "Method Implementation": 117,
-       "Environment & Infrastructure Setup": 37,
-       "Metrics & Benchmarking": 55,
-       "Analysis & Presentation": 2,
-       "Dataset and Model Acquisition": 5
-      }
-     }
-    },
-    {
      "key": "benchmark100__block-rotation-is-all-you-need-for-mxfp4",
      "slug": "block-rotation-is-all-you-need-for-mxfp4",
      "title": "Block Rotation is All You Need for MXFP4 Quantization",
@@ -609,27 +520,6 @@
      }
     },
     {
-     "key": "benchmark100__deep-kernel-fusion-for-transformers",
-     "slug": "deep-kernel-fusion-for-transformers",
-     "title": "Deep Kernel Fusion for Transformers",
-     "stats": {
-      "nodes": 510,
-      "leaves": 425,
-      "max_depth": 4,
-      "categories": {
-       "Method Implementation": 72,
-       "Experimental Setup": 50,
-       "Evaluation, Metrics & Benchmarking": 253,
-       "Analysis & Presentation": 8,
-       "Logging, Analysis & Presentation": 8,
-       "Environment & Infrastructure Setup": 31,
-       "Dataset and Model Acquisition": 3
-      },
-      "estimated_minutes": 22488,
-      "estimated_dollars": 6652.6
-     }
-    },
-    {
      "key": "benchmark100__demystifying-the-silence-of-correctness-bugs-in",
      "slug": "demystifying-the-silence-of-correctness-bugs-in",
      "title": "Demystifying the Silence of Correctness Bugs in PyTorch Compiler",
@@ -734,27 +624,6 @@
      }
     },
     {
-     "key": "benchmark100__drtriton-large-scale-synthetic-data-reinforcement",
-     "slug": "drtriton-large-scale-synthetic-data-reinforcement",
-     "title": "DRTriton: Large-Scale Synthetic Data Reinforcement Learning for Triton Kernel Generation",
-     "stats": {
-      "nodes": 937,
-      "leaves": 853,
-      "max_depth": 3,
-      "categories": {
-       "Experimental Setup": 81,
-       "Method Implementation": 160,
-       "Evaluation, Metrics & Benchmarking": 575,
-       "Logging, Analysis & Presentation": 13,
-       "Environment & Infrastructure Setup": 2,
-       "Data Processing & Preparation": 17,
-       "Dataset and Model Acquisition": 5
-      },
-      "estimated_minutes": 101902,
-      "estimated_dollars": 20811.3
-     }
-    },
-    {
      "key": "benchmark100__dspark-confidence-scheduled-speculative-decoding",
      "slug": "dspark-confidence-scheduled-speculative-decoding",
      "title": "DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation",
@@ -774,27 +643,6 @@
       },
       "estimated_minutes": 28315,
       "estimated_dollars": 6330.4
-     }
-    },
-    {
-     "key": "benchmark100__duet-disaggregated-hybrid-mamba-transformer-llms",
-     "slug": "duet-disaggregated-hybrid-mamba-transformer-llms",
-     "title": "DUET: Disaggregated Hybrid Mamba-Transformer LLMs with Prefill and Decode-Specific Packages",
-     "stats": {
-      "nodes": 526,
-      "leaves": 443,
-      "max_depth": 3,
-      "categories": {
-       "Experimental Setup": 59,
-       "Method Implementation": 145,
-       "Evaluation, Metrics & Benchmarking": 203,
-       "Environment & Infrastructure Setup": 10,
-       "Logging, Analysis & Presentation": 11,
-       "Data Processing & Preparation": 8,
-       "Dataset and Model Acquisition": 7
-      },
-      "estimated_minutes": 11610,
-      "estimated_dollars": 2225.3
      }
     },
     {
@@ -838,89 +686,6 @@
       },
       "estimated_minutes": 44359,
       "estimated_dollars": 11753.7
-     }
-    },
-    {
-     "key": "benchmark100__efficient-multi-round-llm-inference-over",
-     "slug": "efficient-multi-round-llm-inference-over",
-     "title": "Efficient Multi-round LLM Inference over Disaggregated Serving",
-     "stats": {
-      "nodes": 610,
-      "leaves": 513,
-      "max_depth": 3,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 283,
-       "Method Implementation": 116,
-       "Experimental Setup": 63,
-       "Logging, Analysis & Presentation": 17,
-       "Environment & Infrastructure Setup": 24,
-       "Data Processing & Preparation": 5,
-       "Dataset and Model Acquisition": 5
-      },
-      "estimated_minutes": 51752,
-      "estimated_dollars": 15528.2
-     }
-    },
-    {
-     "key": "benchmark100__epd-serve-a-flexible-multimodal-epd",
-     "slug": "epd-serve-a-flexible-multimodal-epd",
-     "title": "EPD-Serve: A Flexible Multimodal EPD Disaggregation Inference Serving System On Ascend",
-     "stats": {
-      "nodes": 423,
-      "leaves": 326,
-      "max_depth": 4,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 118,
-       "Method Implementation": 86,
-       "Logging, Analysis & Presentation": 26,
-       "Experimental Setup": 51,
-       "Evaluation": 16,
-       "Metrics & Benchmarking": 5,
-       "Environment & Infrastructure Setup": 12,
-       "Data Processing & Preparation": 8,
-       "Dataset and Model Acquisition": 4
-      }
-     }
-    },
-    {
-     "key": "benchmark100__equivalence-checking-of-ml-gpu-kernels",
-     "slug": "equivalence-checking-of-ml-gpu-kernels",
-     "title": "Equivalence Checking of ML GPU Kernels",
-     "stats": {
-      "nodes": 345,
-      "leaves": 268,
-      "max_depth": 3,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 73,
-       "Environment & Infrastructure Setup": 21,
-       "Dataset and Model Acquisition": 7,
-       "Method Implementation": 144,
-       "Experimental Setup": 9,
-       "Logging, Analysis & Presentation": 13,
-       "Data Processing & Preparation": 1
-      }
-     }
-    },
-    {
-     "key": "benchmark100__event-tensor-a-unified-abstraction-for-compiling",
-     "slug": "event-tensor-a-unified-abstraction-for-compiling",
-     "title": "Event Tensor: A Unified Abstraction for Compiling Dynamic Megakernel",
-     "stats": {
-      "nodes": 486,
-      "leaves": 400,
-      "max_depth": 4,
-      "categories": {
-       "Method Implementation": 150,
-       "Experimental Setup": 31,
-       "Evaluation, Metrics & Benchmarking": 176,
-       "Analysis & Presentation": 5,
-       "Logging, Analysis & Presentation": 6,
-       "Environment & Infrastructure Setup": 25,
-       "Data Processing & Preparation": 1,
-       "Dataset and Model Acquisition": 6
-      },
-      "estimated_minutes": 14284,
-      "estimated_dollars": 3594.5
      }
     },
     {
@@ -985,28 +750,6 @@
       },
       "estimated_minutes": 6642,
       "estimated_dollars": 1341.5
-     }
-    },
-    {
-     "key": "benchmark100__expert-streaming-accelerating-low-batch-moe",
-     "slug": "expert-streaming-accelerating-low-batch-moe",
-     "title": "Expert Streaming: Accelerating Low-Batch MoE Inference via Multi-chiplet Architecture and Dynamic Expert Trajectory Scheduling",
-     "stats": {
-      "nodes": 735,
-      "leaves": 632,
-      "max_depth": 3,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 358,
-       "Method Implementation": 98,
-       "Experimental Setup": 138,
-       "Analysis & Presentation": 2,
-       "Data Processing & Preparation": 4,
-       "Dataset and Model Acquisition": 10,
-       "Logging, Analysis & Presentation": 11,
-       "Environment & Infrastructure Setup": 11
-      },
-      "estimated_minutes": 21703,
-      "estimated_dollars": 4035.25
      }
     },
     {
@@ -1115,47 +858,6 @@
      }
     },
     {
-     "key": "benchmark100__fleet-hierarchical-task-based-abstraction-for",
-     "slug": "fleet-hierarchical-task-based-abstraction-for",
-     "title": "Fleet: Hierarchical Task-based Abstraction for Megakernels on Multi-Die GPUs",
-     "stats": {
-      "nodes": 547,
-      "leaves": 457,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 149,
-       "Experimental Setup": 20,
-       "Evaluation, Metrics & Benchmarking": 239,
-       "Logging, Analysis & Presentation": 8,
-       "Analysis & Presentation": 16,
-       "Environment & Infrastructure Setup": 17,
-       "Dataset and Model Acquisition": 5,
-       "Data Processing & Preparation": 3
-      },
-      "estimated_minutes": 12988,
-      "estimated_dollars": 2907.0
-     }
-    },
-    {
-     "key": "benchmark100__fluxmoe-decoupling-expert-residency-for-high",
-     "slug": "fluxmoe-decoupling-expert-residency-for-high",
-     "title": "FluxMoE: Decoupling Expert Residency for High-Performance MoE Serving",
-     "stats": {
-      "nodes": 288,
-      "leaves": 224,
-      "max_depth": 3,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 68,
-       "Method Implementation": 88,
-       "Logging, Analysis & Presentation": 11,
-       "Data Processing & Preparation": 5,
-       "Experimental Setup": 25,
-       "Environment & Infrastructure Setup": 19,
-       "Dataset and Model Acquisition": 8
-      }
-     }
-    },
-    {
      "key": "benchmark100__fsa-an-alternative-efficient-implementation-of",
      "slug": "fsa-an-alternative-efficient-implementation-of",
      "title": "FSA: An Alternative Efficient Implementation of Native Sparse Attention Kernel",
@@ -1256,29 +958,6 @@
      }
     },
     {
-     "key": "benchmark100__improving-efficiency-of-gpu-kernel-optimization",
-     "slug": "improving-efficiency-of-gpu-kernel-optimization",
-     "title": "Improving Efficiency of GPU Kernel Optimization Agents using a Domain-Specific Language and Speed-of-Light Guidance",
-     "stats": {
-      "nodes": 759,
-      "leaves": 615,
-      "max_depth": 4,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 185,
-       "Logging": 2,
-       "Method Implementation": 308,
-       "Data Processing & Preparation": 14,
-       "Experimental Setup": 34,
-       "Dataset and Model Acquisition": 2,
-       "Analysis & Presentation": 9,
-       "Logging, Analysis & Presentation": 24,
-       "Evaluation": 13,
-       "Metrics & Benchmarking": 3,
-       "Environment & Infrastructure Setup": 21
-      }
-     }
-    },
-    {
      "key": "benchmark100__judge-decoding-faster-speculative-sampling",
      "slug": "judge-decoding-faster-speculative-sampling",
      "title": "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
@@ -1299,49 +978,6 @@
      }
     },
     {
-     "key": "benchmark100__kernel-contracts-a-specification-language-for-ml",
-     "slug": "kernel-contracts-a-specification-language-for-ml",
-     "title": "Kernel Contracts: A Specification Language for ML Kernel Correctness Across Heterogeneous Silicon",
-     "stats": {
-      "nodes": 700,
-      "leaves": 597,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 168,
-       "Experimental Setup": 42,
-       "Evaluation, Metrics & Benchmarking": 338,
-       "Logging, Analysis & Presentation": 15,
-       "Data Processing & Preparation": 6,
-       "Logging": 2,
-       "Analysis & Presentation": 5,
-       "Environment & Infrastructure Setup": 20,
-       "Dataset and Model Acquisition": 1
-      },
-      "estimated_minutes": 37381,
-      "estimated_dollars": 4312.4
-     }
-    },
-    {
-     "key": "benchmark100__kernel-smith-a-unified-recipe-for-evolutionary",
-     "slug": "kernel-smith-a-unified-recipe-for-evolutionary",
-     "title": "Kernel-Smith: A Unified Recipe for Evolutionary Kernel Optimization",
-     "stats": {
-      "nodes": 473,
-      "leaves": 369,
-      "max_depth": 4,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 120,
-       "Method Implementation": 95,
-       "Logging, Analysis & Presentation": 17,
-       "Experimental Setup": 29,
-       "Dataset and Model Acquisition": 18,
-       "Data Processing & Preparation": 70,
-       "Analysis & Presentation": 3,
-       "Environment & Infrastructure Setup": 17
-      }
-     }
-    },
-    {
      "key": "benchmark100__kernelbench-can-llms-write-efficient-gpu-kernels",
      "slug": "kernelbench-can-llms-write-efficient-gpu-kernels",
      "title": "KernelBench: Can LLMs Write Efficient GPU Kernels?",
@@ -1358,28 +994,6 @@
        "Experimental Setup": 19,
        "Evaluation, Metrics @ Benchmarking": 1
       }
-     }
-    },
-    {
-     "key": "benchmark100__kernelevolve-scaling-agentic-kernel-coding-for",
-     "slug": "kernelevolve-scaling-agentic-kernel-coding-for",
-     "title": "KernelEvolve: Scaling Agentic Kernel Coding for Heterogeneous AI Accelerators at Meta",
-     "stats": {
-      "nodes": 490,
-      "leaves": 399,
-      "max_depth": 4,
-      "categories": {
-       "Method Implementation": 148,
-       "Experimental Setup": 31,
-       "Evaluation, Metrics & Benchmarking": 162,
-       "Analysis & Presentation": 3,
-       "Logging, Analysis & Presentation": 20,
-       "Environment & Infrastructure Setup": 27,
-       "Data Processing & Preparation": 7,
-       "Dataset and Model Acquisition": 1
-      },
-      "estimated_minutes": 12283,
-      "estimated_dollars": 2893.2
      }
     },
     {
@@ -1601,48 +1215,6 @@
      }
     },
     {
-     "key": "benchmark100__mirage-persistent-kernel-a-compiler-and-runtime",
-     "slug": "mirage-persistent-kernel-a-compiler-and-runtime",
-     "title": "Mirage Persistent Kernel: A Compiler and Runtime for Mega-Kernelizing Tensor Programs",
-     "stats": {
-      "nodes": 650,
-      "leaves": 533,
-      "max_depth": 4,
-      "categories": {
-       "Method Implementation": 195,
-       "Experimental Setup": 58,
-       "Evaluation, Metrics & Benchmarking": 236,
-       "Logging, Analysis & Presentation": 9,
-       "Environment & Infrastructure Setup": 24,
-       "Dataset and Model Acquisition": 9,
-       "Data Processing & Preparation": 2
-      },
-      "estimated_minutes": 14029,
-      "estimated_dollars": 3717.5
-     }
-    },
-    {
-     "key": "benchmark100__mirror-speculative-decoding-breaking-the-serial",
-     "slug": "mirror-speculative-decoding-breaking-the-serial",
-     "title": "Mirror Speculative Decoding: Breaking the Serial Barrier in LLM Inference",
-     "stats": {
-      "nodes": 1173,
-      "leaves": 1067,
-      "max_depth": 3,
-      "categories": {
-       "Experimental Setup": 77,
-       "Method Implementation": 160,
-       "Evaluation, Metrics & Benchmarking": 797,
-       "Logging, Analysis & Presentation": 12,
-       "Data Processing & Preparation": 2,
-       "Environment & Infrastructure Setup": 12,
-       "Dataset and Model Acquisition": 7
-      },
-      "estimated_minutes": 98635,
-      "estimated_dollars": 23759.95
-     }
-    },
-    {
      "key": "benchmark100__multikernelbench-a-multi-platform-benchmark-for",
      "slug": "multikernelbench-a-multi-platform-benchmark-for",
      "title": "MultiKernelBench: A Multi-Platform Benchmark for Kernel Generation",
@@ -1685,87 +1257,6 @@
      }
     },
     {
-     "key": "benchmark100__nncase-an-end-to-end-compiler-for-efficient-llm",
-     "slug": "nncase-an-end-to-end-compiler-for-efficient-llm",
-     "title": "nncase: An End-to-End Compiler for Efficient LLM Deployment on Heterogeneous Storage Architectures",
-     "stats": {
-      "nodes": 817,
-      "leaves": 695,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 236,
-       "Experimental Setup": 81,
-       "Evaluation, Metrics & Benchmarking": 359,
-       "Logging, Analysis & Presentation": 2,
-       "Environment & Infrastructure Setup": 14,
-       "Dataset and Model Acquisition": 3
-      },
-      "estimated_minutes": 23446,
-      "estimated_dollars": 3976.2
-     }
-    },
-    {
-     "key": "benchmark100__open-tq-metal-fused-compressed-domain-attention",
-     "slug": "open-tq-metal-fused-compressed-domain-attention",
-     "title": "Open-TQ-Metal: Fused Compressed-Domain Attention for Long-Context LLM Inference on Apple Silicon",
-     "stats": {
-      "nodes": 553,
-      "leaves": 481,
-      "max_depth": 4,
-      "categories": {
-       "Method Implementation": 59,
-       "Experimental Setup": 19,
-       "Evaluation, Metrics & Benchmarking": 366,
-       "Logging, Analysis & Presentation": 12,
-       "Environment & Infrastructure Setup": 14,
-       "Data Processing & Preparation": 2,
-       "Dataset and Model Acquisition": 9
-      },
-      "estimated_minutes": 12998,
-      "estimated_dollars": 2451.7
-     }
-    },
-    {
-     "key": "benchmark100__pam-processing-across-memory-hierarchy-for",
-     "slug": "pam-processing-across-memory-hierarchy-for",
-     "title": "PAM: Processing Across Memory Hierarchy for Efficient KV-centric LLM Serving System",
-     "stats": {
-      "nodes": 311,
-      "leaves": 277,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 61,
-       "Evaluation, Metrics & Benchmarking": 165,
-       "Experimental Setup": 38,
-       "Dataset and Model Acquisition": 9,
-       "Environment & Infrastructure Setup": 4
-      },
-      "estimated_minutes": 11219,
-      "estimated_dollars": 2208.6
-     }
-    },
-    {
-     "key": "benchmark100__pat-accelerating-llm-decoding-via-prefix-aware",
-     "slug": "pat-accelerating-llm-decoding-via-prefix-aware",
-     "title": "PAT: Accelerating LLM Decoding via Prefix-Aware Attention with Resource Efficient Multi-Tile Kernel",
-     "stats": {
-      "nodes": 446,
-      "leaves": 416,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 66,
-       "Evaluation, Metrics & Benchmarking": 290,
-       "Experimental Setup": 43,
-       "Logging, Analysis & Presentation": 3,
-       "Data Processing & Preparation": 3,
-       "Dataset and Model Acquisition": 6,
-       "Environment & Infrastructure Setup": 5
-      },
-      "estimated_minutes": 30868,
-      "estimated_dollars": 4893.8
-     }
-    },
-    {
      "key": "benchmark100__pentagonal-photonic-crystal-mirrors-scalable",
      "slug": "pentagonal-photonic-crystal-mirrors-scalable",
      "title": "Pentagonal Photonic Crystal Mirrors: Scalable Lightsails with Enhanced Acceleration via Neural Topology Optimization",
@@ -1782,27 +1273,6 @@
        "Logging, Analysis & Presentation": 16,
        "Environment & Infrastructure Setup": 4
       }
-     }
-    },
-    {
-     "key": "benchmark100__pipelive-efficient-live-in-place-pipeline",
-     "slug": "pipelive-efficient-live-in-place-pipeline",
-     "title": "PipeLive: Efficient Live In-place Pipeline Parallelism Reconfiguration for Dynamic LLM Serving",
-     "stats": {
-      "nodes": 429,
-      "leaves": 347,
-      "max_depth": 3,
-      "categories": {
-       "Experimental Setup": 47,
-       "Method Implementation": 109,
-       "Evaluation, Metrics & Benchmarking": 158,
-       "Logging, Analysis & Presentation": 12,
-       "Data Processing & Preparation": 3,
-       "Dataset and Model Acquisition": 2,
-       "Environment & Infrastructure Setup": 16
-      },
-      "estimated_minutes": 17949,
-      "estimated_dollars": 4406.6
      }
     },
     {
@@ -1823,27 +1293,6 @@
        "Metrics & Benchmarking": 6,
        "Dataset and Model Acquisition": 12
       }
-     }
-    },
-    {
-     "key": "benchmark100__polyblocks-a-compiler-infrastructure-for-ai-chips",
-     "slug": "polyblocks-a-compiler-infrastructure-for-ai-chips",
-     "title": "PolyBlocks: A Compiler Infrastructure for AI Chips and Programming Frameworks",
-     "stats": {
-      "nodes": 573,
-      "leaves": 486,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 105,
-       "Evaluation, Metrics & Benchmarking": 279,
-       "Experimental Setup": 49,
-       "Logging, Analysis & Presentation": 13,
-       "Dataset and Model Acquisition": 5,
-       "Environment & Infrastructure Setup": 32,
-       "Data Processing & Preparation": 3
-      },
-      "estimated_minutes": 22335,
-      "estimated_dollars": 4620.65
      }
     },
     {
@@ -1931,26 +1380,6 @@
      }
     },
     {
-     "key": "benchmark100__quantization-aware-distillation-for-nvfp4",
-     "slug": "quantization-aware-distillation-for-nvfp4",
-     "title": "Quantization-Aware Distillation for NVFP4 Inference Accuracy Recovery",
-     "stats": {
-      "nodes": 354,
-      "leaves": 273,
-      "max_depth": 4,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 121,
-       "Method Implementation": 44,
-       "Dataset and Model Acquisition": 21,
-       "Analysis & Presentation": 13,
-       "Experimental Setup": 39,
-       "Logging, Analysis & Presentation": 8,
-       "Data Processing & Preparation": 20,
-       "Environment & Infrastructure Setup": 7
-      }
-     }
-    },
-    {
      "key": "benchmark100__quest-query-aware-sparsity-for-efficient-long",
      "slug": "quest-query-aware-sparsity-for-efficient-long",
      "title": "Quest: Query-Aware Sparsity for Efficient Long-Context LLM Inference",
@@ -1974,29 +1403,6 @@
      }
     },
     {
-     "key": "benchmark100__realb-real-time-load-balancing-for-multimodal-moe",
-     "slug": "realb-real-time-load-balancing-for-multimodal-moe",
-     "title": "ReaLB: Real-Time Load Balancing for Multimodal MoE Inference",
-     "stats": {
-      "nodes": 506,
-      "leaves": 447,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 54,
-       "Experimental Setup": 37,
-       "Evaluation, Metrics & Benchmarking": 275,
-       "Metrics & Benchmarking": 31,
-       "Logging, Analysis & Presentation": 16,
-       "Data Processing & Preparation": 7,
-       "Environment & Infrastructure Setup": 11,
-       "Evaluation": 4,
-       "Dataset and Model Acquisition": 12
-      },
-      "estimated_minutes": 34007,
-      "estimated_dollars": 7508.9
-     }
-    },
-    {
      "key": "benchmark100__recursive-self-improvement-in-ai-from-bounded",
      "slug": "recursive-self-improvement-in-ai-from-bounded",
      "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
@@ -2015,28 +1421,6 @@
        "Environment & Infrastructure Setup": 9,
        "Dataset and Model Acquisition": 4
       }
-     }
-    },
-    {
-     "key": "benchmark100__reliable-and-resilient-collective-communication",
-     "slug": "reliable-and-resilient-collective-communication",
-     "title": "Reliable and Resilient Collective Communication Library for LLM Training and Serving",
-     "stats": {
-      "nodes": 1006,
-      "leaves": 898,
-      "max_depth": 4,
-      "categories": {
-       "Method Implementation": 196,
-       "Experimental Setup": 78,
-       "Evaluation, Metrics & Benchmarking": 580,
-       "Logging, Analysis & Presentation": 10,
-       "Environment & Infrastructure Setup": 29,
-       "Data Processing & Preparation": 2,
-       "Dataset and Model Acquisition": 1,
-       "Analysis & Presentation": 2
-      },
-      "estimated_minutes": 50042,
-      "estimated_dollars": 11182.2
      }
     },
     {
@@ -2101,27 +1485,6 @@
      }
     },
     {
-     "key": "benchmark100__scepsy-serving-agentic-workflows-using-aggregate",
-     "slug": "scepsy-serving-agentic-workflows-using-aggregate",
-     "title": "Scepsy: Serving Agentic Workflows Using Aggregate LLM Pipelines",
-     "stats": {
-      "nodes": 675,
-      "leaves": 586,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 74,
-       "Experimental Setup": 79,
-       "Evaluation, Metrics & Benchmarking": 387,
-       "Logging, Analysis & Presentation": 13,
-       "Dataset and Model Acquisition": 8,
-       "Environment & Infrastructure Setup": 23,
-       "Data Processing & Preparation": 2
-      },
-      "estimated_minutes": 69468,
-      "estimated_dollars": 14598.6
-     }
-    },
-    {
      "key": "benchmark100__scheduling-the-unschedulable-taming-black-box-llm",
      "slug": "scheduling-the-unschedulable-taming-black-box-llm",
      "title": "Scheduling the Unschedulable: Taming Black-Box LLM Inference at Scale",
@@ -2138,72 +1501,6 @@
        "Dataset and Model Acquisition": 1,
        "Environment & Infrastructure Setup": 5
       }
-     }
-    },
-    {
-     "key": "benchmark100__sglang-efficient-execution-of-structured-language",
-     "slug": "sglang-efficient-execution-of-structured-language",
-     "title": "SGLang: Efficient Execution of Structured Language Model Programs",
-     "stats": {
-      "nodes": 612,
-      "leaves": 507,
-      "max_depth": 4,
-      "categories": {
-       "Method Implementation": 182,
-       "Experimental Setup": 42,
-       "Evaluation, Metrics & Benchmarking": 246,
-       "Logging, Analysis & Presentation": 10,
-       "Data Processing & Preparation": 3,
-       "Logging": 2,
-       "Dataset and Model Acquisition": 1,
-       "Analysis & Presentation": 3,
-       "Environment & Infrastructure Setup": 18
-      },
-      "estimated_minutes": 23298,
-      "estimated_dollars": 4724.3
-     }
-    },
-    {
-     "key": "benchmark100__shinkaevolve-towards-open-ended-and-sample",
-     "slug": "shinkaevolve-towards-open-ended-and-sample",
-     "title": "ShinkaEvolve: Towards Open-Ended And Sample-Efficient Program Evolution",
-     "stats": {
-      "nodes": 604,
-      "leaves": 514,
-      "max_depth": 4,
-      "categories": {
-       "Experimental Setup": 90,
-       "Method Implementation": 165,
-       "Evaluation, Metrics & Benchmarking": 230,
-       "Logging, Analysis & Presentation": 12,
-       "Analysis & Presentation": 4,
-       "Dataset and Model Acquisition": 4,
-       "Environment & Infrastructure Setup": 8,
-       "Method Invalidation": 1
-      },
-      "estimated_minutes": 91785,
-      "estimated_dollars": 24334.35
-     }
-    },
-    {
-     "key": "benchmark100__smoothquant-accurate-and-efficient-post-training",
-     "slug": "smoothquant-accurate-and-efficient-post-training",
-     "title": "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models",
-     "stats": {
-      "nodes": 907,
-      "leaves": 792,
-      "max_depth": 3,
-      "categories": {
-       "Method Implementation": 120,
-       "Experimental Setup": 44,
-       "Evaluation, Metrics & Benchmarking": 580,
-       "Logging, Analysis & Presentation": 19,
-       "Environment & Infrastructure Setup": 16,
-       "Dataset and Model Acquisition": 6,
-       "Data Processing & Preparation": 7
-      },
-      "estimated_minutes": 89165,
-      "estimated_dollars": 20233.0
      }
     },
     {
@@ -2267,29 +1564,6 @@
      }
     },
     {
-     "key": "benchmark100__taming-throughput-latency-tradeoff-in-llm",
-     "slug": "taming-throughput-latency-tradeoff-in-llm",
-     "title": "Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve",
-     "stats": {
-      "nodes": 423,
-      "leaves": 328,
-      "max_depth": 3,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 101,
-       "Experimental Setup": 46,
-       "Logging, Analysis & Presentation": 18,
-       "Method Implementation": 106,
-       "Data Processing & Preparation": 12,
-       "Evaluation": 8,
-       "Metrics & Benchmarking": 5,
-       "Environment & Infrastructure Setup": 17,
-       "Analysis & Presentation": 5,
-       "Logging": 4,
-       "Dataset and Model Acquisition": 6
-      }
-     }
-    },
-    {
      "key": "benchmark100__tcl-enabling-fast-and-efficient-cross-hardware",
      "slug": "tcl-enabling-fast-and-efficient-cross-hardware",
      "title": "TCL: Enabling Fast and Efficient Cross-Hardware Tensor Program Optimization via Continual Learning",
@@ -2306,68 +1580,6 @@
        "Data Processing & Preparation": 15,
        "Dataset and Model Acquisition": 4
       }
-     }
-    },
-    {
-     "key": "benchmark100__td-pipe-temporally-disaggregated-pipeline",
-     "slug": "td-pipe-temporally-disaggregated-pipeline",
-     "title": "TD-Pipe: Temporally-Disaggregated Pipeline Parallelism Architecture for High-Throughput LLM Inference",
-     "stats": {
-      "nodes": 387,
-      "leaves": 311,
-      "max_depth": 4,
-      "categories": {
-       "Experimental Setup": 45,
-       "Method Implementation": 89,
-       "Evaluation, Metrics & Benchmarking": 138,
-       "Logging, Analysis & Presentation": 10,
-       "Data Processing & Preparation": 11,
-       "Environment & Infrastructure Setup": 13,
-       "Dataset and Model Acquisition": 5
-      },
-      "estimated_minutes": 19626,
-      "estimated_dollars": 4774.1
-     }
-    },
-    {
-     "key": "benchmark100__throughput-optimal-scheduling-algorithms-for-llm",
-     "slug": "throughput-optimal-scheduling-algorithms-for-llm",
-     "title": "Throughput-Optimal Scheduling Algorithms for LLM Inference and AI Agents",
-     "stats": {
-      "nodes": 984,
-      "leaves": 864,
-      "max_depth": 3,
-      "categories": {
-       "Experimental Setup": 101,
-       "Method Implementation": 216,
-       "Evaluation, Metrics & Benchmarking": 519,
-       "Logging, Analysis & Presentation": 9,
-       "Data Processing & Preparation": 4,
-       "Environment & Infrastructure Setup": 15
-      },
-      "estimated_minutes": 37711,
-      "estimated_dollars": 8776.1
-     }
-    },
-    {
-     "key": "benchmark100__tilus-a-tile-level-gpgpu-programming-language-for",
-     "slug": "tilus-a-tile-level-gpgpu-programming-language-for",
-     "title": "Tilus: A Tile-Level GPGPU Programming Language for Low-Precision Computation",
-     "stats": {
-      "nodes": 830,
-      "leaves": 725,
-      "max_depth": 3,
-      "categories": {
-       "Experimental Setup": 52,
-       "Method Implementation": 199,
-       "Evaluation, Metrics & Benchmarking": 439,
-       "Logging, Analysis & Presentation": 15,
-       "Environment & Infrastructure Setup": 8,
-       "Dataset and Model Acquisition": 9,
-       "Data Processing & Preparation": 3
-      },
-      "estimated_minutes": 22293,
-      "estimated_dollars": 5378.4
      }
     },
     {
@@ -2416,69 +1628,6 @@
      }
     },
     {
-     "key": "benchmark100__tpla-tensor-parallel-latent-attention-for",
-     "slug": "tpla-tensor-parallel-latent-attention-for",
-     "title": "TPLA: Tensor Parallel Latent Attention for Efficient Disaggregated Prefill and Decode Inference",
-     "stats": {
-      "nodes": 384,
-      "leaves": 353,
-      "max_depth": 3,
-      "categories": {
-       "Evaluation, Metrics & Benchmarking": 248,
-       "Method Implementation": 67,
-       "Experimental Setup": 22,
-       "Logging, Analysis & Presentation": 2,
-       "Environment & Infrastructure Setup": 3,
-       "Data Processing & Preparation": 1,
-       "Dataset and Model Acquisition": 10
-      },
-      "estimated_minutes": 54623,
-      "estimated_dollars": 8886.75
-     }
-    },
-    {
-     "key": "benchmark100__tritonbench-benchmarking-large-language-model",
-     "slug": "tritonbench-benchmarking-large-language-model",
-     "title": "TritonBench: Benchmarking Large Language Model Capabilities for Generating Triton Operators",
-     "stats": {
-      "nodes": 929,
-      "leaves": 825,
-      "max_depth": 4,
-      "categories": {
-       "Experimental Setup": 55,
-       "Method Implementation": 62,
-       "Evaluation, Metrics & Benchmarking": 632,
-       "Logging, Analysis & Presentation": 15,
-       "Data Processing & Preparation": 38,
-       "Environment & Infrastructure Setup": 14,
-       "Dataset and Model Acquisition": 9
-      },
-      "estimated_minutes": 102194,
-      "estimated_dollars": 21134.4
-     }
-    },
-    {
-     "key": "benchmark100__tritonrl-training-llms-to-think-and-code-triton",
-     "slug": "tritonrl-training-llms-to-think-and-code-triton",
-     "title": "TritonRL: Training LLMs to Think and Code Triton Without Cheating",
-     "stats": {
-      "nodes": 789,
-      "leaves": 664,
-      "max_depth": 3,
-      "categories": {
-       "Experimental Setup": 58,
-       "Method Implementation": 96,
-       "Evaluation, Metrics & Benchmarking": 423,
-       "Logging, Analysis & Presentation": 12,
-       "Dataset and Model Acquisition": 14,
-       "Data Processing & Preparation": 39,
-       "Environment & Infrastructure Setup": 22
-      },
-      "estimated_minutes": 157163,
-      "estimated_dollars": 18781.4
-     }
-    },
-    {
      "key": "benchmark100__turboquant-online-vector-quantization-with-near",
      "slug": "turboquant-online-vector-quantization-with-near",
      "title": "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate",
@@ -2496,72 +1645,6 @@
        "Analysis & Presentation": 1,
        "Environment & Infrastructure Setup": 9
       }
-     }
-    },
-    {
-     "key": "benchmark100__unveiling-the-potential-of-quantization-with",
-     "slug": "unveiling-the-potential-of-quantization-with",
-     "title": "Unveiling the Potential of Quantization with MXFP4: Strategies for Quantization Error Reduction",
-     "stats": {
-      "nodes": 1153,
-      "leaves": 1032,
-      "max_depth": 4,
-      "categories": {
-       "Method Implementation": 164,
-       "Evaluation, Metrics & Benchmarking": 787,
-       "Experimental Setup": 42,
-       "Logging, Analysis & Presentation": 5,
-       "Data Processing & Preparation": 3,
-       "Analysis & Presentation": 12,
-       "Logging": 1,
-       "Dataset and Model Acquisition": 8,
-       "Environment & Infrastructure Setup": 10
-      },
-      "estimated_minutes": 96221,
-      "estimated_dollars": 17409.1
-     }
-    },
-    {
-     "key": "benchmark100__vattention-dynamic-memory-management-for-serving",
-     "slug": "vattention-dynamic-memory-management-for-serving",
-     "title": "vAttention: Dynamic Memory Management for Serving LLMs without PagedAttention",
-     "stats": {
-      "nodes": 471,
-      "leaves": 371,
-      "max_depth": 3,
-      "categories": {
-       "Logging": 2,
-       "Environment & Infrastructure Setup": 23,
-       "Evaluation, Metrics & Benchmarking": 138,
-       "Method Implementation": 125,
-       "Experimental Setup": 44,
-       "Analysis & Presentation": 4,
-       "Logging, Analysis & Presentation": 18,
-       "Data Processing & Preparation": 9,
-       "Dataset and Model Acquisition": 5,
-       "Metrics & Benchmarking": 3
-      }
-     }
-    },
-    {
-     "key": "benchmark100__verbalizable-representations-form-a-global",
-     "slug": "verbalizable-representations-form-a-global",
-     "title": "Verbalizable Representations Form a Global Workspace in Language Models",
-     "stats": {
-      "nodes": 444,
-      "leaves": 361,
-      "max_depth": 3,
-      "categories": {
-       "Experimental Setup": 29,
-       "Method Implementation": 82,
-       "Evaluation, Metrics & Benchmarking": 201,
-       "Logging, Analysis & Presentation": 14,
-       "Environment & Infrastructure Setup": 11,
-       "Data Processing & Preparation": 17,
-       "Dataset and Model Acquisition": 7
-      },
-      "estimated_minutes": 14214,
-      "estimated_dollars": 2813.1
      }
     },
     {
@@ -2605,27 +1688,6 @@
       },
       "estimated_minutes": 231414,
       "estimated_dollars": 11695.6
-     }
-    },
-    {
-     "key": "benchmark100__xgrammar-flexible-and-efficient-structured",
-     "slug": "xgrammar-flexible-and-efficient-structured",
-     "title": "XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models",
-     "stats": {
-      "nodes": 1052,
-      "leaves": 957,
-      "max_depth": 4,
-      "categories": {
-       "Method Implementation": 173,
-       "Experimental Setup": 136,
-       "Evaluation, Metrics & Benchmarking": 604,
-       "Environment & Infrastructure Setup": 19,
-       "Logging, Analysis & Presentation": 12,
-       "Data Processing & Preparation": 10,
-       "Dataset and Model Acquisition": 3
-      },
-      "estimated_minutes": 26850,
-      "estimated_dollars": 5424.4
      }
     }
    ]
