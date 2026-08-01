@@ -6,7 +6,7 @@
   <title>ResearchBench — Task-Graph Explorer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css?v=5" />
+  <link rel="stylesheet" href="assets/style.css?v=6" />
 </head>
 <body class="brand">
   <div class="container">
@@ -16,7 +16,6 @@
       <nav class="navlinks">
         <a href="#about">About</a>
         <a href="#downloads">Download</a>
-        <a href="#baselines">Baselines</a>
         <a href="#explorer">Explore</a>
       </nav>
     </header>
@@ -101,12 +100,6 @@
       <div class="bundle-row" id="bundle-row"></div>
     </section>
 
-    <section class="panel reveal" id="baselines">
-      <p class="sub">Verified-pass tasks under the frozen harness. Attempt 2 is the stock clean baseline; Attempt 3 adds a one-paragraph legibility patch and raised compute caps — models unchanged.</p>
-      <div class="baseline-tiles" id="baseline-tiles"></div>
-      <p class="sub">Tick “Agent baselines” in the explorer below to see per-paper Claude Code and Codex coverage.</p>
-    </section>
-
     <div class="legend" id="legend"></div>
 
     <a id="explorer"></a>
@@ -119,7 +112,7 @@
     <div id="collections" class="explorer"><p class="empty">Loading…</p></div>
   </div>
 
-  <script src="assets/common.js?v=5"></script>
-  <script src="assets/home.js?v=5"></script>
+  <script src="assets/common.js?v=6"></script>
+  <script src="assets/home.js?v=6"></script>
 </body>
 </html>
