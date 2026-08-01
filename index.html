@@ -8,10 +8,28 @@
 </head>
 <body>
   <div class="container">
-    <header class="site">
-      <h1>ResearchBench — Task-Graph Explorer</h1>
-      <p class="sub">Every paper in the benchmark with its reproduction task graph as an explorable dependency tree. Pick a split (ResearchBench 10/20/50/100) and click a paper to open its graph.</p>
+    <header class="site hero">
+      <h1>ResearchBench</h1>
+      <p class="tagline">Recomposing research papers into task graphs for evaluating autonomous AI research agents.</p>
+      <p class="sub">Every paper is decomposed into an explorable, dependency-structured graph of checkable tasks. Pick a split (ResearchBench&nbsp;10/20/50/100), click a paper to open its graph, or download a split bundle and test your own agent.</p>
+      <div class="stat-tiles" id="stat-tiles"></div>
     </header>
+
+    <section class="panel" id="downloads">
+      <h2>Download the benchmark</h2>
+      <p class="sub">Each bundle contains one <code>rubric.json</code> task graph per paper plus a manifest documenting the split criteria. Individual graphs download from each paper card or page.</p>
+      <div class="bundle-row" id="bundle-row"></div>
+    </section>
+
+    <section class="panel" id="baselines">
+      <h2>Agent baselines <span class="count">· ResearchBench-20 (run-backed split)</span></h2>
+      <p class="sub">Verified-pass tasks under the frozen harness. Attempt 2 is the stock clean baseline; Attempt 3 adds a one-paragraph legibility patch and raised compute caps — models unchanged.</p>
+      <div class="baseline-tiles" id="baseline-tiles"></div>
+      <details class="baseline-table-wrap">
+        <summary>Per-paper baseline table</summary>
+        <div id="baseline-table"></div>
+      </details>
+    </section>
 
     <div class="legend" id="legend"></div>
 
