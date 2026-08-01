@@ -105,10 +105,7 @@
       <h2>Agent baselines <span class="count">· ResearchBench-20 (run-backed split)</span></h2>
       <p class="sub">Verified-pass tasks under the frozen harness. Attempt 2 is the stock clean baseline; Attempt 3 adds a one-paragraph legibility patch and raised compute caps — models unchanged.</p>
       <div class="baseline-tiles" id="baseline-tiles"></div>
-      <details class="baseline-table-wrap">
-        <summary>Per-paper baseline table</summary>
-        <div id="baseline-table"></div>
-      </details>
+      <p class="sub">Tick “Agent baselines” in the explorer below to see per-paper Claude Code and Codex coverage.</p>
     </section>
 
     <div class="legend" id="legend"></div>
@@ -117,6 +114,7 @@
     <div class="searchbar">
       <select id="view" aria-label="Benchmark view"></select>
       <input id="search" type="search" placeholder="Filter papers by title or slug…" aria-label="Filter papers" />
+      <label class="baseline-toggle"><input type="checkbox" id="show-baselines" /> Agent baselines</label>
     </div>
 
     <div id="collections" class="explorer"><p class="empty">Loading…</p></div>

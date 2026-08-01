@@ -393,3 +393,9 @@ body.brand .reveal.revealed { opacity: 1; transform: none; }
 body.brand .paper-card { padding-top: 14px; }
 body.brand .paper-card .title { padding-right: 64px; }
 body.brand .paper-card .dl { position: absolute; top: 8px; right: 8px; background: #fff; }
+.baseline-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 0.9rem; color: #4a4635; margin-left: 10px; white-space: nowrap; }
+.bl-cols { display: inline-flex; gap: 8px; margin-left: 10px; font-variant-numeric: tabular-nums; }
+.bl { font-size: 0.78rem; font-weight: 600; padding-left: 12px; position: relative; }
+.bl::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 7px; height: 7px; border-radius: 2px; }
+.bl.claude::before { background: var(--cat-1, #4269d0); }
+.bl.codex::before { background: var(--cat-2, #efb118); }

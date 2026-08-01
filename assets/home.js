@@ -5,7 +5,8 @@ let INDEX = null;
 function currentView() {
   if (!INDEX || !INDEX.views || !INDEX.views.length) return null;
   const sel = document.getElementById("view");
-  return INDEX.views.find((v) => v.id === sel.value) || INDEX.views[0];
+  return INDEX.views.find((v) => v.id === sel.value) ||
+    INDEX.views.find((v) => v.id === "researchbench-100") || INDEX.views[0];
 }
 
 function setupViews() {
@@ -14,14 +15,16 @@ function setupViews() {
     sel.style.display = "none";
     return;
   }
-  sel.innerHTML = INDEX.views
+  const shown = INDEX.views.filter((v) => SPLIT_IDS.includes(v.id));
+  sel.innerHTML = shown
     .map(
       (v) =>
         `<option value="${escapeHtml(v.id)}">${escapeHtml(v.label)} (${v.keys.length})</option>`,
     )
     .join("");
+  sel.value = "researchbench-100";
   const fromUrl = new URLSearchParams(location.search).get("view");
-  if (fromUrl && INDEX.views.some((v) => v.id === fromUrl)) sel.value = fromUrl;
+  if (fromUrl && shown.some((v) => v.id === fromUrl)) sel.value = fromUrl;
   sel.addEventListener("change", () => {
     const url = new URL(location.href);
     url.searchParams.set("view", sel.value);
@@ -68,7 +71,6 @@ function renderBundles() {
 
 function renderBaselines() {
   const tiles = document.getElementById("baseline-tiles");
-  const tableEl = document.getElementById("baseline-table");
   const b = INDEX.baselines;
   if (!tiles || !b || !b.attempts) return;
   const head = b.headline || {};
@@ -80,19 +82,6 @@ function renderBaselines() {
       <span class="pair"><span class="who codex">Codex</span><span class="n">${escapeHtml(h.codex || "—")}</span></span>
       <span class="l sub">implementable claims closed</span></div>`;
   }).join("");
-  if (!tableEl || !b.papers) return;
-  const rows = Object.entries(b.papers)
-    .sort((x, y) => ((y[1].attempt3?.claude?.pct || 0) - (x[1].attempt3?.claude?.pct || 0)));
-  const cell = (e) => e && e.pct != null
-    ? `<td><span class="pctbar" style="--w:${Math.min(100, e.pct)}%"></span>${e.pct.toFixed(1)}% <span class="frac">${e.passed}/${e.total}</span></td>`
-    : "<td>—</td>";
-  tableEl.innerHTML = `<table class="baseline"><thead><tr>
-      <th>Paper</th><th>Claude A2</th><th>Claude A3</th><th>Codex A2</th><th>Codex A3</th>
-    </tr></thead><tbody>` + rows.map(([slug, e]) =>
-      `<tr><td class="slug">${escapeHtml(slug.slice(0, 44))}</td>` +
-      cell(e.attempt2 && e.attempt2.claude) + cell(e.attempt3 && e.attempt3.claude) +
-      cell(e.attempt2 && e.attempt2.codex) + cell(e.attempt3 && e.attempt3.codex) +
-      "</tr>").join("") + "</tbody></table>";
 }
 
 fetch("data/papers.json")
@@ -115,6 +104,7 @@ fetch("data/papers.json")
   });
 
 document.getElementById("search").addEventListener("input", rerender);
+document.getElementById("show-baselines")?.addEventListener("change", rerender);
 
 function distBar(categories, leaves) {
   const parts = [];
@@ -134,6 +124,19 @@ function distBar(categories, leaves) {
   return `<div class="dist" role="img" aria-label="leaf category distribution">${parts.join("")}</div>`;
 }
 
+function baselineCols(slug) {
+  if (!document.getElementById("show-baselines")?.checked) return "";
+  const e = (INDEX.baselines && INDEX.baselines.papers || {})[slug];
+  const pick = (agent) => {
+    const v = e && ((e.attempt3 && e.attempt3[agent]) || (e.attempt2 && e.attempt2[agent]));
+    return v && v.pct != null ? `${v.pct.toFixed(1)}%` : "—";
+  };
+  return `<span class="bl-cols">
+    <span class="bl claude" title="Claude Code coverage (best attempt)">${pick("claude")}</span>
+    <span class="bl codex" title="Codex coverage (best attempt)">${pick("codex")}</span>
+  </span>`;
+}
+
 function paperCard(p) {
   const s = p.stats;
   const bits = [`${s.leaves} tasks`, `depth ${s.max_depth}`];
@@ -142,7 +145,7 @@ function paperCard(p) {
     <div class="paper-card">
       <a class="stretch" href="paper.html?p=${encodeURIComponent(p.key)}" aria-label="Open task graph for ${escapeHtml(p.title)}"></a>
       <p class="title">${escapeHtml(p.title)}</p>
-      <p class="meta"><span class="slug">${escapeHtml(p.slug)}</span> · ${bits.join(" · ")}</p>
+      <p class="meta"><span class="slug">${escapeHtml(p.slug)}</span> · ${bits.join(" · ")}${baselineCols(p.slug)}</p>
       <a class="dl" href="data/rubrics/${encodeURIComponent(p.key)}.json" download="${escapeHtml(p.slug)}.rubric.json" title="Download task graph JSON">⤓ JSON</a>
       ${distBar(s.categories, s.leaves)}
     </div>`;
