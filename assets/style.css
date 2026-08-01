@@ -349,3 +349,16 @@ body.brand .paper-card .dl:hover { border-color: var(--brand-accent); color: var
 body.brand .searchbar select, body.brand .searchbar input { border: 1px solid var(--brand-accent-line); background: #fff; border-radius: 8px; font-family: inherit; }
 body.brand a { color: #7a6420; }
 body.brand .slug, body.brand code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85em; }
+
+/* Compact masthead */
+body.brand .masthead { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px dashed var(--brand-accent-line); }
+body.brand .masthead .brandmark img { height: 30px; width: auto; display: block; }
+body.brand .masthead .wordmark { font-family: 'Crimson Pro', Georgia, serif; font-weight: 600; font-size: 1.25rem; }
+body.brand .masthead .navlinks { margin-left: auto; }
+body.brand .hero.compact { padding: 10px 0 4px; }
+body.brand .hero.compact .tagline { font-size: 1rem; margin: 0 0 8px; }
+body.brand .hero.compact .stat-tiles { margin-top: 6px; }
+body.brand .hero.compact .tile { padding: 6px 12px; min-width: 104px; }
+body.brand .hero.compact .tile .n { font-size: 1.15rem; }
+body.brand .panel { padding: 12px 14px; margin: 12px 0; }
+body.brand .about-text p { font-size: 0.9rem; line-height: 1.45; }
