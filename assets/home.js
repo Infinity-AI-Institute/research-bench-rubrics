@@ -129,12 +129,15 @@ function baselineCols(slug) {
   const e = (INDEX.baselines && INDEX.baselines.papers || {})[slug];
   const pick = (agent) => {
     const v = e && ((e.attempt3 && e.attempt3[agent]) || (e.attempt2 && e.attempt2[agent]));
-    return v && v.pct != null ? `${v.pct.toFixed(1)}%` : "—";
+    return v && v.passed != null
+      ? `${v.passed}/${v.achievable}/${v.total}`
+      : "no run";
   };
-  return `<span class="bl-cols">
-    <span class="bl claude" title="Claude Code coverage (best attempt)">${pick("claude")}</span>
-    <span class="bl codex" title="Codex coverage (best attempt)">${pick("codex")}</span>
-  </span>`;
+  return `<div class="bl-row" title="completed / possible / total tasks (best attempt)">
+    <span class="bl claude">Claude Code&nbsp;<b>${pick("claude")}</b></span>
+    <span class="bl codex">Codex&nbsp;<b>${pick("codex")}</b></span>
+    <span class="bl-key">done/possible/total</span>
+  </div>`;
 }
 
 function paperCard(p) {
@@ -145,7 +148,8 @@ function paperCard(p) {
     <div class="paper-card">
       <a class="stretch" href="paper.html?p=${encodeURIComponent(p.key)}" aria-label="Open task graph for ${escapeHtml(p.title)}"></a>
       <p class="title">${escapeHtml(p.title)}</p>
-      <p class="meta"><span class="slug">${escapeHtml(p.slug)}</span> · ${bits.join(" · ")}${baselineCols(p.slug)}</p>
+      <p class="meta"><span class="slug">${escapeHtml(p.slug)}</span> · ${bits.join(" · ")}</p>
+      ${baselineCols(p.slug)}
       <a class="dl" href="data/rubrics/${encodeURIComponent(p.key)}.json" download="${escapeHtml(p.slug)}.rubric.json" title="Download task graph JSON">⤓ JSON</a>
       ${distBar(s.categories, s.leaves)}
     </div>`;

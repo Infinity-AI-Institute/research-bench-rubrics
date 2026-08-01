@@ -6,7 +6,7 @@
   <title>ResearchBench — Task-Graph Explorer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/style.css?v=5" />
 </head>
 <body class="brand">
   <div class="container">
@@ -102,7 +102,6 @@
     </section>
 
     <section class="panel reveal" id="baselines">
-      <h2>Agent baselines <span class="count">· ResearchBench-20 (run-backed split)</span></h2>
       <p class="sub">Verified-pass tasks under the frozen harness. Attempt 2 is the stock clean baseline; Attempt 3 adds a one-paragraph legibility patch and raised compute caps — models unchanged.</p>
       <div class="baseline-tiles" id="baseline-tiles"></div>
       <p class="sub">Tick “Agent baselines” in the explorer below to see per-paper Claude Code and Codex coverage.</p>
@@ -120,7 +119,7 @@
     <div id="collections" class="explorer"><p class="empty">Loading…</p></div>
   </div>
 
-  <script src="assets/common.js"></script>
-  <script src="assets/home.js"></script>
+  <script src="assets/common.js?v=5"></script>
+  <script src="assets/home.js?v=5"></script>
 </body>
 </html>

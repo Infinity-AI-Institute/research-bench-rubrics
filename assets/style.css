@@ -399,3 +399,6 @@ body.brand .paper-card .dl { position: absolute; top: 8px; right: 8px; backgroun
 .bl::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 7px; height: 7px; border-radius: 2px; }
 .bl.claude::before { background: var(--cat-1, #4269d0); }
 .bl.codex::before { background: var(--cat-2, #efb118); }
+.bl-row { display: flex; gap: 14px; align-items: baseline; margin: 4px 0 6px; font-size: 0.8rem; font-variant-numeric: tabular-nums; position: relative; z-index: 2; }
+.bl-row b { font-weight: 600; }
+.bl-key { color: var(--muted, #888); font-size: 0.7rem; }
