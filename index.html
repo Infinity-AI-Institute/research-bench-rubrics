@@ -4,10 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ResearchBench — Task-Graph Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body>
+<body class="brand">
   <div class="container">
+    <nav class="topnav">
+      <a class="brandmark" href="https://infinity.inc/" title="Infinity"><img src="assets/infinity_logo.png" alt="Infinity" /></a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#downloads">Download</a>
+        <a href="#baselines">Baselines</a>
+        <a href="#explorer">Explore</a>
+      </div>
+    </nav>
     <header class="site hero">
       <h1>ResearchBench</h1>
       <p class="tagline">Recomposing research papers into task graphs for evaluating autonomous AI research agents.</p>
@@ -16,9 +27,21 @@
     </header>
 
     <section class="panel about" id="about">
-      <h2>What is a task graph?</h2>
+      <h2>The goal: autonomous research</h2>
       <div class="about-cols">
         <div class="about-text">
+          <p>The goal of automated AI research is an agent that can take a hypothesis,
+          implement it, run the experiments, and report faithful results. Progress toward
+          that goal is hard to evaluate for a fundamental reason: <strong>novel research has no
+          ground truth</strong>. Paper replication offers an escape — the sub-tasks of
+          replicating a published paper are, to a first approximation, the same sub-tasks
+          novel research requires (environment bring-up, data preparation, method
+          implementation, benchmarking, analysis), yet the paper's reported numbers give
+          every one of them a checkable target. An agent that closes a paper's task graph
+          has demonstrated the skills of research, verifiably. ResearchBench exists to
+          make that measurement rigorous, scalable, and public.</p>
+
+          <h3>What is a task graph?</h3>
           <p>A <strong>task graph</strong> is a research paper, recomposed: a weighted tree of
           small, checkable tasks — <em>the environment is set up; the method's component
           exists; it computes the right thing on a deterministic input; the experiment
@@ -34,21 +57,17 @@
           <p>Replicating a paper used to be scored as one bit: did it replicate or not?
           That single bit collapses months of layered work and hides everything we want to
           measure. Decomposition turns replication into a <strong>score</strong> — how many of the
-          paper's sub-tasks did the agent actually complete? — and the paper's own reported
-          numbers make each measured task checkable against ground truth. Expert-authored
+          paper's sub-tasks did the agent actually complete? Expert-authored
           decompositions (PaperBench, 2024) proved the idea; automatic generation removes
           the expert-labor bottleneck that capped it at a handful of papers.</p>
 
-          <h3>How this helps autonomous research</h3>
-          <p>The sub-tasks of replicating a published paper are, to a first approximation,
-          the same sub-tasks required to execute novel research: environment bring-up, data
-          preparation, method implementation, benchmarking, analysis. An agent that closes
-          a paper's task graph has demonstrated the skills novel research requires — with
-          verifiable ground truth that novel research can never offer. And because papers
-          decompose into the same reusable parts novel research composes, a library of
-          verified task graphs is more than a benchmark: it is a <strong>parts inventory for
-          recomposing new research</strong> — a new idea expressed as a novel composition of
-          sub-tasks from existing graphs, graded by the same executable contracts.</p>
+          <h3>From replication to recomposition</h3>
+          <p>Because papers decompose into the same reusable parts novel research
+          composes, a library of verified task graphs is more than a benchmark: it is a
+          <strong>parts inventory for recomposing new research</strong> — a new idea expressed as a
+          novel composition of sub-tasks from existing graphs, graded by the same
+          executable contracts and anti-fabrication auditing that grade replication.
+          That is the bridge from measuring research agents to running them.</p>
         </div>
         <figure class="about-figure" aria-label="Miniature task graph: environment and dataset groups unlock the method group, which unlocks experiments">
           <svg viewBox="0 0 300 210" width="300" height="210" role="img">
@@ -90,12 +109,13 @@
 
     <div class="legend" id="legend"></div>
 
+    <a id="explorer"></a>
     <div class="searchbar">
       <select id="view" aria-label="Benchmark view"></select>
       <input id="search" type="search" placeholder="Filter papers by title or slug…" aria-label="Filter papers" />
     </div>
 
-    <div id="collections"><p class="empty">Loading…</p></div>
+    <div id="collections" class="explorer"><p class="empty">Loading…</p></div>
   </div>
 
   <script src="assets/common.js"></script>

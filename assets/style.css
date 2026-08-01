@@ -318,3 +318,34 @@ table.baseline td .pctbar { display: inline-block; vertical-align: middle; heigh
 .about-figure { flex: 0 0 300px; margin: 4px 0; }
 .about-figure svg { max-width: 100%; height: auto; }
 .about-figure figcaption { font-size: 0.78rem; color: var(--muted, #666); margin-top: 4px; }
+
+/* --- Infinity brand theme (matches omega.infinity.inc) --------------------- */
+body.brand {
+  --brand-bg: #F8F7F2;
+  --brand-accent: #D4AF37;
+  --brand-accent-soft: rgba(212, 175, 55, 0.08);
+  --brand-accent-line: rgba(212, 175, 55, 0.35);
+  background: var(--brand-bg);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-weight: 400;
+  color: #1e1c16;
+}
+body.brand h1, body.brand h2, body.brand h3 { font-family: 'Crimson Pro', Georgia, serif; font-weight: 600; letter-spacing: 0.01em; }
+body.brand .hero h1 { font-size: 2.4rem; margin: 0.35em 0 0.1em; }
+body.brand .hero .tagline { color: #4a4635; }
+body.brand .topnav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0 6px; border-bottom: 1px dashed var(--brand-accent-line); }
+body.brand .brandmark img { height: 34px; width: auto; display: block; }
+body.brand .navlinks a { margin-left: 18px; text-decoration: none; color: #4a4635; font-size: 0.98rem; }
+body.brand .navlinks a:hover { color: var(--brand-accent); }
+body.brand .panel { background: var(--brand-accent-soft); border: 1px dashed var(--brand-accent-line); border-radius: 12px; }
+body.brand .tile { background: #fff; border-color: var(--brand-accent-line); }
+body.brand .tile .n { color: #1e1c16; }
+body.brand .bundle { background: #fff; border-color: var(--brand-accent-line); }
+body.brand .bundle:hover { border-color: var(--brand-accent); border-style: solid; }
+body.brand .bundle .name { color: #1e1c16; }
+body.brand .paper-card { background: #fff; border: 1px solid var(--brand-accent-line); }
+body.brand .paper-card:hover { border-color: var(--brand-accent); }
+body.brand .paper-card .dl:hover { border-color: var(--brand-accent); color: var(--brand-accent); }
+body.brand .searchbar select, body.brand .searchbar input { border: 1px solid var(--brand-accent-line); background: #fff; border-radius: 8px; font-family: inherit; }
+body.brand a { color: #7a6420; }
+body.brand .slug, body.brand code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85em; }
