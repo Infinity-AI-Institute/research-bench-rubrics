@@ -362,3 +362,34 @@ body.brand .hero.compact .tile { padding: 6px 12px; min-width: 104px; }
 body.brand .hero.compact .tile .n { font-size: 1.15rem; }
 body.brand .panel { padding: 12px 14px; margin: 12px 0; }
 body.brand .about-text p { font-size: 0.9rem; line-height: 1.45; }
+
+/* --- Landing intro: staggered INFINITY reveal ----------------------------- */
+body.brand .intro { min-height: calc(100vh - 120px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+body.brand .intro-word { display: flex; gap: 0.08em; font-family: 'Crimson Pro', Georgia, serif; font-weight: 300; font-size: clamp(3rem, 11vw, 7.5rem); letter-spacing: 0.14em; color: #1e1c16; }
+body.brand .intro-word span { opacity: 0; transform: translateY(0.25em); animation: ltr-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+body.brand .intro-word span:nth-child(1) { animation-delay: 0.15s; }
+body.brand .intro-word span:nth-child(2) { animation-delay: 0.32s; }
+body.brand .intro-word span:nth-child(3) { animation-delay: 0.49s; }
+body.brand .intro-word span:nth-child(4) { animation-delay: 0.66s; }
+body.brand .intro-word span:nth-child(5) { animation-delay: 0.83s; }
+body.brand .intro-word span:nth-child(6) { animation-delay: 1.00s; }
+body.brand .intro-word span:nth-child(7) { animation-delay: 1.17s; }
+body.brand .intro-word span:nth-child(8) { animation-delay: 1.34s; color: var(--brand-accent); }
+@keyframes ltr-in { to { opacity: 1; transform: none; } }
+body.brand .intro-sub { opacity: 0; animation: ltr-in 1s 2.0s forwards; color: #4a4635; font-size: 1.05rem; line-height: 1.5; margin-top: 1rem; }
+body.brand .scroll-cue { opacity: 0; animation: ltr-in 1s 2.6s forwards, bob 1.8s 3.6s ease-in-out infinite; text-decoration: none; font-size: 1.6rem; color: var(--brand-accent); margin-top: 2.2rem; }
+@keyframes bob { 50% { transform: translateY(6px); } }
+
+/* Scroll-reveal for content blocks */
+body.brand .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+body.brand .reveal.revealed { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  body.brand .intro-word span, body.brand .intro-sub, body.brand .scroll-cue { animation: none; opacity: 1; transform: none; }
+  body.brand .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* JSON download pinned top-right of each card */
+body.brand .paper-card { padding-top: 14px; }
+body.brand .paper-card .title { padding-right: 64px; }
+body.brand .paper-card .dl { position: absolute; top: 8px; right: 8px; background: #fff; }

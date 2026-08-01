@@ -20,12 +20,17 @@
         <a href="#explorer">Explore</a>
       </nav>
     </header>
-    <header class="site hero compact">
-      <p class="tagline">Recomposing research papers into task graphs for evaluating autonomous AI research agents.</p>
+    <section class="intro" aria-label="Infinity ResearchBench">
+      <div class="intro-word" aria-hidden="true"><span>I</span><span>N</span><span>F</span><span>I</span><span>N</span><span>I</span><span>T</span><span>Y</span></div>
+      <p class="intro-sub">ResearchBench — recomposing research papers into task graphs<br/>for evaluating autonomous AI research agents</p>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to learn more">↓</a>
+    </section>
+
+    <header class="site hero compact reveal">
       <div class="stat-tiles" id="stat-tiles"></div>
     </header>
 
-    <section class="panel about" id="about">
+    <section class="panel about reveal" id="about">
       <h2>The goal: autonomous research</h2>
       <div class="about-cols">
         <div class="about-text">
@@ -90,13 +95,13 @@
       </div>
     </section>
 
-    <section class="panel" id="downloads">
+    <section class="panel reveal" id="downloads">
       <h2>Download the benchmark</h2>
       <p class="sub">Each bundle contains one <code>rubric.json</code> task graph per paper plus a manifest documenting the split criteria. Individual graphs download from each paper card or page.</p>
       <div class="bundle-row" id="bundle-row"></div>
     </section>
 
-    <section class="panel" id="baselines">
+    <section class="panel reveal" id="baselines">
       <h2>Agent baselines <span class="count">· ResearchBench-20 (run-backed split)</span></h2>
       <p class="sub">Verified-pass tasks under the frozen harness. Attempt 2 is the stock clean baseline; Attempt 3 adds a one-paragraph legibility patch and raised compute caps — models unchanged.</p>
       <div class="baseline-tiles" id="baseline-tiles"></div>

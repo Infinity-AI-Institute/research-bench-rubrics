@@ -189,3 +189,19 @@ function render(query) {
   }
   root.innerHTML = sections.join("") || `<p class="empty">No papers match “${escapeHtml(query)}”.</p>`;
 }
+
+// Scroll-reveal: content blocks fade in as they enter the viewport.
+(() => {
+  const els = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    els.forEach((e) => e.classList.add("revealed"));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    for (const en of entries) {
+      if (en.isIntersecting) { en.target.classList.add("revealed"); io.unobserve(en.target); }
+    }
+  }, { threshold: 0.12 });
+  els.forEach((e) => io.observe(e));
+})();
