@@ -311,3 +311,10 @@ table.baseline td .pctbar { display: inline-block; vertical-align: middle; heigh
 .paper-card .dl { position: relative; z-index: 2; font-size: 0.75rem; text-decoration: none; border: 1px solid var(--border, #ccc); border-radius: 6px; padding: 1px 7px; color: var(--muted, #555); align-self: flex-start; }
 .paper-card .dl:hover { border-color: var(--cat-1, #4269d0); color: var(--cat-1, #4269d0); }
 .toolbar .dl-link { font-size: 0.85rem; margin-left: 8px; align-self: center; text-decoration: none; border: 1px solid var(--border, #ccc); border-radius: 7px; padding: 3px 10px; color: inherit; }
+.about-cols { display: flex; gap: 22px; align-items: flex-start; flex-wrap: wrap; }
+.about-text { flex: 1 1 380px; }
+.about-text h3 { margin: 14px 0 4px; font-size: 0.95rem; }
+.about-text p { margin: 4px 0 8px; line-height: 1.5; font-size: 0.92rem; }
+.about-figure { flex: 0 0 300px; margin: 4px 0; }
+.about-figure svg { max-width: 100%; height: auto; }
+.about-figure figcaption { font-size: 0.78rem; color: var(--muted, #666); margin-top: 4px; }

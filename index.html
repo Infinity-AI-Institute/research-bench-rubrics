@@ -15,6 +15,63 @@
       <div class="stat-tiles" id="stat-tiles"></div>
     </header>
 
+    <section class="panel about" id="about">
+      <h2>What is a task graph?</h2>
+      <div class="about-cols">
+        <div class="about-text">
+          <p>A <strong>task graph</strong> is a research paper, recomposed: a weighted tree of
+          small, checkable tasks — <em>the environment is set up; the method's component
+          exists; it computes the right thing on a deterministic input; the experiment
+          independently reproduces the paper's number within tolerance</em> — with
+          dependency edges recording which task groups must be completed before others can
+          begin. Every measured task carries an executable verification contract, so credit
+          comes from running tests, never from trusting an agent's claims. The graphs here
+          are <strong>generated automatically by terminal agents</strong> at whatever size the paper
+          demands, then audited by deterministic gates (no duplicate padding, claim
+          coverage, category balance).</p>
+
+          <h3>Why decompose papers?</h3>
+          <p>Replicating a paper used to be scored as one bit: did it replicate or not?
+          That single bit collapses months of layered work and hides everything we want to
+          measure. Decomposition turns replication into a <strong>score</strong> — how many of the
+          paper's sub-tasks did the agent actually complete? — and the paper's own reported
+          numbers make each measured task checkable against ground truth. Expert-authored
+          decompositions (PaperBench, 2024) proved the idea; automatic generation removes
+          the expert-labor bottleneck that capped it at a handful of papers.</p>
+
+          <h3>How this helps autonomous research</h3>
+          <p>The sub-tasks of replicating a published paper are, to a first approximation,
+          the same sub-tasks required to execute novel research: environment bring-up, data
+          preparation, method implementation, benchmarking, analysis. An agent that closes
+          a paper's task graph has demonstrated the skills novel research requires — with
+          verifiable ground truth that novel research can never offer. And because papers
+          decompose into the same reusable parts novel research composes, a library of
+          verified task graphs is more than a benchmark: it is a <strong>parts inventory for
+          recomposing new research</strong> — a new idea expressed as a novel composition of
+          sub-tasks from existing graphs, graded by the same executable contracts.</p>
+        </div>
+        <figure class="about-figure" aria-label="Miniature task graph: environment and dataset groups unlock the method group, which unlocks experiments">
+          <svg viewBox="0 0 300 210" width="300" height="210" role="img">
+            <defs><marker id="arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L8 4L0 8z" fill="#999"/></marker></defs>
+            <g font-family="system-ui, sans-serif" font-size="10">
+              <rect x="10" y="10" width="120" height="26" rx="6" fill="var(--cat-4, #6cc5b0)"/><text x="70" y="27" text-anchor="middle" fill="#fff">Environment setup</text>
+              <rect x="10" y="46" width="120" height="26" rx="6" fill="var(--cat-5, #3ca951)"/><text x="70" y="63" text-anchor="middle" fill="#fff">Dataset acquisition</text>
+              <rect x="90" y="92" width="120" height="26" rx="6" fill="var(--cat-1, #4269d0)"/><text x="150" y="109" text-anchor="middle" fill="#fff">Method implementation</text>
+              <rect x="170" y="138" width="120" height="26" rx="6" fill="var(--cat-2, #efb118)"/><text x="230" y="155" text-anchor="middle" fill="#333">Experiments / tables</text>
+              <line x1="70" y1="36" x2="130" y2="92" stroke="#999" stroke-width="2" marker-end="url(#arr)"/>
+              <line x1="70" y1="72" x2="122" y2="94" stroke="#999" stroke-width="2" marker-end="url(#arr)"/>
+              <line x1="150" y1="118" x2="216" y2="138" stroke="#999" stroke-width="2" marker-end="url(#arr)"/>
+              <g font-size="9" fill="var(--muted, #666)">
+                <text x="150" y="185">code exists → code behaves → result matches</text>
+                <text x="150" y="199">each leaf: an executable check</text>
+              </g>
+            </g>
+          </svg>
+          <figcaption>Dependency edges order the task groups; leaves are individually checkable.</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="panel" id="downloads">
       <h2>Download the benchmark</h2>
       <p class="sub">Each bundle contains one <code>rubric.json</code> task graph per paper plus a manifest documenting the split criteria. Individual graphs download from each paper card or page.</p>
