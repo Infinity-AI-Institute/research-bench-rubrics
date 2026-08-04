@@ -6,7 +6,7 @@
   <title>ResearchBench — Task-Graph Explorer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css?v=6" />
+  <link rel="stylesheet" href="assets/style.css?v=7" />
 </head>
 <body class="brand">
   <div class="container">
@@ -100,9 +100,13 @@
       <div class="bundle-row" id="bundle-row"></div>
     </section>
 
-    <div class="legend" id="legend"></div>
-
     <a id="explorer"></a>
+    <div class="legend completion-legend" aria-label="Task completion legend">
+      <span class="chip"><i style="background:#008300"></i> done</span>
+      <span class="chip"><i style="background:#e66767"></i> possible, not done</span>
+      <span class="chip"><i style="background:#52514e"></i> not achievable on H100</span>
+      <span class="chip note">bars appear on papers with baseline runs</span>
+    </div>
     <div class="searchbar">
       <select id="view" aria-label="Benchmark view"></select>
       <input id="search" type="search" placeholder="Filter papers by title or slug…" aria-label="Filter papers" />
@@ -113,6 +117,6 @@
   </div>
 
   <script src="assets/common.js?v=6"></script>
-  <script src="assets/home.js?v=6"></script>
+  <script src="assets/home.js?v=7"></script>
 </body>
 </html>

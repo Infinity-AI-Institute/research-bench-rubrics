@@ -1,4 +1,3 @@
-buildLegend(document.getElementById("legend"), "Uncategorized");
 
 let INDEX = null;
 
@@ -140,6 +139,28 @@ function baselineCols(slug) {
   </div>`;
 }
 
+function completionBars(slug) {
+  const e = (INDEX.baselines && INDEX.baselines.papers || {})[slug];
+  if (!e) return "";
+  const best = (agent) => (e.attempt3 && e.attempt3[agent]) || (e.attempt2 && e.attempt2[agent]);
+  const bar = (label, v) => {
+    if (!v || v.total == null) return "";
+    const done = v.passed || 0;
+    const poss = Math.max(0, (v.achievable || 0) - done);
+    const un = Math.max(0, (v.total || 0) - (v.achievable || 0));
+    return `<div class="cbar-row">
+      <span class="cbar-label">${label}</span>
+      <div class="cbar" role="img" title="${label}: ${done} done · ${poss} possible not done · ${un} not achievable (of ${v.total})">
+        ${done ? `<span style="flex:${done};background:#008300"></span>` : ""}
+        ${poss ? `<span style="flex:${poss};background:#e66767"></span>` : ""}
+        ${un ? `<span style="flex:${un};background:#52514e"></span>` : ""}
+      </div>
+    </div>`;
+  };
+  const rows = bar("Claude", best("claude")) + bar("Codex", best("codex"));
+  return rows ? `<div class="cbars">${rows}</div>` : "";
+}
+
 function paperCard(p) {
   const s = p.stats;
   const bits = [`${s.leaves} tasks`, `depth ${s.max_depth}`];
@@ -151,7 +172,7 @@ function paperCard(p) {
       <p class="meta"><span class="slug">${escapeHtml(p.slug)}</span> · ${bits.join(" · ")}</p>
       ${baselineCols(p.slug)}
       <a class="dl" href="data/rubrics/${encodeURIComponent(p.key)}.json" download="${escapeHtml(p.slug)}.rubric.json" title="Download task graph JSON">⤓ JSON</a>
-      ${distBar(s.categories, s.leaves)}
+      ${completionBars(p.slug)}
     </div>`;
 }
 
