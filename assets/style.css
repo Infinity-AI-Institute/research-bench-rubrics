@@ -433,3 +433,6 @@ body.brand .intro-word span:nth-child(13) { animation-delay: 1.30s; }
 body.brand .intro-word span:nth-child(n+9) { color: var(--brand-accent); }
 body.brand .intro-sub.byline { font-size: 1.25rem; color: var(--brand-accent); font-weight: 600; animation-delay: 1.7s; margin-top: 0.6rem; }
 body.brand .intro-sub { animation-delay: 2.1s; }
+/* v10: only BENCH gold (old INFINITY rule made child 8 gold too); logo byline */
+body.brand .intro-word span:nth-child(8) { color: #1e1c16; }
+body.brand .intro-sub.byline img { height: 40px; width: auto; display: inline-block; vertical-align: middle; }
