@@ -103,7 +103,6 @@ fetch("data/papers.json")
   });
 
 document.getElementById("search").addEventListener("input", rerender);
-document.getElementById("show-baselines")?.addEventListener("change", rerender);
 
 function distBar(categories, leaves) {
   const parts = [];
@@ -121,22 +120,6 @@ function distBar(categories, leaves) {
     parts.push(`<span style="flex:${other};background:var(--cat-0)" title="Uncategorized: ${other}"></span>`);
   }
   return `<div class="dist" role="img" aria-label="leaf category distribution">${parts.join("")}</div>`;
-}
-
-function baselineCols(slug) {
-  if (!document.getElementById("show-baselines")?.checked) return "";
-  const e = (INDEX.baselines && INDEX.baselines.papers || {})[slug];
-  const pick = (agent) => {
-    const v = e && ((e.attempt3 && e.attempt3[agent]) || (e.attempt2 && e.attempt2[agent]));
-    return v && v.passed != null
-      ? `${v.passed}/${v.achievable}/${v.total}`
-      : "no run";
-  };
-  return `<div class="bl-row" title="completed / possible / total tasks (best attempt)">
-    <span class="bl claude">Claude Code&nbsp;<b>${pick("claude")}</b></span>
-    <span class="bl codex">Codex&nbsp;<b>${pick("codex")}</b></span>
-    <span class="bl-key">done/possible/total</span>
-  </div>`;
 }
 
 function completionBars(slug) {
@@ -170,7 +153,6 @@ function paperCard(p) {
       <a class="stretch" href="paper.html?p=${encodeURIComponent(p.key)}" aria-label="Open task graph for ${escapeHtml(p.title)}"></a>
       <p class="title">${escapeHtml(p.title)}</p>
       <p class="meta"><span class="slug">${escapeHtml(p.slug)}</span> · ${bits.join(" · ")}</p>
-      ${baselineCols(p.slug)}
       <a class="dl" href="data/rubrics/${encodeURIComponent(p.key)}.json" download="${escapeHtml(p.slug)}.rubric.json" title="Download task graph JSON">⤓ JSON</a>
       ${completionBars(p.slug)}
     </div>`;
