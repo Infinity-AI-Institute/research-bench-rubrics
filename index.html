@@ -6,7 +6,7 @@
   <title>ResearchBench — Task-Graph Explorer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/style.css?v=10" />
+  <link rel="stylesheet" href="assets/style.css?v=11" />
 </head>
 <body class="brand">
   <div class="container">
@@ -14,7 +14,6 @@
       <a class="brandmark" href="https://infinity.inc/" title="Infinity"><img src="assets/infinity_logo.png" alt="Infinity" height="30" /></a>
       <nav class="navlinks">
         <a href="#about">About</a>
-        <a href="#downloads">Download</a>
         <a href="#explorer">Explore</a>
       </nav>
     </header>
@@ -94,12 +93,6 @@
       </div>
     </section>
 
-    <section class="panel reveal" id="downloads">
-      <h2>Download the benchmark</h2>
-      <p class="sub">Each bundle contains one <code>rubric.json</code> task graph per paper plus a manifest documenting the split criteria. Individual graphs download from each paper card or page.</p>
-      <div class="bundle-row" id="bundle-row"></div>
-    </section>
-
     <a id="explorer"></a>
     <div class="legend completion-legend" aria-label="Task completion legend">
       <span class="chip"><i style="background:#008300"></i> done</span>
@@ -110,12 +103,13 @@
     <div class="searchbar">
       <select id="view" aria-label="Benchmark view"></select>
       <input id="search" type="search" placeholder="Filter papers by title or slug…" aria-label="Filter papers" />
+      <a id="zip-all" class="zip-all" href="data/bundles/researchbench-100.zip" download>⤓ .zip all papers</a>
     </div>
 
     <div id="collections" class="explorer"><p class="empty">Loading…</p></div>
   </div>
 
-  <script src="assets/common.js?v=10"></script>
-  <script src="assets/home.js?v=10"></script>
+  <script src="assets/common.js?v=11"></script>
+  <script src="assets/home.js?v=11"></script>
 </body>
 </html>

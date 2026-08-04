@@ -24,10 +24,14 @@ function setupViews() {
   sel.value = "researchbench-100";
   const fromUrl = new URLSearchParams(location.search).get("view");
   if (fromUrl && shown.some((v) => v.id === fromUrl)) sel.value = fromUrl;
+  const zip = document.getElementById("zip-all");
+  const syncZip = () => { if (zip) zip.href = `data/bundles/${sel.value}.zip`; };
+  syncZip();
   sel.addEventListener("change", () => {
     const url = new URL(location.href);
     url.searchParams.set("view", sel.value);
     history.replaceState(null, "", url);
+    syncZip();
     rerender();
   });
 }
