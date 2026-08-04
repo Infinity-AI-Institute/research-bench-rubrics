@@ -19,13 +19,14 @@ const detail = document.getElementById("detail");
 
 buildLegend(document.getElementById("legend"), "Group / uncategorized");
 
+const dlLink = document.getElementById("download-graph");
+if (dlLink && paperKey) {
+  dlLink.href = `data/rubrics/${encodeURIComponent(paperKey)}.json`;
+  dlLink.setAttribute("download", `${paperKey}.rubric.json`);
+}
+
 Promise.all([
   fetch("data/papers.json").then((r) => r.json()),
-  const dlLink = document.getElementById("download-graph");
-  if (dlLink && paperKey) {
-    dlLink.href = `data/rubrics/${encodeURIComponent(paperKey)}.json`;
-    dlLink.setAttribute("download", `${paperKey}.rubric.json`);
-  }
   fetch(`data/rubrics/${encodeURIComponent(paperKey || "")}.json`).then((r) => {
     if (!r.ok) throw new Error(`rubric not found (HTTP ${r.status})`);
     return r.json();
