@@ -3778,6 +3778,108 @@
       "pct": 6.8
      }
     }
+   },
+   "fast-heterogeneous-serving-scalable-mixed-scale": {
+    "attempt2": {
+     "claude": {
+      "passed": 0,
+      "achievable": 93,
+      "total": 93,
+      "pct": 0.0,
+      "ungraded": true
+     },
+     "codex": {
+      "passed": 0,
+      "achievable": 93,
+      "total": 93,
+      "pct": 0.0,
+      "ungraded": true
+     }
+    },
+    "attempt3": {
+     "claude": {
+      "passed": 0,
+      "achievable": 93,
+      "total": 93,
+      "pct": 0.0,
+      "ungraded": true
+     },
+     "codex": {
+      "passed": 0,
+      "achievable": 93,
+      "total": 93,
+      "pct": 0.0,
+      "ungraded": true
+     }
+    }
+   },
+   "flexicache-leveraging-temporal-stability-of": {
+    "attempt2": {
+     "claude": {
+      "passed": 0,
+      "achievable": 96,
+      "total": 96,
+      "pct": 0.0,
+      "ungraded": true
+     },
+     "codex": {
+      "passed": 0,
+      "achievable": 96,
+      "total": 96,
+      "pct": 0.0,
+      "ungraded": true
+     }
+    },
+    "attempt3": {
+     "claude": {
+      "passed": 0,
+      "achievable": 96,
+      "total": 96,
+      "pct": 0.0,
+      "ungraded": true
+     },
+     "codex": {
+      "passed": 0,
+      "achievable": 96,
+      "total": 96,
+      "pct": 0.0,
+      "ungraded": true
+     }
+    }
+   },
+   "hexgen-flow-optimizing-llm-inference-request": {
+    "attempt2": {
+     "claude": {
+      "passed": 0,
+      "achievable": 105,
+      "total": 105,
+      "pct": 0.0,
+      "ungraded": true
+     },
+     "codex": {
+      "passed": 0,
+      "achievable": 105,
+      "total": 105,
+      "pct": 0.0,
+      "ungraded": true
+     }
+    },
+    "attempt3": {
+     "claude": {
+      "passed": 0,
+      "achievable": 105,
+      "total": 105,
+      "pct": 0.0,
+      "ungraded": true
+     },
+     "codex": {
+      "passed": 0,
+      "achievable": 105,
+      "total": 105,
+      "pct": 0.0,
+      "ungraded": true
+     }
+    }
    }
   },
   "headline": {

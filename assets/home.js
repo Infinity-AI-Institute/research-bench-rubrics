@@ -135,9 +135,10 @@ function completionBars(slug) {
     const done = v.passed || 0;
     const poss = Math.max(0, (v.achievable || 0) - done);
     const un = Math.max(0, (v.total || 0) - (v.achievable || 0));
+    const note = v.ungraded ? " · run failed before grading" : "";
     return `<div class="cbar-row">
       <span class="cbar-label">${label}</span>
-      <div class="cbar" role="img" title="${label}: ${done} done · ${poss} possible not done · ${un} not achievable (of ${v.total})">
+      <div class="cbar" role="img" title="${label}: ${done} done · ${poss} possible not done · ${un} not achievable (of ${v.total})${note}">
         ${done ? `<span style="flex:${done};background:#008300"></span>` : ""}
         ${poss ? `<span style="flex:${poss};background:#e66767"></span>` : ""}
         ${un ? `<span style="flex:${un};background:#52514e"></span>` : ""}
