@@ -444,3 +444,6 @@ body.brand .zip-all:hover { border-color: var(--brand-accent); color: var(--bran
 body.brand .masthead { margin: 0; width: 100%; background: #fff; border-bottom: 1px solid var(--brand-accent-line); padding: 0; }
 body.brand .masthead-inner { max-width: 1100px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; gap: 12px; }
 body.brand .masthead-inner .navlinks { margin-left: auto; }
+/* v14: masthead content spans the full bar — logo far left, nav far right */
+body.brand .masthead { display: block; }
+body.brand .masthead-inner { max-width: none; width: 100%; margin: 0; padding: 10px 20px; }
