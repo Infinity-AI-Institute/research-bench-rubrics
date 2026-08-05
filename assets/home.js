@@ -177,20 +177,32 @@ function render(query) {
   const view = currentView();
   const viewKeys = view ? new Set(view.keys) : null;
   const sections = [];
-  for (const coll of INDEX.collections) {
-    const papers = coll.papers.filter(
-      (p) =>
-        (!viewKeys || viewKeys.has(p.key)) &&
-        (!query ||
-          p.title.toLowerCase().includes(query) ||
-          p.slug.toLowerCase().includes(query)),
-    );
-    if (!papers.length) continue;
-    sections.push(`
+  const match = (p) =>
+    (!viewKeys || viewKeys.has(p.key)) &&
+    (!query ||
+      p.title.toLowerCase().includes(query) ||
+      p.slug.toLowerCase().includes(query));
+  if (view && SPLIT_IDS.includes(view.id)) {
+    // Splits are a single named set — one section titled after the split,
+    // not the internal source collections the papers came from.
+    const papers = INDEX.collections.flatMap((coll) => coll.papers.filter(match));
+    if (papers.length) {
+      sections.push(`
+      <section class="collection">
+        <h2>${escapeHtml(view.label)} <span class="count">· ${papers.length} paper${papers.length === 1 ? "" : "s"}</span></h2>
+        <div class="paper-list">${papers.map(paperCard).join("")}</div>
+      </section>`);
+    }
+  } else {
+    for (const coll of INDEX.collections) {
+      const papers = coll.papers.filter(match);
+      if (!papers.length) continue;
+      sections.push(`
       <section class="collection">
         <h2>${escapeHtml(coll.label)} <span class="count">· ${papers.length} paper${papers.length === 1 ? "" : "s"}</span></h2>
         <div class="paper-list">${papers.map(paperCard).join("")}</div>
       </section>`);
+    }
   }
   const pending = (view && view.pending || []).filter(
     (p) => !query || (p.title || p.slug).toLowerCase().includes(query) || p.slug.toLowerCase().includes(query),
