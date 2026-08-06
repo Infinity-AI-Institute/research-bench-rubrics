@@ -435,7 +435,7 @@ body.brand .intro-sub.byline { font-size: 1.25rem; color: var(--brand-accent); f
 body.brand .intro-sub { animation-delay: 2.1s; }
 /* v10: only BENCH gold (old INFINITY rule made child 8 gold too); logo byline */
 body.brand .intro-word span:nth-child(8) { color: #1e1c16; }
-body.brand .intro-sub.byline img { height: 40px; width: auto; display: inline-block; vertical-align: middle; }
+body.brand .intro-sub.byline img { height: 48px; width: auto; display: inline-block; vertical-align: middle; }
 .searchbar { display: flex; align-items: center; gap: 10px; }
 .searchbar input { flex: 1; }
 body.brand .zip-all { white-space: nowrap; font-size: 0.85rem; text-decoration: none; border: 1px solid var(--brand-accent-line); border-radius: 7px; padding: 6px 12px; color: #1e1c16; background: #fff; }

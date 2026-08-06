@@ -21,7 +21,7 @@ function setupViews() {
         `<option value="${escapeHtml(v.id)}">${escapeHtml(v.label)} (${v.keys.length})</option>`,
     )
     .join("");
-  sel.value = "researchbench-100";
+  sel.value = "researchbench-20";
   const fromUrl = new URLSearchParams(location.search).get("view");
   if (fromUrl && shown.some((v) => v.id === fromUrl)) sel.value = fromUrl;
   const zip = document.getElementById("zip-all");
