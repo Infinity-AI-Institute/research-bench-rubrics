@@ -447,3 +447,12 @@ body.brand .masthead-inner .navlinks { margin-left: auto; }
 /* v14: masthead content spans the full bar — logo far left, nav far right */
 body.brand .masthead { display: block; }
 body.brand .masthead-inner { max-width: none; width: 100%; margin: 0; padding: 10px 20px; }
+/* v17: tabbed layout — benchmark above the fold, about in its own tab */
+body.brand .intro.compact { min-height: unset; padding: 30px 0 4px; }
+body.brand .intro.compact .intro-sub { margin-top: 0.6rem; }
+body.brand .tabs { display: flex; gap: 6px; justify-content: center; margin: 16px 0 20px; border-bottom: 1px solid var(--brand-accent-line); }
+body.brand .tab { appearance: none; background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -1px; padding: 10px 18px; font-family: 'Crimson Pro', Georgia, serif; font-size: 1.08rem; color: #4a4635; cursor: pointer; }
+body.brand .tab:hover { color: var(--brand-accent); }
+body.brand .tab.active { color: #1e1c16; border-bottom-color: var(--brand-accent); font-weight: 600; }
+.tabpane { display: none; }
+.tabpane.active { display: block; }

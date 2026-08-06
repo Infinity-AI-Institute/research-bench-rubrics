@@ -108,6 +108,28 @@ fetch("data/papers.json")
 
 document.getElementById("search").addEventListener("input", rerender);
 
+// Tabs: benchmark (default) / about. Masthead links carry data-tab too.
+(() => {
+  const activate = (name) => {
+    document.querySelectorAll(".tab").forEach((t) => {
+      const on = t.dataset.tab === name;
+      t.classList.toggle("active", on);
+      t.setAttribute("aria-selected", String(on));
+    });
+    document.querySelectorAll(".tabpane").forEach((p) =>
+      p.classList.toggle("active", p.id === `tab-${name}`));
+  };
+  document.querySelectorAll("[data-tab]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      activate(el.dataset.tab);
+      history.replaceState(null, "", `#${el.dataset.tab}`);
+      window.scrollTo({ top: 0 });
+    });
+  });
+  if (location.hash === "#about") activate("about");
+})();
+
 function distBar(categories, leaves) {
   const parts = [];
   for (let i = 0; i < CATEGORY_SLOTS.length; i++) {
